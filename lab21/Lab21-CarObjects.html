@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab21 - CS 149</title>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="main">
+
+<div align="center">
+<font size="+1"><strong>
+    <a href="../index.html">CS 149</a>: Introduction to Programming
+</strong></font>
+<br>
+<font size="+1">
+    <a href="http://www.jmu.edu/">James Madison University</a>, Fall 2017 Semester
+</font>
+<br>
+<br>
+<font size="+2" color="forestgreen"><strong>
+    Lab21: Simulation of mutable objects
+</strong></font>
+</div>
+
+<p style="float: right; padding: 10px; text-align: center;">
+<img src="mcqueen.jpg" width="300">
+</p>
+
+<h3>Background</h3>
+
+<p>Object-oriented programming changes the view of a program as <i>a series of steps</i> to <i>an interaction between objects</i>. You design the objects by specifying what they should look like (attributes) and what behaviors they should have (methods). Your program will control how those objects interact in the "world" (which in the case of Greenfoot, is just another object).</p>
+
+<h3>Objectives</h3>
+
+<ul>
+<li><p>Design an interactive simulation using Greenfoot.</p></li>
+<li><p>Write constructor, accessor, and mutator methods.</p></li>
+</ul>
+
+<h3>Part 1 - Create a scenario</h3>
+
+<p>Before the break, we took our first look at <a href="../wk-12/Lab20-Greenfoot.html">game design with Greenfoot</a>. Today we will create a new simulation from scratch.</p>
+
+<ol>
+<li>
+    <p>Run Greenfoot (from the Linux menu) and select "Scenario &gt; New Java Scenario..." from the Greenfoot menu. Name your scenario <code>Lab21</code> (under your CS149 directory).</p>
+</li>
+<!--
+<li>
+    <p>You may want to close any Greenfoot windows from last time. When you start the program, it opens whatever project you were working on previously.</p>
+</li>
+-->
+<li>
+    <p>Right-click the "MyWorld" rectangle on the right, and select "Remove". We'll create a different World in the next step.</p>
+</li>
+<li>
+    <p>Right-click the "World" rectangle on the right, and select "New subclass..." Name the subclass <code>Road</code> and select a suitable image from the "backgrounds" category.</p>
+</li>
+<li>
+    <p>Right-click the "Actor" rectangle on the right, and select "New subclass..." Name the subclass <code>Car</code> and select a suitable image from the "transport" category.</p>
+</li>
+<li>
+    <p>Press the compile button and then add a <code>new Car()</code> to the world. After placing the car, select "Controls &gt; Save the World" from the menu.</p>
+</li>
+</ol>
+
+<h3>Part 2 - Basic Car methods</h3>
+<ol start="6">
+  <li><p>Double-click the Car rectangle (on the right) to open <kbd>Car.java</kbd>. Write the code for the following steps above the <code>act()</code> method.</p>
+  </li>
+  <li><p>
+      Create three private variables within the class:
+      an integer that holds the car's year, a string that
+      holds the car's make, and an integer that holds the
+      car's speed.</p>
+  </li>
+  <li>
+    <p>Create a constructor that accepts the model year and make,
+      and sets the speed to 0. Make the constructor's parameters
+      the same names as the private attributes, and use the
+      <code>this</code> keyword when assigning the values.</p>
+  </li>
+  <li>
+    <p>Create a <code>toString()</code> method that accepts no
+      parameters and returns a string in the format
+      <code>"A %d %s that is going %d mph"</code>.</p>
+    <ol type="a">
+      <li>
+        <p>Do <strong>NOT</strong> print anything
+          in the method (no System.out). It should only create and return the string.</p>
+      </li>
+      <li>
+        <p><code>String.format()</code>
+          operates just like <code>printf()</code>. You should use
+          this method to create the string.</p>
+      </li>
+    </ol>
+  </li>
+  <li>
+    <p>Compile your <code>Car</code> class and correct any errors. You may want to ask a TA to check over your code.</p>
+  </li>
+  <li><p>At this point, you should have a compiler error in your <kbd>Road.java</kbd> file. Fix this error by providing info about your car.
+  </p></li>
+</ol>
+
+<h3>Part 3 - Test your Car</h3>
+<ol start="12">
+  <li>
+    <p>Create a second car object of your choice in the
+      <code>Road.prepare()</code> method using the year and make of your "dream" car.</p>
+  </li>
+  <li><p>Go back to <kbd>Car.java</kbd> and add the following line at the top:</p>
+<pre>
+import javax.swing.JOptionPane;
+</pre></li>
+  <li><p>Add the following code to the <code>Car.act()</code> method:</p>
+<pre>
+// handle mouse click events
+if (Greenfoot.mouseClicked(this)) {
+    JOptionPane.showMessageDialog(null, this.toString());
+}
+</pre>
+  <p>Remember, you can press <em>Ctrl+Shift+I</em> to fix the indenting of your code.</p></li>
+  <li><p>From the main screen, compile the project and click "Run". Then click on each car and see what happens.</p>
+  </li>
+</ol>
+
+<h3>Part 4 - Go cars, go!</h3>
+<ol start="16">
+  <li>Pause or reset the simulation before writing new code. Right-click one of the car objects, and see what methods are in the context menu.</li>
+  <li><p>For this lab, you do NOT have to write documentation comments for each method. But double check that you have written your name and today's date in both files.</p></li>
+  <li>
+    <p>Create <i>accessor</i> methods that let you access
+      each individual attribute of the <code>Car</code>.
+      They should be named with "<kbd>get</kbd>"
+      followed by the name of the attribute. So one of your accessor
+      methods would be <code>getSpeed()</code>.
+      Each accessor should take no parameters and return the value of
+      that attribute.</p>
+  </li>
+  <li>
+    <p>Create two <i>mutator</i> methods,
+      <code>accelerate()</code> and <code>brake()</code>.
+      These methods take no parameters and return no values.
+      When called, the accelerate()
+      method should increase the speed variable by 1
+      mile per hour. The brake()
+      method should decrease the speed variable by 1
+      mile per hour.</p>
+  </li>
+  <li><p>Add the following code to the <code>Car.act()</code> method:</p>
+<pre>
+// update speed and move the car
+if (Greenfoot.isKeyDown("up")) {
+    accelerate();
+}
+if (Greenfoot.isKeyDown("down")) {
+    brake();
+}
+move(speed);
+</pre></li>
+  <li>Compile and run the simulation, then click on a car while it's moving. You may need to adjust the simulation speed slider at the bottom.</li>
+</ol>
+
+<h3>Part 5 - Stop cars, stop!</h3>
+<ol start="22">
+  <li><p>Add a private boolean named <code>crash</code> to the Car class. Set this variable to false in the constructor.</p>
+  </li>
+  <li><p>In the act method, surround the "update speed and move the car" code with a decision that checks if the car has not crashed.
+  </p></li>
+  <li><p>After the line <code>move(speed);</code> (i.e., just before the closing brace of the if block) add the following code:</p>
+<pre>
+// check if the car has crashed
+Actor other = getOneIntersectingObject(Car.class);
+if (other != null) {
+    crash = true;
+}
+</pre></li>
+  <li><p>Test your code by moving and rotating your cars so that they will collide. If everything is correct, they should stop.</p>
+  </li>
+  <li><p>Add sound effects to your project! <a href="http://soundbible.com/tags-crash.html">Download a wav or mp3 file</a> to your <kbd><i>scenario</i>/sounds</kbd> directory. Then add the following example code where applicable:</p>
+<pre>
+Greenfoot.playSound("crash.wav");
+</pre>
+  </li>
+</ol>
+
+<p>At some point, you should try running your scenario with "lots" of cars. Don't forget to save the world! :) Submit your <kbd>Car.java</kbd> and <kbd>Road.java</kbd> files via Canvas by the end of the day. Make sure you wrote your name and today's date in the Javadoc comments of both source files.</p>
+
+</div>
+</body>
+</html>

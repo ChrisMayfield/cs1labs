@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab19 - CS 149</title>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+    pre {color: forestgreen;}
+    </style>
+</head>
+<body>
+<div class="main">
+
+<div align="center">
+<font size="+1"><strong>
+    <a href="../index.html">CS 149</a>: Introduction to Programming
+</strong></font>
+<br>
+<font size="+1">
+    <a href="http://www.jmu.edu/">James Madison University</a>, Fall 2017 Semester
+</font>
+<br>
+<br>
+<font size="+2" color="forestgreen"><strong>
+    Lab19: Passing and returning objects
+</strong></font>
+</div>
+
+<p style="float: right; padding: 10px; text-align: center;">
+<img src="painter_penguin.png" title="http://openclipart.org/detail/174634">
+</p>
+
+<h3>Background</h3>
+
+<p>For this lab you are going to create a class named <tt>Color149</tt>. Java already comes with its own <tt>Color</tt> class (check out the <a href="http://docs.oracle.com/javase/8/docs/api/java/awt/Color.html">documentation</a> and <a href="Color.java">source code</a>), but we are going to create a simple variant of that class. This lab was designed by Prof. Arch Harris.</p>
+
+<h3>Objectives</h3>
+
+<ul>
+<li><p>Implement methods that accept objects as parameters.</p></li>
+<li><p>Implement methods that return an object of the class.</p></li>
+</ul>
+
+<h3>Part 1: Getting Started</h3>
+
+<ol start="1">
+<li>
+    <p>Download a copy of <a href="Main.java">Main.java</a>. This file implements the main method you will use to test your implementation of <tt>Color149</tt>.</p>
+</li>
+<li>
+    <p>Download a copy of <a href="Color149.java">Color149.java</a>. Read the <a href="Color149.html">documentation</a> for the <tt>Color149</tt> class that this file implements.</p>
+</li>
+<li>
+    <p>You will run today's program from the command line. Recall that to use java from the command line, you must first change your working directory to be the location that holds your java files.</p>
+</li>
+<li>
+    <p>If you have already compiled your java files in DrJava, you do NOT need to compile them again. But if you want to compile your java files from the command line, enter the following command.</p>
+    <pre>javac *.java</pre>
+    <p>If you have many errors and want to limit the number of error messages displayed, enter the following alternative command.</p>
+    <pre>javac *.java 2&gt;&amp;1 | head -20</pre>
+</li>
+<li>
+    <p>Normally, to run a java program that has the main method in a file named <tt>Main.java</tt>, you would run the following command.</p>
+    <pre>java Main</pre>
+    <p>But instead of sending the program output to the screen, we want the output to go to a file. So run today's lab with the following command.</p>
+    <pre>java Main &gt; output.html</pre>
+    <p>This will create a file named <tt>output.html</tt> which you should view in a web browser.</p>
+</li>
+</ol>
+
+<h3>Part 2: Implementation</h3>
+
+<ol start="6">
+<li>
+    <p>Look at the parts of <tt>Color149</tt> that have already been completed.</p>
+    <ul>
+    <li><p>A number of constants have been defined. Those constants are public so they may be used outside of the class (you should note those constants are referenced in <tt>Main.java</tt>).</p></li>
+    <li><p>Three instance variables are defined. Thus every object that is created will have its own copy of those three instance variables. Those instance variables are private so they can only be accessed by methods in the class.</p></li>
+    <li><p>The methods <code>toString</code>, <code>add</code>, and <code>dim</code> have already been defined. Look at those methods and ask questions about anything that you do not understand.</p></li>
+    </ul>
+</li>
+<li>
+    <p>Implement the constructor. Recall that a constructor's job is to initialize an object to a particular state. In this lab, your color class's state will not change after it is initially created. Compile your java files and run the main program as specified below. The top portion of the html file that outputs the constants should work properly after you complete the constructor.</p>
+</li>
+<li>
+    <p>Implement the other methods, one at a time. Rerun the program after implementing each method to test the implemented method. Make sure a method is working correctly before moving on to the next method.</p>
+</li>
+<li>
+    <p>When you have everything working, open two browser windows: one with your web page and one with the <a href="output.html">sample output page</a>. Ask a TA or instructor to verify that your program produces the correct output.</p>
+</li>
+</ol>
+
+<p>Submit your <tt>Color149.java</tt> file via Canvas by the end of the day.</p>
+
+</div>
+</body>
+</html>

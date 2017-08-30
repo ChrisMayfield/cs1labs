@@ -1,0 +1,37 @@
+@media screen {
+    body {
+        background-color: ghostwhite;
+    }
+    .main {
+        background-color: white;
+        border: 1px ridge darkgray;
+        margin: 15px auto;
+        padding: 15px;
+        max-width: 960px;
+    }
+}
+
+A:link    {text-decoration: none}
+A:visited {text-decoration: none}
+A:active  {text-decoration: none}
+A:hover   {text-decoration: underline}
+
+h1 {
+    font-size: 15pt;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    padding-top: 5px;
+}
+
+.infobox {
+    background-color: lightyellow;
+    border: black 1px solid;
+}
+
+code {
+    color: darkorange;
+}
+
+em {
+    color: deeppink;
+}

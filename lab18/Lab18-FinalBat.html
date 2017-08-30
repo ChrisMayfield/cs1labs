@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab18 - CS 149</title>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+    pre {color: forestgreen;}
+    kbd {color: forestgreen;}
+    </style>
+</head>
+<body>
+<div class="main">
+
+<div align="center">
+<font size="+1"><strong>
+    <a href="../index.html">CS 149</a>: Introduction to Programming
+</strong></font>
+<br>
+<font size="+1">
+    <a href="http://www.jmu.edu/">James Madison University</a>, Fall 2017 Semester
+</font>
+<br>
+<br>
+<font size="+2" color="forestgreen"><strong>
+    Lab18: Final round of CodingBat
+</strong></font>
+</div>
+
+<p style="float: right; padding: 15px; text-align: center;">
+<img src="scoreUp.png" width="400" title="codingbat.com/prob/p180365"
+     style="padding: 3px; border: 2px ridge lavender">
+</p>
+
+<h3>Instructions</h3>
+
+<p>In Ecipse, create a new project named <tt>Lab18</tt>. Download the <a href="CodingBatAP1.java">CodingBatAP1.java</a> file and move it into your Workspace/Lab18 directory (doing that will add it to your project automatically).</p>
+
+<ol start="1">
+<li>
+    <p><font color="red"><b>Remember to log into CodingBat before doing any problems so you will receive credit.</b></font> There will be nothing to turn in via Canvas today, but there is a Web-CAT submission for extra credit.</p>
+</li>
+<li>
+    <p>Solve as many <a href="http://codingbat.com/java/AP-1">AP-1 problems</a> as you can during the lab period. These problems are good practice for the logic/loop/array aspects of the course.</p>
+</li>
+<li>
+    <p>You will receive two points for each problem solved (10 points max). Your grade will come directly from CodingBat &ndash; so again, make sure you're logged in!</p>
+</li>
+</ol>
+
+<p>We strongly recommend you also complete the following section, especially if you are interested in using Eclipse on PA5, PA6, and/or the final exam. It won't take that long, and it will be worth it!</p>
+
+<h3>Part 2 - Eclipse Plugins (optional)</h3>
+
+<p>One of the great advantages of using Eclipse is the rich third-party plugin library that exists. Plugins are developed and maintained by other users and organizations, and they are freely available. This next section will walk through setting up some of the plugins we use in CS 149 and CS 159.</p>
+
+<h4>JUnit</h4>
+
+<ol>
+<li>
+    <p>Select File -&gt; New -&gt; Other -&gt; Junit Test Case. Select "New JUnit 3 test" (that's what we've been using this semester) and name your class <tt>CodingBatAP1Test</tt>. Click Next, and select the six AP-1 methods to create stubs.</p>
+</li>
+<li>
+    <p>To save you some busy work, copy the contents of this <a href="CodingBatAP1Test.java">CodingBatAP1Test.java</a> file into your new test file.</p>
+</li>
+<li>
+    <p>To run JUnit tests, select Run -&gt; RunAs -&gt; JUnit Test. This will test your methods using <tt>CodingBatAP1Test</tt>.</p>
+</li>
+<li>
+    <p>Finish writing test cases for your program. Get all six working 100% and submit to <a href="https://webcat.cs.jmu.edu/">Web-CAT</a> for extra credit.</p>
+</li>
+</ol>
+
+<h4>Checkstyle</h4>
+
+<ol>
+<li>
+    <p>Go to Help -&gt; Eclipse marketplace, find the Checkstyle plugin, and click the Install button.</p>
+</li>
+<li>
+    <p>Configure checkstyle to use our <a href="../wk-02/cs149.xml">cs149.xml</a> by going to Window -&gt; Preferences -&gt; Checkstyle and importing the cs149.xml as an External Configuration file. (Click New, select the Type, name it cs149, and Browse to the location of cs149.xml.)</p>
+</li>
+<li>
+    <p>Go to the Package Explorer panel (on the left), right-click your project, and select Checkstyle -&gt; Activate Checkstyle to get comments in your main code window. You will need to repeat this last step for each project in the future; it's not enabled by default.</p>
+</li>
+</ol>
+
+<h4>Fomatter</h4>
+
+<p>When you press Ctrl+Shift+F to format your code, it uses the built-in style definitions. They don't match our Checkstyle configuration, but they are easy to customize.</p>
+
+<ol>
+<li>
+    <p>Go to Window -&gt; Preferences -&gt; Java -&gt; CodeStyle -&gt; Formatter, and then do an import of our <a href="cs149-formatter.xml">cs149-formatter.xml</a> file. (We suggest you download this file to your workspace directory, so it's easy to find.)</p>
+</li>
+</ol>
+
+<h4>EclEmma</h4>
+
+<ol>
+<li>
+    <p>Go to Help -&gt; Eclipse Marketplace, find EclEmma, and click Install. This plugin will allow you to run 'Code Coverage' tests (like Web-CAT does) against your program to see the coverage of your test files against your code.</p>
+</li>
+<li>
+    <p>You can now run coverage tests against your program by clicking the Coverage button <img src="coverage-button.png" height="24"> on the toolbar, or by going to Run -&gt; Coverage from the menu bar.</p>
+</li>
+</ol>
+
+</div>
+</body>
+</html>

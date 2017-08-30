@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab22 - CS 149</title>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="main">
+
+<div align="center">
+<font size="+1"><strong>
+    <a href="../index.html">CS 149</a>: Introduction to Programming
+</strong></font>
+<br>
+<font size="+1">
+    <a href="http://www.jmu.edu/">James Madison University</a>, Fall 2017 Semester
+</font>
+<br>
+<br>
+<font size="+2" color="forestgreen"><strong>
+    Lab22: Class variables vs attributes
+</strong></font>
+</div>
+
+<h3>Background</h3>
+
+<p>In the previous lab, you created a class of immutable objects named <tt>Color149</tt>. Today you will explore another immutable class, but also work with a class intending to be changed. That class contains some instance variables (attributes) as well as some class variables (static).</p>
+
+<h3>Objectives</h3>
+
+<ul>
+<li><p>Explain the difference between immutable and mutable objects.</p></li>
+<li><p>Create methods that manipulate class as well as instance variables.</p></li>
+<li><p>Trace the execution of a program that uses many different objects.</p></li>
+</ul>
+
+<h3>The Story</h3>
+
+<div align="center">
+<img src="stallone.jpg" title="Stallone" height="200" border="3">
+&nbsp;
+<img src="frank_the_pug.jpg" title="Frank the Pug" height="200" border="3">
+&nbsp;
+<img src="bugcup.jpg" title="Bug Cup" height="200" border="3">
+&nbsp;
+<img src="speilberg.jpeg" title="Speilberg" height="200" border="3">
+</div>
+
+<p>The premise behind the <a href="http://www.imdb.com/title/tt0119654/">Men in Black</a> (MIB) series of movies is that there are aliens on this earth who have sought a neutral planet for refuge from conflict elsewhere in the universe. Most are benign and in fact are helpful to society. But some go out of control. The MIB keep track of the aliens, and if warranted, "isolate" or "remove" them from the earth.</p>
+
+<p>A little known fact is that the recent Bridgeforth Stadium addition was partially funded through the MIB, who built a secret detention center underneath the stadium turf. Aliens detained at the JMU location will be found at location 38.435427 latitude, -78.872942 longitude.</p>
+
+<p>Your application will enable MID to "check in" new alien arrivals and track their whereabouts. Also, it is important that we know how many aliens we are currently tracking in order to determine workforce requirements. Aliens that are eliminated or deported will be removed from these counts.</p>
+
+<h3>Instructions</h3>
+
+<ol start="1">
+
+<li><p>Download a copy of <a href="Location.java">Location.java</a> and <a href="Lab22.txt">Lab22.txt</a> (the worksheet).</p></li>
+
+<li><p>Review the code for Location.java, and answer the corresponding questions in the worksheet.</p></li>
+
+<li><p>Download a copy of <a href="MIB.java">MIB.java</a> (which contains the main method) and <a href="Alien.java">Alien.java</a> (which you will implement).</p></li>
+
+<li><p>Review the code for Alien.java, and answer the corresponding questions in the worksheet.</p></li>
+
+<li><p>Stub out each of the methods by adding return statements. Get everything to compile before moving forward.</p></li>
+
+<li><p>Fill in the rest of the code in Alien.java. Use MIB.java to test your code.</p></li>
+
+<li><p>Compare your output with the <a href="MIB.txt">solution's output</a> (using diff and/or meld).</p></li>
+
+</ol>
+
+<p>Read carefully the description of each of the blank methods. In some cases you will alter class variables and instance variables; in others you will alter one or the other; and in some cases you will simply access data.</p>
+
+<!--
+<h3>Memory Model</h3>
+
+<i>Note: You will be expected to do this type of exercise on the final exam, so now is a good time to practice.</i>
+
+<p>On a blank sheet of paper, draw a memory model diagram to trace the execution of MIB.java. See the <a href="polygon.pdf">sample solution from yesterday</a> for an example, but don't worry about memory usage this time. You should draw each reference variable as it is declared, along with the object it's referencing. As values change, simply draw new arrows (using a pencil and eraser is recommended). Don't forget to show the static variables for the Alien and Location classes. Have a TA or the instructor double check the model you drew on paper.</p>
+-->
+
+<p>Submit <tt>Alien.java</tt> and <tt>Lab22.txt</tt> via Canvas by the end of the day.</p>
+
+</div>
+</body>
+</html>

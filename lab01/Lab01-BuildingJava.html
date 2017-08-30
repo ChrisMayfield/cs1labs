@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab01 - CS 149</title>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="main">
+
+<div align="center">
+<font size="+1"><strong>
+    <a href="../index.html">CS 149</a>: Introduction to Programming
+</strong></font>
+<br>
+<font size="+1">
+    <a href="http://www.jmu.edu/">James Madison University</a>, Fall 2017 Semester
+</font>
+<br>
+<br>
+<font size="+2" color="forestgreen"><strong>
+    Lab01: Building a Java program
+</strong></font>
+</div>
+
+<h3>Background</h3>
+
+<p>Welcome to your first programming lab in Java! Today's emphasis is on the
+development cycle of edit, save, compile, and run. We will also experiment with
+different kinds of compiler errors, learn to recognize when an error occurs,
+what information is conveyed in the error message, where the error occurred,
+and how to resolve it.</p>
+
+<h3>Objectives</h3>
+
+<img src="../drjava.png" width="450" style="float: right; padding: 10px">
+
+<ul>
+<li><p>Use an IDE (Integrated Development Environment).</p></li>
+<li><p>Edit, save, compile, and run a simple Java program.</p></li>
+<li><p>Recognize and correct syntax errors in a Java program.</p></li>
+</ul>
+
+<h3>Key Terms</h3>
+
+<dl>
+<dt>source file</dt>
+<dd>the Java program as written by the programmer</dd>
+<dt>class file</dt>
+<dd>the executable program produced by the compiler</dd>
+<dt>compile</dt>
+<dd>process of checking syntax and making a class file</dd>
+<dt>syntax error</dt>
+<dd>mistake in the source code that violates the language</dd>
+<dt>logic error</dt>
+<dd>mistake in the program that causes incorrect behavior</dd>
+<dt>execute</dt>
+<dd>the process of running a program on a computer</dd>
+</dl>
+
+<h3>Part 1: Java Development Cycle</h3>
+
+<p>DrJava is a text editor much like gedit or Notepad. But it does a lot more!
+First, it highlights key words as you type them. It also supports indenting of
+sections of the code. When you want to compile your code, there is a tool within
+DrJava to do so. And when you want to execute and test your program, it will do
+that too.</p>
+
+<ol>
+<li>
+    <p>Open DrJava and click "File &ndash;&gt; New Java Class" from the menu.
+    Name the class Hello (note the capital H) and check the box to include a
+    main method. Save the file on your Desktop or other preferred location.</p>
+</li>
+<li>
+    <p>Type the code in the picture on the upper right. Change the @author
+    to your name and @version to today's date. Pay attention to all spelling,
+    punctuation, and indentation.</p>
+    <p><b>NOTE: Java is case sensitive ("System" is different than "system").
+    Using the wrong case anywhere will cause an error.</b></p>
+</li>
+<li>
+    <p>Compile your Java program (click the compile button on the toolbar).</p>
+    <ul>
+        <li><p>If it compiles successfully you will get a message: Compilation completed.
+        If you have other messages indicating errors, check your typing very carefully.
+        Your error message will give you the line number of the first place the compiler
+        was "confused" by what you typed.</p></li>
+        <li><p>Upon successful compilation, examine the directory (use the file browser)
+        in which you placed your Hello.java file and you should see a Hello.class
+        file.</p></li>
+    </ul>
+</li>
+<li>
+    <p>Execute your program from DrJava. (Click the run button on the toolbar.)
+    Under the Interactions tab, you should see the message "Welcome to CS 149!"
+    appear in green. If not, please see the instructor before proceeding.</p>
+</li>
+</ol>
+
+<p>You have just completed the "edit, save, compile, execute" cycle. Each time
+you change and save your program, you will need to recompile the source file to
+see the changes reflected in the executed program.</p>
+
+<img src="EditSaveCycle.png" width="500">
+
+<h3>Part 2: Syntax Errors</h3>
+
+<p>Download the <a href="Lab01.txt"><img src="../icons/disk.png"> Lab01.txt</a>
+worksheet and open/edit the file as plain text.</p>
+
+<p>This part of the lab will give you some practice in reading and interpreting
+syntax errors. As you make each error, pay particular attention to the message
+produced, and in some cases, a single error will cascade several other errors.
+Record the answers to the following questions in your lab worksheet.</p>
+
+<ol start="5">
+<li>
+    <b>Class name different from file name.</b>
+    <p>Delete the beginning 'H' from the name of the class (so the first
+    non-comment line is <code>public class ello</code>) and save the program.
+    <br><i>(Question 1)</i> What happens when you try to save it?</p>
+    <p>Now compile your program. Keep the <code>public class ello</code> mistake
+    in the code.
+    <br><i>(Question 2)</i> What error message do you get during the compile?</p>
+</li>
+<li>
+    <b>Interpreting the error message.</b>
+    <p>All compiler messages will begin with the name of the source file
+    (Hello.java) and the line number in that file that contains the error.
+    <br><i>(Question 3)</i> What line number was your error on?</p>
+</li>
+<li>
+    <b>Misspelling inside a string literal.</b>
+    <p>Correct the mistake above, save, and compile. Next, delete one letter 'l'
+    from the Welcome in the message to be printed (inside the quotation marks).
+    Save the program and recompile it.
+    <br><i>(Question 4)</i> Why is there no error message?</p>
+    <p>Now run the program, and review the "key terms" at the top of this lab.
+    <br><i>(Question 5)</i> What type of error just occurred?</p>
+</li>
+<li>
+    <b>No ending quote mark for a string literal.</b>
+    <p>Correct the spelling in the string, then delete the ending quotation mark
+    enclosing the "Welcome to CS 149!" Save the program and recompile it.
+    <br><i>(Question 6)</i> What error message(s) do you get?</p>
+</li>
+<li>
+    <b>No beginning quote mark for a string literal.</b>
+    <p>Put the ending quotation mark back, then take out the beginning one. Save
+    and recompile.
+    <br><i>(Question 7)</i> What was different about the errors this time?</p>
+</li>
+<li>
+    <b>No semicolon after a statement.</b>
+    <p>Put the missing quote back, and remove the semicolon at the end of the
+    line that prints the message. Save the program and recompile it.
+    <br><i>(Question 8)</i> What error message(s) do you get?</p>
+</li>
+</ol>
+
+<p><font color="forestgreen"><b>A good practice to follow when you have multiple
+errors is to focus on the first error, correct it, then recompile. Do not try to
+figure out all of the errors at once!</b></font></p>
+
+<h3>Part 3: Declaration and Assignment</h3>
+
+<p>Now we will make
+variables using the Java language. All variables must be declared prior to their
+first use in the program. A declaration is an abstract data type, followed by an
+identifier, followed by a semi-colon. For example <code>int sum;</code> declares
+the variable sum to be an int (short for integer). Add the following line to the
+program prior to the <code>System.out.println</code> statement.</p>
+
+<blockquote><code>
+String message;
+</code></blockquote>
+
+<p>This statement declares message to be a variable container that can hold
+Strings. Note that String must be capitalized. Skip one line (make one line of
+white space) and add an assignment statement. This statement will put the String
+literal "Hello, World" into the container called message.</p>
+
+<blockquote><code>
+message = "Hello, World";
+</code></blockquote>
+
+<p>You may use a different string if you prefer for your message. Finally, make
+this change to print the contents of the message variable:</p>
+
+<blockquote><code>
+System.out.println(message);
+</code></blockquote>
+
+<p>Save and recompile your program. Then run it to make sure that the message
+prints in the way that you want it to.</p>
+
+<i>(Question 9)</i> Why does message not have quotes around it?
+
+<h3>Part 4: Manipulating Output</h3>
+
+<p>System.out.println sends a string to standard output and adds a newline
+character at the end. What happens if we use System.out.print instead? This
+section will have you experiment with the output.</p>
+
+<ol start="11">
+<li>
+    <p>In your program, add in a second String variable named message2.
+    Assign to it the value "I'm happy to be a programmer."</p>
+</li>
+<li>
+    <p>Change your println to use print instead:
+    <code>System.out.print(...);</code>
+    Then add another println statement on the next line:
+    <code>System.out.println(message2);</code>
+    Compile and run your program.
+    <br><i>(Question 10)</i> How many lines of output do you get?</p>
+</li>
+<li>
+    <p>After the word "World" in message, put in the code <code>\n</code>.
+    This is one of the <i>escape characters</i> in Java. Recompile and run
+    your program.
+    <br><i>(Question 11)</i> How many lines of output do you get?</p>
+</li>
+<li>
+    <p>In Java, <code>\n</code> is the newline character and can be used to
+    force a new line wherever we want it. In this case, it is doing the job
+    that the println did before, adding a newline after the last character.</p>
+</li>
+<li>
+    <p>Finally, remove the second println command which is printing the second
+    line of the message. Change the other print command to read:
+    <code>System.out.println(message + message2);</code>
+    Recompile and run the program.
+    <br><i>(Question 12)</i> What output do you get?</p>
+</li>
+</ol>
+
+<p>Submit both your completed <b>Lab01.txt and Hello.java</b> via
+<a href="https://canvas.jmu.edu/"> <img src="../icons/world.png">
+canvas.jmu.edu</a> by the end of the day.</p>
+
+<h3>Part 5: Canvas Settings</h3>
+
+<p>After submitting the lab, take a few minutes to complete your Canvas account setup:</p>
+
+<ol start="16">
+<li><p>In Canvas, click the "Account" icon on the upper left, then click "Settings".</p></li>
+<li><p>If you haven't done so already, please set up a profile picture of your choice.</p></li>
+<li><p>If you'd like to receive text messages from Canvas, click "+ Contact Method" on the right.</p></li>
+<li><p>Click "Notifications" on the left sidebar and verify what emails/texts you want to receive.</p></li>
+</ol>
+
+<p><font color="red"><b>Steps 16-19 are required for the lab. You will lose points if your profile picture is still a ghost.</b></font></p>
+
+<h3>Optional Challenge</h3>
+
+<p>For those who finish before the end of the lab period, I have an extra
+challenge for you. Write a program named Miles.java that converts miles to
+kilometers (i.e., 1 mile = 1.60934 km).</p>
+
+</div>
+</body>
+</html>

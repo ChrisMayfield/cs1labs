@@ -1,0 +1,39 @@
+CS 149 - Lab01 Worksheet
+
+Name:
+
+
+(Question 1) What happens when you try to save it?
+
+
+(Question 2) What error message do you get during the compile?
+
+
+(Question 3) What line number was your error on?
+
+
+(Question 4) Why is there no error message?
+
+
+(Question 5) What type of error just occurred?
+
+
+(Question 6) What error message(s) do you get?
+
+
+(Question 7) What was different about the errors this time?
+
+
+(Question 8) What error message(s) do you get?
+
+
+(Question 9) Why does message not have quotes around it?
+
+
+(Question 10) How many lines of output do you get?
+
+
+(Question 11) How many lines of output do you get?
+
+
+(Question 12) What output do you get?

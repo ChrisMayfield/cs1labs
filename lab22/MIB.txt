@@ -1,0 +1,22 @@
+Aliens now 1: 2
+Wanted now 1: 0
+Aliens now 2: 2
+Wanted now 2: 1
+Aliens now 3: 4
+Wanted now 3: 1
+Aliens now 4: 3
+Wanted now 4: 2
+Aliens now 5: 2
+Wanted now 5: 1
+Aliens now 6: 3
+Wanted now 6: 0
+Aliens now 7: 3
+Wanted now 7: 1
+
+The final set of aliens: 
+Frank aka Frank the Pug from Saturn is currently at 38.434663/-78.863732 
+Bug aka Edgar from Romulus is currently at Off Planet 
+;opm** aka ET from Home is currently at Off Planet 
+Kai-el aka Clark Kent from Krypton is currently at 38.435427/-78.872942 
+Beedle aka Steven Spielberg from Jupiter is currently at 38.434663/-78.863732 ROGUE
+Beedle aka Steven Spielberg from Jupiter is currently at 38.434663/-78.863732 ROGUE

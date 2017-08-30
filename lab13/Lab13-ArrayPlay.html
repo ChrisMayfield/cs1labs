@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab13 - CS 149</title>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+    pre {color: forestgreen;}
+    kbd {color: forestgreen;}
+    </style>
+</head>
+<body>
+<div class="main">
+
+<div align="center">
+<font size="+1"><strong>
+    <a href="../index.html">CS 149</a>: Introduction to Programming
+</strong></font>
+<br>
+<font size="+1">
+    <a href="http://www.jmu.edu/">James Madison University</a>, Fall 2017 Semester
+</font>
+<br>
+<br>
+<font size="+2" color="forestgreen"><strong>
+    Lab13: Processing array elements
+</strong></font>
+</div>
+
+<p style="float: right; padding: 10px; text-align: center;">
+<img src="dice.png" width="275" title="Wikimedia Commons">
+</p>
+
+<h3>Background</h3>
+
+<p>You will write today's program from scratch. Create a new Java class named <tt>ArrayPlay</tt> with a main method. <font color="red">For each step below, you should add code to the program without replacing prior code.</font> When you are finished, this program will provide you with a reference for working with arrays including initializing, printing, and comparing.</p>
+
+<h3>Objectives</h3>
+
+<ul>
+<li><p>Use an array to store a sequence of values.</p></li>
+<li><p>Display the contents of an array with a loop.</p></li>
+<li><p>Practice manipulating various types of arrays.</p></li>
+</ul>
+
+<h3>Key Terms</h3>
+
+<dl>
+<dt>initializer list</dt>
+<dd>list of values used to instantiate and initialize an array in one step</dd>
+<dt>array.length</dt>
+<dd>read-only attribute of an array that stores the number of elements</dd>
+<dt>subscript</dt>
+<dd>integer value in brackets [ ] that specifies an element of an array</dd>
+<dt><tt>ArrayIndexOutOfBoundsException</tt></dt>
+<dd>error raised when trying to access A[i] where i &lt; 0 or i &gt;= A.length</dd>
+</dl>
+
+<h3>Part 1: Sequentially accessing an array</h3>
+
+<p>Whenever you are asked to do something to your array and then print it, you should finish the update step first and then have a separate loop to do the printing.</p>
+
+<ol start="1">
+<li>
+    <p>In the main method, create a single array of integers that is 6 elements long.</p>
+</li>
+<li>
+    <p>Initialize each of the array elements to the value -1 using a loop of your choice.</p>
+</li>
+<li>
+    <p>In another loop, print each element of the array on a separate line as shown:</p>
+<pre>
+array[0] = -1
+array[1] = -1
+...
+</pre>
+</li>
+<li>
+    <p>Add code to change the value of each element of the array to its subscript. For example, array[3] should hold the value 3.</p>
+</li>
+<li>
+    <p>Print the new contents of the array. You may copy and paste the code from step 3. (Your program should now print both versions of the array.)</p>
+</li>
+<li>
+    <p>If you have not seen an <tt>ArrayIndexOutOfBoundsException</tt>, make one by causing a loop to read past the end of the array. What happens?</p>
+</li>
+<li>
+    <p>Fix the code that causes the ArrayIndexOutOfBoundsException. Then add code to re-initialize your array contents to all zeros.</p>
+</li>
+</ol>
+
+<h3>Part 2: Randomly accessing an array</h3>
+
+<p>Download <a href="Die.class">Die.class</a> for use in Part 3. Make sure it's in the same directory as your <tt>ArrayPlay.java</tt> file.</p>
+
+<ol start="8">
+<li>
+    <p>Create a new Die object. (Refer to <a href="Die.html">Die.html</a> for documentation.)</p>
+</li>
+<li>
+    <p>Create a loop that will iterate at least 100 times. In the loop body:</p>
+    <ol type="a">
+    <li>
+        <p>Roll the die. (Don't create a new object, just roll it again.)</p>
+    </li>
+    <li>
+        <p>Based on the result of the roll, increment the corresponding cell of your array.<br>The value of each array element should be the number of times that roll is made.</p>
+    </li>
+    </ol>
+<li>
+    <p>After the loop finishes, print the results of the simulation. For example, if the array holds {20, 17, 19, 15, 12, 17} you would output:</p>
+<pre>
+1 was rolled 20 times.
+2 was rolled 17 times.
+...
+</pre>
+</li>
+</ol>
+
+<h3>Part 3: Working with multiple arrays</h3>
+
+For this exercise, you will need two arrays of double values.
+
+<ol start="11">
+<li>
+    <p>Use an initializer list to assign one of the arrays to 10 double values of your choice.</p>
+</li>
+<li>
+    <p>Instantiate the other array to store 10 elements, but do not initialize the contents yet.</p>
+</li>
+<li>
+    <p>Print the contents of both arrays side by side on your screen. Label this output <i>Before</i>.</p>
+</li>
+<li>
+    <p>Copy the contents of the first array into the second, then print their contents again. Label this output <i>After</i>.</p>
+</li>
+<li>
+    <p>Finally, change the contents of one element of the first array and a different element of the second array.</p>
+</li>
+<li>
+    <p>Again, print the contents of the two arrays side by side. Label this output <i>After Change</i>.</p>
+</li>
+<li>
+    <p>Check that the contents of the two arrays are indeed different. If not, make the appropriate corrections.</p>
+</li>
+</ol>
+
+<!--
+<h3>Part 4: Searching an array of Strings</h3>
+
+<ol start="18">
+<li>
+    <p>Create a String array of length 6. Use an initializer list to assign 6 String values of your choice.</p>
+</li>
+<li>
+    <p>Use a loop to display the length of each item in the array and the String value itself, one line per array element.</p>
+</li>
+<li>
+    <p>Finally, write a loop that finds and displays the longest String in the array. Think about how you will keep track of it.</p>
+</li>
+</ol>
+-->
+
+<h3>Part 4: CodingBat Problems</h3>
+
+<p>For the remainder of today's lab, solve as many CodingBat problems as you can. At a minimum, you must solve three of each category. <font color="red">Remember to log into CodingBat first so you will receive credit</font>.</p>
+
+<ol start="18">
+<li><p>
+    Quickly review the <a href="http://codingbat.com/java/Warmup-2">Warmup-2 problems</a> that use arrays:
+        <a href="http://codingbat.com/prob/p184031">arrayCount9</a>,
+        <a href="http://codingbat.com/prob/p186031">arrayFront9</a>,
+        <a href="http://codingbat.com/prob/p136041">array123</a>,
+        <a href="http://codingbat.com/prob/p110019">array667</a>,
+        <a href="http://codingbat.com/prob/p170221">noTriples</a>,
+        <a href="http://codingbat.com/prob/p167430">has271</a>.
+    All of them have solutions available; try to solve them first before looking at the answer.
+</p></li>
+<li><p>
+    Solve at least three of the <a href="http://codingbat.com/java/Array-1">Array-1 problems</a>. <em>None of these problems require loops.</em> Pick a variety of problems; don't just do the first three.
+</p></li>
+<li><p>
+    Solve at least three of the <a href="http://codingbat.com/java/Array-2">Array-2 problems</a>. <em>Each of these problems requires one loop.</em> You may find (on CodingBat's site) the Java Arrays and Loops help document useful.
+</p></li>
+</ol>
+
+<p>Submit your <tt>ArrayPlay.java</tt> file via Canvas by the end of the day. About half of your lab grade will be based on your CodingBat results.</p>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab09 - CS 149</title>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="main">
+
+<div align="center">
+<font size="+1"><strong>
+    <a href="../index.html">CS 149</a>: Introduction to Programming
+</strong></font>
+<br>
+<font size="+1">
+    <a href="http://www.jmu.edu/">James Madison University</a>, Fall 2017 Semester
+</font>
+<br>
+<br>
+<font size="+2" color="forestgreen"><strong>
+    Lab09: Writing and calling methods
+</strong></font>
+</div>
+
+<h3>Background</h3>
+
+<p>Last time we began to look at writing programs with multiple methods.
+Today we will implement method stubs and learn about separate compilation.
+You will also use command line arguments for the first time in a program.</p>
+
+<p style="float: right; padding: 10px; text-align: center;">
+<iframe width="400" height="225" frameborder="0" allowfullscreen
+src="https://www.youtube.com/embed/YPIA7mpm1wU"></iframe>
+<br><i>Here's a song your methods will be singing...maybe. :)</i></p>
+
+<h3>Objectives</h3>
+<ul>
+    <li><p>Create a class without a main method, but containing some other methods.</p></li>
+    <li><p>Stub out the class so that methods can be written and tested incrementally.</p></li>
+    <li><p>Run a Java program from the Terminal and pass command line arguments.</p></li>
+    <li><p>Become more familiar with the <a href="http://docs.oracle.com/javase/8/docs/api/java/lang/Math.html">Math class</a> in the Java Standard Library.</p></li>
+</ul>
+
+<h3>Key Terms</h3>
+<dl>
+<dt>void method</dt>
+<dd>A method that does not return anything. Its return type is <code>void</code>.</dd>
+<dt>value method</dt>
+<dd>A method that returns some value, usually based on parameters.</dd>
+<dt>return type</dt>
+<dd>The data type the method returns; it comes after <code>public static</code>.</dd>
+<dt>return value</dt>
+<dd>The value that the method returns via the <code>return</code> statement.</dd>
+<dt>method stub</dt>
+<dd>An empty or incomplete method that returns 0, "", false, etc.</dd>
+</dl>
+
+<h3>Submission</h3>
+<p>At the end of class today, or by 11:00 PM if you would like more time, submit CirclePlay.java via Canvas. As always, you are encouraged to work with another student to complete the lab.</p>
+
+
+<p>&nbsp;</p><hr>
+
+<p align="center"><font size="+1" color="blue"><strong>
+Part 1: Creating Stubs</strong></font></p>
+
+<p>We are going to create a small class to carry out some geometry operations.
+It will include a couple of utility methods to make input and printing easier, as well as the calculation of the area of a circle and the volume of a sphere.
+(Normally, you would design one class to do the geometry and another one to deal with the utility methods, but for today's lab we are putting them together in one class.)</p>
+
+<ol>
+  <li>Download and open the <a href="CircleDriver.java">CircleDriver.java</a> program. Do not be concerned with what it contains just yet.</li>
+  <li>Create a new source file, <kbd>CirclePlay.java</kbd>.
+  Create the class documentation including your name and today's date.</li>
+  <li>Define each of the following methods:
+    <blockquote>
+      <table border="0" cellspacing="2" cellpadding="2">
+        <tr>
+          <td>1. <kbd>printGreeting</kbd> will simply print some lines to greet the user upon running the application.
+          Create a method stub by typing the following header and braces for the method block.
+          <em>No code needs to be contained in the block at this time.</em>
+            <blockquote>
+              <p><code>public static void printGreeting()</code>. This header says that the method is public, returns nothing (<code>void</code>), is named printGreeting, and accepts no parameters.</p></blockquote>
+              <p>Create method documentation. In this case you only need to describe what this method will do.</p>
+            </p>
+          </p></td>
+        </tr>
+        <tr>
+          <td>2. <kbd>enterRadius</kbd> - create a method header that looks like this:
+            <blockquote>
+            <p><code>public static double enterRadius()</code>. This header says the method is <code>public</code>, returns a value of <code>double</code> type, is named <code>enterRadius</code>, and accepts no parameters.</p>
+            <p>Add method documentation for this method as follows: (note the use of the <code>@return</code> label)</p>
+          </blockquote>
+<pre>
+/**
+ * Displays a prompt to the user, then reads in a double value
+ * that the user has entered.
+ *
+ * @return a double value representing a radius
+ */
+</pre>
+
+      <blockquote>
+        <p>Create the method block, and add in a single return statement, <code>return -999;</code>
+        This is a "stubbed" return statement that returns a value of the correct type, but is not the value we will eventually need.</p></blockquote>
+      </td>
+        </tr>
+        <tr>
+          <td><p>3. <kbd>calculateArea</kbd> - This method will calculate the area of a circle with a given radius.</p>
+            <p>Create a method header that is <code>public</code>, <code>static</code>, returns a <code>double</code> value, is named <code>calculateArea</code> and has a single parameter, a <code>double</code> value representing a radius. </p>
+            <p>Create the method block with a return statement to return the value -888. (These are meaningless values, but if we call the method and its not done, we'll know that by the return value.) </p>
+            <p>Add your documentation including an <code>@param</code> tag. (See <a href="../wk-02/Lab03-Checkstyle.html">Lab03</a> to review the <code>@param</code> tag.)</p></td>
+        </tr>
+        <tr>
+          <td><p>4. <kbd>calculateVolume</kbd> - This method will calculate the volume of a sphere with a given radius.</p>
+          <p>Create a method header, method block, return statement, and documentation as for <kbd>calculateArea</kbd>. </p></td>
+        </tr>
+      </table>
+  </li>
+  <li>Save and compile your work at this point, <em>before implementing any of the methods</em>. You should not have any compiler errors.
+  If you do, check to make sure that each method in CirclePlay is created exactly as described above.</li>
+  <li>Run CircleDriver from DrJava or using the command line. What output do you see? Does it make any sense?</li>
+</ol>
+
+<p>Now we will begin to fill in our stubbed methods.</p>
+
+
+<p>&nbsp;</p><hr>
+
+<p align="center"><font size="+1" color="blue"><strong>
+Part 2: Creating a Void Method With No Parameters</strong></font></p>
+
+<p>Begin with <code>printGreeting</code>, which should print the following.
+(Note that &lt;blank line&gt; just means that you should print a newline there.)</p>
+<pre>Welcome to the Circle Calculator
+&lt;blank line&gt;
+This application will calculate the area of a circle and/or volume of a sphere.
+&lt;blank line&gt;
+</pre>
+<ol start="6">
+  <li>Create the code to print these four lines. Compile your code in DrJava, but run it from the command line.</li>
+  <li>You are currently testing the 1st method, so pass the argument 1 to the main method as follows:</li>
+<p><code>java CircleDriver 1</code></p>
+  <li>Does your greeting print correctly? Make any corrections that you need before moving on.</li>
+</ol>
+<p><em>Explanation</em>: The CircleDriver is designed to let you test each of your methods separately.
+In this case, you have built a single method, so you are testing just that method.
+The method stubs enable you to compile the entire program, but then just fill in the parts that you are ready to complete and test.
+By testing individual methods, you can focus on getting that method written correctly before moving on to the next one.</p>
+
+
+<p>&nbsp;</p><hr>
+
+<p align="center"><font size="+1" color="blue"><strong>
+Part 3: Creating a Value Returning Method With No Parameters</strong></font></p>
+
+<p>Next you'll fill in the <code>enterRadius</code> method.
+This method displays a standard prompt, <code>"Enter the radius: "</code> and then reads in the radius from the keyboard.
+You will need to create a Scanner object as part of this method.</p>
+<ol start="9">
+  <li>You need to declare at least two variables: a Scanner and a double. The double will hold the radius that the user enters.</li>
+  <li>Instantiate the Scanner (using the <code>new</code> keyword).</li>
+  <li>Output the prompt "Enter the radius: ". The cursor should remain on the same line, one space to the right of the colon.</li>
+  <li>Read the value that the user enters.</li>
+  <li>Change the <code>return</code> statement to return the value that the user enters.</li>
+  <li>Test your program on the command line. This time enter the number 2 as the command line argument. What happens?</li>
+</ol>
+
+
+<p>&nbsp;</p><hr>
+
+<p align="center"><font size="+1" color="blue"><strong>
+Part 4: Creating Value-Returning Methods With Parameters</strong></font></p>
+
+<p>Finally, you will fill in each of the calculation methods.
+You are going to calculate the area of a circle and the volume of a sphere.
+The area of a circle is defined as A&nbsp;=&nbsp;&pi;&nbsp;r&nbsp;<sup>2</sup>.
+The volume of a sphere is V&nbsp;=&nbsp;4/3&nbsp;&pi;&nbsp;r&nbsp;<sup>3</sup>.
+Use these formulas to come up with a few test cases for each method.</p>
+<ol start="15">
+  <li>Write down your examples on a piece of paper, so you can be sure your code works as expected. </li>
+  <li>Begin with the <code>calculateArea</code> method.
+  You may find that the Math class (provided in the java.lang package) is helpful for this step.
+  First, there is a constant defined in that class called PI.
+  Since the constant is in another class, we must use the qualified name <code>Math.PI</code> to access it.</li>
+  <li>Define the variables that you will need.</li>
+  <li>Create the calculation using Math.PI for &pi;.</li>
+  <li>Instead of the stub value in your <code>return</code> statement, return the area that you calculate.</li>
+  <li>Test your work passing the number 3 in for the command line argument.</li>
+  <li>Check your area values against the ones that you calculated by hand. Work with your method until it runs correctly.</li>
+  <li>Create the <code>calculateVolume</code> method and test as before using command line argument 4 to test your volume method.</li>
+  <li>Finally, test the entire application running the application with no arguments. It should run each method in turn.</li>
+</ol>
+
+
+<p>&nbsp;</p><hr>
+
+<p align="center"><font size="+1" color="blue"><strong>
+Part 5: Optional Awesomeness and Bragging Rights</strong></font></p>
+
+<p>If you find you're writing the same code over and over again, it's a good idea to put that code into a method. We're going to have a little competition to illustrate this point. Think of a typical song from popular culture: it often repeats the same phrases over and over again. It's as if the song writers created a bunch of methods and then called them...maybe? (ha ha)</p>
+
+<p>Using <a href="CallMeMaybe.java">CallMeMaybe.java</a> as a starting point, see if you can rewrite the program using as few <code>System.out.println</code> statements as possible by breaking down the song into multiple methods. You don't need to write javadoc comments for these methods. <font color="red">You may NOT change or combine any of the existing println statements</font>, but you may delete as many as you like. In the end your program's output must match <a href="CallMeMaybe.txt">CallMeMaybe.txt</a> exactly (use <code>diff</code> or <code>meld</code> to compare your results).</p>
+
+<p>If you're up for this challenge (and possibly EXTRA CREDIT) then submit your completed CallMeMaybe.java file along with your CirclePlay.java file. Be sure to replace the <code>??</code>'s in the documentation comment with your final results.</p>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab06 - CS 149</title>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="main">
+
+<div align="center">
+<font size="+1"><strong>
+    <a href="../index.html">CS 149</a>: Introduction to Programming
+</strong></font>
+<br>
+<font size="+1">
+    <a href="http://www.jmu.edu/">James Madison University</a>, Fall 2017 Semester
+</font>
+<br>
+<br>
+<font size="+2" color="forestgreen"><strong>
+    Lab06: Testing via command line
+</strong></font>
+</div>
+
+<h3>Background</h3>
+
+<p>Throughout the semester, you will learn many techniques for testing your programs. In the next programming assignment, you will be required to compare differences between your output and the solution's output. They should match 100%, otherwise you either have incorrect formatting (e.g., missing or extra whitespace, misspelled words) or incorrect results (e.g., computing the wrong values). The good news is that you can automate the process of comparing <i>expected output</i> with <i>actual output</i> using the command line.</p>
+
+<h3>Objectives</h3>
+
+<p style="float: right; padding: 10px; text-align: center;">
+<img src="meld-mary.png" title="Credit: Meld website">
+<br>Check out <a href="http://meldmerge.org/">meldmerge.org</a></p>
+
+<ul>
+<li><p>Perform integer division and modulus.</p></li>
+<li><p>Display output with specific formatting.</p></li>
+<li><p>Compile and run from the command line.</p></li>
+<li><p>Redirect input and output using text files.</p></li>
+</ul>
+
+<h3>Key Terms</h3>
+
+<dl>
+<dt><code>import</code> statement</dt>
+<dd>bring in classes from <a href="http://docs.oracle.com/javase/8/docs/api/">Java's standard library</a></dd>
+<dt>division (<code>/</code>)</dt>
+<dd>integer operation that produces the quotient</dd>
+<dt>modulus (<code>%</code>)</dt>
+<dd>integer operation that produces the remainder</dd>
+</dl>
+
+<h3>Part 1: Preparation</h3>
+
+<p>Develop (on paper) an algorithm for converting a total number of seconds into
+hours, minutes, and seconds. For example:</p>
+
+<table border="1" cellpadding="3" cellspacing="1">
+<tr>
+    <th>Input</th>
+    <th colspan="3">Output</th>
+</tr>
+<tr>
+    <th>Total Seconds</th>
+    <th>Hours</th>
+    <th>Minutes</th>
+    <th>Seconds</th>
+</tr>
+<tr>
+    <td>5000</td>
+    <td>1</td>
+    <td>23</td>
+    <td>20</td>
+</tr>
+<tr>
+    <td>3625</td>
+    <td>1</td>
+    <td>0</td>
+    <td>25</td>
+</tr>
+<tr>
+    <td>1000</td>
+    <td>0</td>
+    <td>16</td>
+    <td>40</td>
+</tr>
+</table>
+
+<p><font color="red">Before writing any code, think about solving this problem
+in general.</font> Make sure you know how to do this task on paper! Only then
+can you describe the process algorithmically. Be sure to indicate the names of
+all variables, and list all required steps in the conversion.</p>
+
+<h3>Part 2: Implementation</h3>
+
+<p>Create a new program <kbd>Seconds.java</kbd> (note the capital S) in DrJava
+with the following structure.</p>
+
+<ol start="1">
+<li>Write a one-sentence documentation comment about your class, along with @author and @version tags.</li>
+<li>Remove unnecessary comments like "Auto Generated Java Class" and "ADD YOUR CODE HERE."</li>
+<li>Add an <code>import</code> statement at the top of the file to make Scanner available to your program.</li>
+<li>Add all required variable declarations at the start of the main method.</li>
+<li>Declare and initialize a Scanner variable after the other declarations.</li>
+<li>Display the prompt <code>"Enter the number of seconds: "</code> exactly as shown.</li>
+<li>Use the print method (rather than println) so that the cursor remains on the same line as the prompt.</li>
+<li>Calculate the equivalent hours, minutes, and seconds using your algorithm from Part 1.</li>
+<li>Finally, output the result. The format must be <em>exactly</em> as shown, including whitespace:
+<pre style="color: green">
+(blank line)
+_____ seconds = _____ hours, _____ minutes, and _____ seconds
+(blank line)
+</pre>
+For example:<pre style="color: green">
+1000 seconds = 0 hours, 16 minutes, and 40 seconds</pre></li>
+<li>Test your program with several input values, and make adjustments if the
+results are not correct.</li>
+</ol>
+
+<p>Make sure to put spaces around each of the values. There should be exactly
+one space between elements on the output line, and no leading or trailing spaces.
+Be sure to include the right number of blank lines in the output (use the newline
+character <code>\n</code> if needed). Incorrect spacing or anything other than <b>three
+lines</b> of output (each with one newline character at the end) will cause the
+output to be flagged as incorrect.</p>
+
+<h3>Part 3: Command Line</h3>
+
+<p>One of the most powerful and useful skills you will learn in this course is
+how to use the <a href="http://en.wikipedia.org/wiki/Command-line_interface">
+command-line interface</a> or "Terminal" for short. Today we will learn the
+commands for compiling and running Java applications so that we can automate
+the input and capture the output.</p>
+
+<ol start="11">
+<li>Locate your .java and .class files for today's lab using the file manager.</li>
+<li>Right-click the open space around your files (i.e., the folder containing your files).</li>
+<li>Select "Open in Terminal" from the context menu. Welcome to the command line!</li>
+<li>Enter the command &nbsp;<code>javac Seconds.java</code>&nbsp; (<kbd>javac</kbd> means "java compiler").</li>
+<li>If it fails to compile, javac will print out the usual compiler error messages.</li>
+<li>Enter the command &nbsp;<code>java Seconds</code>&nbsp; (<kbd>java</kbd> means "java virtual machine").</li>
+</ol>
+
+<p><font color="red">Note that <kbd>javac</kbd> requires a file name, whereas
+the <kbd>java</kbd> command requires a class name.</font></p>
+
+<ol start="17">
+<li>Download the file <a href="test.in">test.in</a> and look at the file contents.</li>
+<li>Enter the command &nbsp;<code>java Seconds &lt; test.in</code>&nbsp; and see what happens.</li>
+<li>Enter the command &nbsp;<code>java Seconds &lt; test.in &gt; test.out</code>&nbsp; and see what happens.</li>
+<li>You should now have a file named test.out in that same directory. What is in the file?</li>
+</ol>
+
+<p>The <code>&lt;</code> and <code>&gt;</code> command-line operators redirect
+standard input and output using plain text files. This technique is useful for
+saving yourself a lot of typing when testing your programs!</p>
+
+<h3>Part 4: Diff Testing</h3>
+
+<p>Once you have captured the actual output of a program, you should compare it
+with the expected output. We will use <a href="http://meldmerge.org/">Meld</a>,
+a visual diff and merge tool that runs on Linux. (There are similar free tools
+like <a href="http://winmerge.org/">WinMerge</a> on Windows or opendiff on Mac,
+the latter of which comes with <a href="https://developer.apple.com/xcode/">Xcode</a>.)
+
+<ol start="21">
+<li>Download the file <a href="test.exp">test.exp</a> and look at the file contents.</li>
+<li>Enter the command &nbsp;<code>meld test.exp test.out</code>&nbsp; to compare the two files.</li>
+<li>If there are no differences, congratulations on getting your program right the first time!<br>(But go back and make a mistake in your Java code to see how this part of the lab works.)</li>
+<li>Based on the differences between the expected output and your actual output, figure out what needs to be changed in your code.</li>
+<li>Edit and re-compile your code using DrJava. Then run it from the command line using test.in and test.out, and run meld again.</li>
+<li>Repeat the previous step until your solution matches 100%. Then submit your Seconds.java file via Canvas.</li>
+</ol>
+
+<p>You may design your own test cases by editing the test.in and test.exp files,
+or by creating new files (e.g., test2.in and test2.exp). The more test cases you
+have, the more confident you can be about your solution.</p>
+
+</div>
+</body>
+</html>

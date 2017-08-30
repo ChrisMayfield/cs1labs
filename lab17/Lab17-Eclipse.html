@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab17 - CS 149</title>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="main">
+
+<div align="center">
+<font size="+1"><strong>
+    <a href="../index.html">CS 149</a>: Introduction to Programming
+</strong></font>
+<br>
+<font size="+1">
+    <a href="http://www.jmu.edu/">James Madison University</a>, Fall 2017 Semester
+</font>
+<br>
+<br>
+<font size="+2" color="forestgreen"><strong>
+    Lab17: Getting started with Eclipse
+</strong></font>
+</div>
+
+<p style="float: right; padding: 10px; text-align: center;">
+<img src="eclipse.jpg" width="300">
+</p>
+
+<h3>Background</h3>
+
+<p>Throughout the semester, you have been using classes that come with the <a href="http://en.wikipedia.org/wiki/Java_Platform,_Standard_Edition">Java Platform, Standard Edition</a> or "Java SE" for short. Did you know that the source code for Java SE is <a href="http://openjdk.java.net/">freely available</a>? Have you ever wondered what "real world" Java code looks like? This lab has two main objectives: (1) introduce you to the <a href="https://eclipse.org/">Eclipse IDE</a>, and (2) show you what Java library source code looks like. Eclipse is a heavyweight IDE that makes it easier to navigate large software projects.</p>
+
+<h3>Part 1 - Hello World</h3>
+
+Eclipse provides two levels of organization:
+<ul>
+    <li>A <em>workspace</em> is a collection of projects and settings. Typically students create a separate workspace for each course they take.</li>
+    <li>A <em>project</em> is a collection of files that make up a single application. Typically each lab or assignment will be its own project.</li>
+</ul>
+
+<ol start="1">
+<li>
+    <p>If you have not done so already, open Eclipse. At the "Select a workspace" prompt, specify a location for your workspace (e.g., <code>/cs/home/stu/<i>username</i>/CS149</code>).</p>
+</li>
+<li>
+    <p>From the "Welcome" screen, click on the tutorials icon (graduation cap and tassel). Select the "Create a Hello World application" tutorial.</p>
+</li>
+<li>
+    <p>Follow the instructions carefully, except for one detail. When creating projects for CS 149/159, we recommend that you do NOT create separate folders for source and class files.</p>
+    <img src="NewProject.png">
+    <p>NOTE: Putting source and class files <em>in the project folder</em> enables you to switch back and forth between Eclipse, the command-line, and other editors without making any changes.</p>
+</li>
+<li>
+    <p>Go ahead and close the "Task List" view on the right, since we won't be using it. Explore the menus, toolbars, and other areas of the program. Ask questions regarding features you are curious about.</p>
+</li>
+<li>
+    <p>Be sure to see how the automatic syntax checking works by introducing some bugs in your HelloWorld program. Then mess up the indenting, and press Ctrl+Shift+F to "Format" your code.</p>
+</li>
+<li>
+    <p>Explore the autocomplete feature by typing partial lines of code. For example, type the code <code>System.</code> and see the list of options that pop up. Then type <code>System.out.</code> and press Ctrl+Space to see a list of possible method calls. Use the arrow keys to select different methods, and see how the Javadoc displays in a yellow tooltip.</p>
+    <img src="ToolTip.png" width="600">
+</li>
+</ol>
+
+<p>At this point, you should have a working Hello World program. Do not proceed until you have completed the tutorial and Steps 4-6 above.</p>
+
+<h3>Part 2 - Java Library Source</h3>
+
+<p>Technically speaking, code like <code>System.out.println()</code> is not part of the Java <em>language</em>, but rather part of the Java <em>library</em>. You can learn a lot about programming by exploring the Java library source code.</p>
+
+<ol start="7">
+<li>
+    <p>If you download the source code for the Java library, it comes in a single file named <code>src.zip</code>. From a CS Linux lab machine, type <code>nemo /usr/lib/jvm/openjdk-8</code> to locate that zip file. Open it and find the source code for <code>java.lang.String</code> (under the <tt>java/lang/</tt> folder).</p>
+</li>
+<li>
+    <p>Eclipse automatically knows about this file if it's installed on your computer. In your HelloWorld.java program, add the line <code>String str = "Hello";</code> and put your cursor on the word String. Then press the F3 button (which is a shortcut for "Open Declaration").</p>
+</li>
+<li>
+    <p>Notice the "Outline" view on the right. Click on the <code>substring</code> methods and take a look at how they are implemented. Then close the "String.class" window, move the cursor to <code>println</code>, and press F3 again. Now see how that method is implemented.</p>
+</li>
+<li>
+    <p>You can also hover your mouse over pretty much anything. In the <code>println(Object x)</code> method, hover your mouse over the code <code>valueOf</code> and read the tooltip. Then put your cursor there, press F3, and see the source code for <code>valueOf</code>.</p>
+</li>
+</ol>
+
+<h3>Part 3 - CodingBat String-1</h3>
+
+<p>When learning to use methods from <tt>String</tt> and other library classes, you may find the autocomplete feature of Eclipse to be very helpful. But make sure it doesn't interfere with your learning how to write the code yourself!</p>
+
+<ol start="11">
+<li>
+    <p>Create a new Eclipse project named <tt>Lab17</tt>. Don't forget to use the project folder as root for sources and class files (see Step 3 above). You may want to configure that option to be the default.</p>
+</li>
+<li>
+    <p>Create a new class named <tt>StringThing</tt>, but do NOT check the box to create a main method. Write a documentation comment including your name and today's date.</p>
+</li>
+<li>
+    <p>Write the code that defines the following methods from <a href="http://codingbat.com/java/String-1">CodingBat String-1</a>: <tt>extraEnd</tt>, <tt>firstTwo</tt>, <tt>firstHalf</tt>, and <tt>withoutEnd</tt>. Add stubs so that your code compiles.</p>
+</li>
+<li>
+    <p>At this point you may want to set up your Eclipse preferences to match the <a href="../wk-02/Lab03-Checkstyle.html">CS 149 style guidelines</a>. Go to Window -&gt; Preferences and select the General -&gt; Editors -&gt; Text Editors item:</p>
+    <img src="eclipse-prefs.png">
+</li>
+<li>
+    <p>Change the settings to match the screenshot above: insert spaces for tabs, and show print margin at 80 columns. You may also want to show whitespace characters. Then click the Apply and Ok buttons.</p>
+</li>
+<li>
+    <p>Make sure there is a blank line between each method. Press Ctrl+Shift+F to clean up the code. Quickly write the documentation comments for each method. (You may copy-paste the method descriptions directly from CodingBat.)</p>
+</li>
+<li>
+    <p>Note that Eclipse will auto-generate a documentation template if you select a method and press Shift-Alt-J. You can accomplish the same thing by typing <code>/**</code> then pressing enter above an existing method.</p>
+</li>
+<li>
+    <p>At the bottom of the class (on the line just before the last }), press Ctrl+Space. Arrow down to the main option, and press Enter. Write a simple program that calls your four methods with a test string of your choice &ndash; <code>"HelloThere"</code> is a good example from CodingBat.</p>
+</li>
+<li>
+    <p>At this point, you should have a working <tt>StringThing</tt> program. Make sure it compiles and runs without any errors. You will turn in this file later on.</p>
+</li>
+<li>
+    <p>Finish implemeting your four String-1 methods. Then in the main method, write a loop that calls each of your methods for each of the provided command-line arguments. You should be able to test your program from the command line like this: <code>java StringThing This is a test!</code></p>
+</li>
+</ol>
+
+<p>Submit your <kbd>StringThing.java</kbd> to Canvas by the end of the day. Part of your grade will be based on your CodingBat.com scores, so make sure that you have "submitted" each problem to CodingBat as well (and that it works).</p>
+
+</div>
+</body>
+</html>

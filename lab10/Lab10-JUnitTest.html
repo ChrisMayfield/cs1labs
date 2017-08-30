@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab10 - CS 149</title>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="main">
+
+<div align="center">
+<font size="+1"><strong>
+    <a href="../index.html">CS 149</a>: Introduction to Programming
+</strong></font>
+<br>
+<font size="+1">
+    <a href="http://www.jmu.edu/">James Madison University</a>, Fall 2017 Semester
+</font>
+<br>
+<br>
+<font size="+2" color="forestgreen"><strong>
+    Lab10: Program testing with JUnit
+</strong></font>
+</div>
+
+<p style="float: right; padding: 10px; text-align: center;">
+<img src="H96566k.jpg" width="325" title="Wikipedia: Software bug">
+<br>The first computer bug (see <a href="http://en.wikipedia.org/wiki/Grace_Hopper">Grace Hopper</a>)</p>
+
+<h3>Background</h3>
+
+<p>One thing we've learned through decades of software engineering is that developing correct software is difficult! The best way to ensure correctness is to test thoroughly <b><i>while</i></b> software is being developed. JUnit is a framework that automates testing by providing a standard format for tests and an easy way to execute them (see <a href="http://junit.sourceforge.net/doc/faq/faq.htm">JUnit FAQ</a>). In today's lab, you will design and implement your own JUnit tests cases.</p>
+
+<p><em>Collaboration:</em> You are encouraged to work with another student to complete this lab. Each of you should submit your own copy of the code. It's okay if your files are similar or identical, as long as both of your names are present at the top.</p>
+
+<h3>Objectives</h3>
+
+<ul>
+<li><p>Create a TestCase class for use with JUnit.</p></li>
+<li><p>Write JUnit test methods that use assertEquals.</p></li>
+<li><p>Run JUnit tests for a class or set of classes.</p></li>
+</ul>
+
+<h3>Key Terms</h3>
+<dl>
+<dt>test class</dt>
+<dd>A class that has the purpose of testing some other class, but is not part of the final application.</dd>
+<dt>test method</dt>
+<dd>A method that has the purpose of testing another method, but is not part of the final application.</dd>
+<dt>assertion</dt>
+<dd>A statement that should always be true. Assertions make claims about the correctness of programs.</dd>
+</dl>
+
+<h3>Part 1: Using JUnit for Testing</h3>
+
+<p>The basic JUnit pattern is very simple:</p>
+<ul>
+<li>For every class <code>X</code> there is a companion class named <code>XTest</code> that is responsible for testing the class.</li>
+<li>For every method <code>m</code> there is a companion method <code>testM</code> that is responsible for testing the method.</li>
+</ul>
+
+<table border="1" cellpadding="10" cellspacing="2">
+<tr>
+    <th>Main Class</th>
+    <th>Test Class</th>
+</tr>
+<tr>
+    <td>
+<pre>
+public class BasicMath {
+
+    public static double add(double x, double y) {
+        double sum;
+        sum = x + y;
+        return sum;
+    }
+
+    public static double subtract(double x, double y) {
+        double diff;
+        diff = x - y;
+        return diff;
+    }
+
+}
+</pre>
+<i>(Note: Javadoc comments have been omitted for compactness.)</i>
+    </td>
+    <td>
+<pre>
+import junit.framework.TestCase;
+
+public class BasicMathTest extends TestCase {
+
+    public static void testAdd() {
+        double expected;
+        double actual;
+
+        expected = 15.5;
+        actual = BasicMath.add(7.2, 8.3);
+        assertEquals(expected, actual);
+    }
+
+    public static void testSubtract() {
+        double expected;
+        double actual;
+
+        expected = 2.2;
+        actual = BasicMath.subtract(3.5, 1.3);
+        assertEquals(expected, actual);
+    }
+
+}
+</pre>
+    </td>
+</tr>
+</table>
+
+<p>Note in the above example:</p>
+<ul>
+<li>Test classes must import <kbd>junit.framework.TestCase</kbd>, and they must extend <kbd>TestCase</kbd>.</li>
+<li>Test methods are usually <kbd>void</kbd> and take no parameters. However, they can be as complex as you like.</li>
+<li>Each test method establishes an expected value and runs the corresponding method to get the actual value.</li>
+<li>Finally, test methods use assertEquals (or other assert methods provided by JUnit) to verify correctness.</li>
+</ul>
+
+<p>Let's see how this process works in DrJava:</p>
+<ol start="1">
+<li><p>Copy and paste the example code above into <kbd>BasicMath.java</kbd> and <kbd>BasicMathTest.java</kbd>.</p></li>
+<li><p>Make sure both files are open and then press the Compile button. You should have no errors.</p></li>
+<li><p>Press the Run button. (Note that since neither class has a main method, you can't "run" them.)</p></li>
+<li><p>Press the Test button. You should get a green light indicating that all tests completed successfully.</p></li>
+<li><p>Now go back and "break" the code by changing the BasicMath.add method: <kbd>return sum + 1;</kbd></p></li>
+<li><p>Compile the new code, and then press the Test button. <i>What happens when an assertion fails?</i></p></li>
+</ol>
+
+<h3>Part 2: Writing Basic Test Methods</h3>
+
+<ol start="7">
+<li>
+    <p>Implement the following methods in your <kbd>BasicMath</kbd> class:</p>
+    <ul>
+    <li><kbd>public static double multiply(double x, double y)</kbd></li>
+    <li><kbd>public static double divide(double x, double y)</kbd></li>
+    </ul>
+</li>
+<li>
+    <p>Now write the corresponding test methods in <kbd>BasicMathTest</kbd>. Use the same pattern as in <kbd>testAdd</kbd> and <kbd>testSubtract</kbd>: establish an expected result and an actual result, then compare the two with an assertion.</p>
+</li>
+<li>
+    <p>Floating point arithmetic (i.e., using <code>float</code> or <code>double</code> in Java) is <a href="http://en.wikipedia.org/wiki/Floating_point#Accuracy_problems">not completely accurate</a> due to limitations in computer hardware. Use the following technique to test your <kbd>multiply</kbd> and <kbd>divide</kbd> methods:</p>
+<pre>
+double expected;
+double actual;
+double error;
+
+expected = 4.1;
+actual = BasicMath.divide(12.3, 3.0);
+error = Math.abs(expected - actual);
+assertTrue(error &lt; 1e-6);
+</pre>
+</li>
+<li>
+    <p>Run your new tests to validate the new methods. Then induce errors into the new methods, just as you did before with the add method, and run the tests again to see if they are really working.</p>
+</li>
+</ol>
+
+<p>It's generally not enough to test a method just once. To be sure that the method is correct, we need to test multiple times with multiple values.</p>
+
+<ol start="11">
+<li>
+    <p>Add the following test cases to the <kbd>testAdd</kbd> method. (Copy and paste the last three lines of <kbd>testAdd</kbd> for each case below.
+    For readability, separate each one with a blank line.)</p>
+    <ul>
+    <li>case 1: x = 0.0, y = 0.0</li>
+    <li>case 2: x = -5.0, y = 3.5</li>
+    </ul>
+</li>
+<li>
+    <p>Add two additional test cases to each of the other three test methods. Design your own expected values for these methods.</p>
+</li>
+<li>
+    <p>Write an appropriate Javadoc comment for your <kbd>BasicMathTest</kbd> class, including <code>@author</code> and <code>@version</code> tags.</p>
+</li>
+<li>
+    <p>Write Javadoc comments for each of the test methods. It's okay to be brief if what you are testing is straightforward.</p>
+</li>
+</ol>
+
+<h3>Part 3: A More Complex Example</h3>
+
+<p>Add the following code to the end of your <kbd>BasicMath</kbd> class, but <font color="red">don't look too carefully at the code itself</font>. Your goal is to find the mistakes in <kbd>calculateTax</kbd> by writing test cases based on its documentation.</p>
+
+<pre>
+    /**
+     * Calculate the tax on the given amount based on the following rules:
+     *   If the taxType is 'X' or 'x' (exempt), then tax amount is zero.
+     *   If the taxType is 'M' or 'm', then tax is 11% of the amount.
+     *   If the taxType is 'F' or 'f', then tax is 2% of the amount.
+     *   If the taxType is anything else, then tax is 5% of the amount.
+     *
+     * @param amount the amount of the sale
+     * @param taxType type of items purchased
+     * @return amount of tax
+     */
+    public static double calculateTax(double amount, char taxType) {
+        double tax;
+        switch (taxType) {
+            case 'X':
+            case 'x':
+                tax = 0.0;
+            case 'M':
+            case 'n':
+                tax = 0.11 * amount;
+            case 'F':
+            case 'f':
+                tax = 0.2 * amount;
+            default:
+                tax = 0.5 * amount;
+        }
+        return tax;
+    }
+</pre>
+
+<ol start="15">
+<li>
+    <p>Rather than write over a dozen test cases in a single method, create the following test methods:</p>
+    <ul>
+    <li><kbd>testTypeX</kbd> should test cases 'X' and 'x'</li>
+    <li><kbd>testTypeM</kbd> should test cases 'M' and 'm'</li>
+    <li><kbd>testTypeF</kbd> should test cases 'F' and 'f'</li>
+    <li><kbd>testOther</kbd> should test "anything else"</li>
+    </ul>
+</li>
+<li>
+    <p>For each of the <kbd>calculateTax</kbd> test methods, write at least four test cases using assertEquals. Note that you can implement many of these assertions in one line of code, for example:</p>
+    <pre>assertEquals(0.0, BasicMath.calculateTax(1.99, 'X'));</pre>
+</li>
+<li>
+    <p>Run your test cases. If all your test methods are correct, all four of them should fail.</p>
+</li>
+<li>
+    <p>OPTIONAL: Can you figure out how to fix calculateTax and get your test methods to pass? You may need to learn about the <a href="https://docs.oracle.com/javase/tutorial/java/nutsandbolts/switch.html">switch statement</a> in the Java tutorials.</p>
+</li>
+</ol>
+
+<p>Submit your completed <kbd>BasicMathTest.java</kbd> file via Canvas by the end of the day.</p>
+
+</div>
+</body>
+</html>

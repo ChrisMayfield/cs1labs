@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab08 - CS 149</title>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="main">
+
+<div align="center">
+<font size="+1"><strong>
+    <a href="../index.html">CS 149</a>: Introduction to Programming
+</strong></font>
+<br>
+<font size="+1">
+    <a href="http://www.jmu.edu/">James Madison University</a>, Fall 2017 Semester
+</font>
+<br>
+<br>
+<font size="+2" color="forestgreen"><strong>
+    Lab08: Debugging and tracing code
+</strong></font>
+</div>
+
+<p style="float: right; padding: 10px; text-align: center;">
+<img src="dads.jpg" title="Dad's Root Beer 1-Liter Products">
+</p>
+
+<h3>Background</h3>
+
+<p>Have you ever heard that unforgettable children's song <i>100 bottles of pop</i> on the wall? Your task is to write a program that will "sing" a few verses of this song. Here's an example <a href="http://www.youtube.com/watch?v=L5Oy3w4fBm0">recording on Youtube</a>, but beware it may get stuck in your head the rest of the day!</p>
+
+<h3>Objectives</h3>
+
+<ul>
+<!--
+<li><p>Use loops to solve a counting problem.</p></li>
+-->
+<li><p>Step through code using a debuggger.</p></li>
+<li><p>Trace execution flow with a debuggger.</p></li>
+</ul>
+
+<!--
+<h3>Key Terms</h3>
+<dl>
+<dt>control variable</dt>
+<dd>the variable used to control the continuation of a loop</dd>
+<dt>off by one</dt>
+<dd>error in which a loop executes one too many/few times</dd>
+<dt>infinite loop</dt>
+<dd>common error in which a loop never finishes executing</dd>
+</dl>
+-->
+
+<h3>Part 1: Bottles of Pop</h3>
+
+<p>Download <a href="Bottles.java">Bottles.java</a> as a starting point for the lab. Write your name and today's date in the Javadoc comment. Here is what the output should look like when you finish the lab:</p>
+
+<table class="infobox" cellpadding="5"><tr><td>
+100 bottles of pop on the wall<br>
+100 bottles of pop<br>
+If one of those bottles should happen to fall<br>
+99 bottles of pop on the wall<br>
+<br>
+99 bottles of pop on the wall<br>
+99 bottles of pop<br>
+If one of those bottles should happen to fall<br>
+98 bottles of pop on the wall<br>
+<br>
+<i>(repeat until 1)</i>
+</td></tr></table>
+
+<ol start="1">
+<li>
+    <p>Most of the algorithm has already been implemented in <kbd>Bottles.java</kbd>. Figure out how to complete the <code>sing</code> method.</p>
+</li>
+<li>
+    <p>Test your solution on a small number of verses. You may want to run this lab from the command line (i.e., <code>java Bottles 5</code>) for convenience.</p>
+    <ul>
+        <li>Is it working right? If not, go back and fix it!</li>
+        <li>Do you have a blank line after each verse?</li>
+    </ul>
+</li>
+<li>
+    <p>Modify your code to print "1 bottle" instead of "1 bottles" when
+    applicable.</p>
+    <ul>
+        <li>Don't forget the ending of the "2 bottles of pop" verse.</li>
+    </ul>
+</li>
+<li>
+    <p>Modify your code to print "No more bottles" instead of "0 bottles" when
+    applicable.</p>
+</li>
+<li>
+    <p>Make sure your solution works in the following cases.
+    Test each one via the command line.</p>
+    <ul>
+        <li><code>java Bottles 0</code> &nbsp; <i>nothing should print</i></li>
+        <li><code>java Bottles 1</code> &nbsp; <i>the last verse prints</i></li>
+        <li><code>java Bottles 5</code> &nbsp; <i>only five verses print</i></li>
+    </ul>
+</li>
+</ol>
+
+<h3>Part 2: Debugging with DrJava</h3>
+
+<p>Most <a href="http://en.wikipedia.org/wiki/Integrated_development_environment">integrated development environments</a> (like DrJava, Eclipse, and NetBeans) come with a debugger that allows you to "step through" your code while it is running.</p>
+
+<ol start="6">
+<li>
+    <p>Move your cursor to the following line of code in DrJava:</p>
+    <pre>if (args.length > 0) {</pre>
+</li>
+<li>
+    <p>Click the Debugger menu and select Toggle Breakpoint on Current Line (or just press Ctrl+B).</p>
+</li>
+<li>
+    <p>Click the Debugger menu again and select Debug Mode (or Ctrl+Shift+D).</p>
+</li>
+<li>
+    <p>Now click the Run button on the toolbar (or press F2). Your program should stop on the if statement.</p>
+</li>
+<li>
+    <p>At this point, you can take any of the following steps from the Debugger menu (or use the keyboard shortcuts):</p>
+    <ul>
+        <li>Step Into (F12) -- run the current line of code (the default action)</li>
+        <li>Step Over (F11) -- run the current line, but don't step into other methods</li>
+        <li>Step Out (Shift-F12) -- run all code until it returns from the current method</li>
+        <li>Resume (F7) -- run all code until it reaches another breakpoint (if any)</li>
+    </ul>
+</li>
+<li>
+    <p>Practice stepping through your code one line at a time. Each time the program ends, you will need to restart the debugger.</p>
+</li>
+<li>
+    <p>DrJava has an "Automatic Trace" feature that animates the entire execution of a program. Can you figure out how it works?</p>
+</li>
+</ol>
+
+<p>Submit your completed <kbd>Bottles.java</kbd> file via Canvas by the end of the day.</p>
+
+</div>
+</body>
+</html>

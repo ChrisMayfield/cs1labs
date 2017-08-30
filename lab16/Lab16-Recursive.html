@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab16 - CS 149</title>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="main">
+
+<div align="center">
+<font size="+1"><strong>
+    <a href="../index.html">CS 149</a>: Introduction to Programming
+</strong></font>
+<br>
+<font size="+1">
+    <a href="http://www.jmu.edu/">James Madison University</a>, Fall 2017 Semester
+</font>
+<br>
+<br>
+<font size="+2" color="forestgreen"><strong>
+    Lab16: Recursive 2D graphics
+</strong></font>
+</div>
+
+<p style="float: right; padding: 10px; text-align: center;">
+<img src="vee.png" width="400" title="A perfectly symmetric vee">
+</p>
+
+<h3>Background</h3>
+
+<p>This lab will be short and sweet, in part because there's an assignment due today. But more importantly, it gives you an opportunity to visualize what it means to make a recursive method call. You will also learn a bit about random numbers and graphics programming.</p>
+
+<p>Download <a href="Lab16.java">Lab16.java</a> as a starting point, and submit your work via Canvas by the end of the day.</p>
+
+<h3>Part 1: Random Numbers</h3>
+
+<p>The <code>Math.random()</code> method generates a double value greater than or equal to 0.0 and strictly less than 1.0. Whenever you call this method, you should get a different result. Each floating-point value in the range [0, 1) is equally likely to be returned over time. Here are two common examples of how to use random numbers in algorithms.</p>
+
+<ol start="1">
+<li><p>
+    <i>Run code about x percent of the time.</i> Since we know that the return values of <code>Math.random()</code> are equally likely, we can use an if statement and the less than operator. In other words, is the random number less than x?
+</p></li>
+<p><em>Program:</em> In the <code>hello</code> method of <code>Lab16</code>, write an if statement that prints "Hello, world!" about half of the time and "Howdy, world!" the other half. Test your method interactively (type <code>Lab16.hello()</code> in DrJava Interactions instead of clicking on Run). Make sure it displays each value about half of the time.</p>
+<li><p>
+    <i>Generate a random integer between x and y.</i>
+    Let's say we need a number between 5 and 15 inclusive. Notice how there are 11 possible results [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]. We can use <code>Math.random()</code> to get a number in the range [0, 1). If we multiply that number by 11, we now have a number in the range [0, 11). Now we just have to add 5 to that number to shift the range to [5, 16). Finally, we cast the value to an int, which throws away any decimal places.
+</p></li>
+<p><em>Program:</em> Complete the method in <code>Lab16</code> named <code>randInt</code>. It should take two integer parameters, x and y, and return a random integer in that range. Test your method interactively (type <code>Lab16.randInt(5, 15)</code> in DrJava Interactions instead of clicking on Run). Make sure it returns the numbers 5 and 15 at some point.</p>
+</ol>
+
+<h3>Part 2: Java 2D Graphics</h3>
+
+<p>We're only going to scratch the surface of graphics programming today. You can read a lot more about it in the official Java Tutorials (see <a href="https://docs.oracle.com/javase/tutorial/2d/">Trail: 2D Graphics</a>). We will mainly use the <a href="https://en.wikipedia.org/wiki/Abstract_Window_Toolkit">Abstract Window Toolkit</a>, which is Java's old school library for drawing graphics.</p>
+
+<ol start="3">
+<li><p>
+    Take two minutes to become vaguely familiar with the following classes. Just read the class descriptions and see what methods they have.
+</p></li>
+    <ul>
+    <li><a href="http://docs.oracle.com/javase/8/docs/api/java/awt/Canvas.html">
+        java.awt.Canvas</a> - blank rectangular area of the screen onto which the application can draw</li>
+    <li><a href="http://docs.oracle.com/javase/8/docs/api/java/awt/Color.html">
+        java.awt.Color</a> - standard colors (e.g., RED, GREEN, BLUE) and the ability to make others</li>
+    <li><a href="http://docs.oracle.com/javase/8/docs/api/java/awt/Graphics.html">
+        java.awt.Graphics</a> - basic drawing methods (e.g., drawLine, drawOval, drawRect, drawString)</li>
+    <li><a href="http://docs.oracle.com/javase/8/docs/api/javax/swing/JFrame.html">
+        java.swing.JFrame</a> - top level container that represents a window in a graphical user interface</li>
+    </ul>
+<li><p>
+    The <code>main</code> method of <code>Lab16</code> has been provided for you; please don't change any of that code. But take a look at it and figure out how it works. Basically it creates a window, adds a canvas to it, and makes it visible. At that point the main method ends, but the window lives on until you close it. The <code>paint</code> method is where all the magic happens.
+</p></li>
+<li><p>
+    You are probably used to Cartesian coordinates, where x and y values can be either positive or negative. In contrast, Java uses a coordinate system where the origin is in the upper-left corner. That way, x and y are always positive integers. Coordinates are measured in pixels; each pixel corresponds to a dot on the screen.
+</p></li>
+<img src="coordinates.png" width="600">
+</p></li>
+<li><p>
+    <em>Program:</em> The <code>Lab16</code> class comes with methods for drawing diamonds and triangles and specific locations. Modify the <code>vee</code> method so that it draws a diamond on top of the left branch and a triangle on top of the right branch. The size of each shape should be 10.
+</p></li>
+<li><p>
+    Notice that when you run the program, it prints each method call to System.out. Use this information to trace the behavior of your code and debug as necessary.
+</p></li>
+</ol>
+
+<h3>Part 3: More Recursion</h3>
+
+<p>What if, instead of drawing a diamond or triangle at the top of each branch of the vee, we draw a <i>vee</i> instead?</p>
+
+<ol start="8">
+<li><p>
+    Modify the <code>vee</code> method to call itself at the top of each branch. Use <code>depth + 1</code> for the depth argument. <i>What happens when you run the program at this point?</i>
+</p></li>
+<li><p>
+    Add an if statement at the top of <code>vee</code> that returns (from the current method call) if the depth is greater than 6. <i>Now what happens when you run the program?</i>
+</p></li>
+<li><p>
+    Change your code so that, at the top of each branch, there's a 50/50 chance whether it will do a recursive call. In other words, at the top of the left branch, it should draw a diamond about half of the time and a vee the other half. On the top of the right branch, it should draw a triangle half of the time and a vee the other half.
+</p></li>
+<li><p>
+    At this point, your drawing should look different every time you run the program. Now let's add some fancy colors. In the <code>vee</code> method, change the lines that call <code>g.setColor()</code> to use a random color each time. Replace <code>Color.magenta</code> and <code>Color.blue</code> with <code>new Color(red, green, blue)</code> where <code>red</code>, <code>green</code>, and <code>blue</code> are random integers between 0 and 255. Use the <code>randInt</code> method you made at the beginning of the lab.
+</p></li>
+</ol>
+
+<h3>Additional References</h3>
+
+<p>To learn more about drawing graphics, see the <a href="http://zetcode.com/gfx/java2d/">Java 2D tutorial</a> on ZetCode's website.</p>
+
+<p>To learn more about user interfaces (GUIs), see the <a href="http://docs.oracle.com/javase/tutorial/uiswing/">Swing tutorial</a> on Oracle's website.</p>
+
+</div>
+</body>
+</html>

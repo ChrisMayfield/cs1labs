@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab23 - CS 149</title>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+    pre {color: forestgreen;}
+    kbd {color: forestgreen;}
+    </style>
+</head>
+<body>
+<div class="main">
+
+<div align="center">
+<font size="+1"><strong>
+    <a href="../index.html">CS 149</a>: Introduction to Programming
+</strong></font>
+<br>
+<font size="+1">
+    <a href="http://www.jmu.edu/">James Madison University</a>, Fall 2017 Semester
+</font>
+<br>
+<br>
+<font size="+2" color="forestgreen"><strong>
+    Lab23: Greenfoot media computation
+</strong></font>
+</div>
+
+<p style="float: right; padding: 10px; text-align: center;">
+<img src="football.jpg" width="350"><br><i>Image courtesy of <a href="https://www.flickr.com/photos/cisat/sets/72157637022160665/">JMU Creative Services</a></i>
+</p>
+
+<h3>Background</h3>
+
+<p><a href="http://coweb.cc.gatech.edu/mediaComp-teach">Media Computation</a> is an approach to learning programming that focuses on manipulating digital media like images and sounds. In today's lab, you will use Greenfoot to implement several features of programs like <a href="http://www.photoshop.com/">Photoshop</a>.</p>
+
+<h3>Objectives</h3>
+
+<ul>
+<li><p>Practice writing nested for loops.</p></li>
+<li><p>Create and use immutable objects.</p></li>
+<li><p>Become familiar with a new API.</p></li>
+</ul>
+
+<h3>Part 1: Setting up your project</h3>
+
+<p>In the <a href="../wk-13/Lab21-CarObjects.html">previous Greenfoot lab</a>, we dealt with Actor objects. Today we will focus on the world itself.</p>
+
+<ol start="1">
+<li>
+    <p>Run Greenfoot and then select "Scenario &gt; New Java Scenario..." from the menu. Name your scenario <code>Lab23</code> or whatever you like. Once open, right-click the "MyWorld" rectangle and delete it. We'll create a new World from scratch. <!--You may want to close any Greenfoot windows from last time. (When you start the program, it opens whatever project you were working on previously.)--></p>
+</li>
+<li>
+    <p>Right-click the football stadium photo above, and save it to the "images" folder in your Greenfoot project. Then in Greenfoot, right-click the "World" rectangle on the right and select "New subclass..." Name the subclass <code>Image</code> and select football.jpg (it should be listed below).</p>
+</li>
+<li>
+    <p>Open the editor for Image.java (by double clicking on the Image rectangle on the right) and modify the constructor to use the dimensions 640x426 (the actual size of football.jpg). Then press the "Compile" button.</p>
+</li>
+<li>
+    <p>Write your name, today's date, and a short description of this lab in the Javadoc comment of the Image class. After you complete the exercises below, you will submit the Image.java file via Canvas.</p>
+</li>
+</ol>
+
+<h3>Part 2: Averaging the colors</h3>
+
+<p>Images in Greenfoot are essentially 2D arrays of <code>Color</code> objects. Each object represents the red, green, and blue value of a single pixel.</p>
+
+<ol start="5">
+<li>
+    <p>Skim through the <a href="http://www.greenfoot.org/files/javadoc/greenfoot/GreenfootImage.html">GreenfootImage Javadoc</a> to become familiar with that class. In particular, you will need to use the following methods: getWidth, getHeight, getColorAt, and setColorAt.</p>
+</li>
+<li>
+    <!-- Add the line <code>import java.awt.Color;</code> to the top of your source file. -->
+    <p> Then skim through the <a href="https://www.greenfoot.org/files/javadoc/greenfoot/Color.html">Color Javadoc</a> to become familiar with that class. You will need to use the getBlue, getGreen, and getRed methods.</p>
+</li>
+
+<li>
+    <p>Add the following method stub below your constructor:</p>
+<pre>
+/**
+ * Updates all pixels to the closest gray equivalent.
+ */
+public void grayScale() {
+    GreenfootImage img = getBackground();
+
+}
+</pre>
+</li>
+<li>
+    <p>Implement the following algorithm: for each x and y value in the range (0..width, 0..height), get the Color object at that x and y, calculate the average of its red, green, and blue values, and then create a <code>new Color</code> object using the average for all three of its RGB values. Finally, store the new Color at the current x and y.</p>
+</li>
+<li>
+    <p>To test your method, compile the project and then right-click the world image in the main Greenfoot window. A menu will appear with all the methods that you write today. Press the reset button (on the bottom) before trying other methods.</p>
+</li>
+</ol>
+
+<h3>Part 3: Other transformations</h3>
+
+<p>Once you figure out how to do grayScale, you can implement all sorts of other features. All four of today's methods are very similar in structure. Their solutions are simple, but they can be challenging to figure out. If you get stuck, try working through examples on paper.</p>
+
+<ol start="10">
+<li>
+    <p>Add the following method stubs to your source file:</p>
+<pre>
+/**
+ * Applies a sepia transformation to all pixels.
+ */
+public void sepiaTone() {
+}
+
+/**
+ * Replaces the right half of an image with a reflection of its left half.
+ */
+public void reflectLeft() {
+}
+
+/**
+ * Replaces the bottom half of an image with a reflection of its top half.
+ */
+public void reflectTop() {
+}
+</pre>
+</li>
+<li>
+    <p>Here is the formula for sepia transformation, given the original color's red, green, and blue values:</p>
+    <ul>
+        <li><tt>r2 = 0.393 * R + 0.769 * G + 0.189 * B</tt></li>
+        <li><tt>g2 = 0.349 * R + 0.686 * G + 0.168 * B</tt></li>
+        <li><tt>b2 = 0.272 * R + 0.534 * G + 0.131 * B</tt></li>
+    </ul>
+    <p>In other words, you need to create a <code>new Color(r2, g2, b2)</code> for each pixel. If any of those color values is greater than 255, you should replace it with 255.</p>
+</li>
+<li>
+    <p>The reflect methods are implemented by copying colors from one half of the image to another half. You won't need to change the colors, but you will need to figure out how to go from (x, y) to (x2, y2). Here are some hints:</p>
+    <ul>
+        <li>In reflectLeft, the x for loop goes from 0 to width / 2.</li>
+<table border="1" cellpadding="3" cellspacing="0">
+    <tr>
+        <td width="20">&nbsp;</td>
+        <td width="20">&nbsp;</td>
+        <td width="20" bgcolor="lightyellow">&nbsp;</td>
+        <td width="20" bgcolor="lightyellow">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>X</td>
+        <td>X</td>
+        <td bgcolor="lightyellow">X</td>
+        <td bgcolor="lightyellow">X</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>X</td>
+        <td bgcolor="lightyellow">X</td>
+        <td bgcolor="lightyellow">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td bgcolor="lightyellow">&nbsp;</td>
+        <td bgcolor="lightyellow">&nbsp;</td>
+    </tr>
+</table>
+<br>
+        <li>In reflectTop, the y for loop goes from 0 to height / 2.</li>
+<table border="1" cellpadding="3" cellspacing="0">
+    <tr>
+        <td width="20">&nbsp;</td>
+        <td width="20">&nbsp;</td>
+        <td width="20">X</td>
+        <td width="20">&nbsp;</td>
+    </tr>
+    <tr>
+        <td>&nbsp;</td>
+        <td>X</td>
+        <td>&nbsp;</td>
+        <td>X</td>
+    </tr>
+    <tr bgcolor="lightyellow">
+        <td>&nbsp;</td>
+        <td>X</td>
+        <td>&nbsp;</td>
+        <td>X</td>
+    </tr>
+    <tr bgcolor="lightyellow">
+        <td>&nbsp;</td>
+        <td>&nbsp;</td>
+        <td>X</td>
+        <td>&nbsp;</td>
+    </tr>
+</table>
+    </ul>
+</li>
+</ol>
+
+</div>
+</body>
+</html>

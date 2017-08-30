@@ -1,0 +1,29 @@
+CS 149 - Lab22 Worksheet
+
+Name:
+
+
+==== Location.java ====
+
+1. Is the Location class mutable or immutable? Why?
+
+2. Why is [mutable/immutable] the appropriate design for this class?
+
+3. Why do we have only one constructor? Would there be any use for another?
+
+4. What is the purpose of the two Location constants JMU and ISAT?
+
+5. Is there any danger in making the constants public? Why or why not?
+
+
+==== Alien.java ====
+
+6. Why is it important that all the attributes of the Alien class are private?
+
+7. What is the purpose of the class variables? Why are they private and static?
+
+8. What would happen if they were not static? (i.e., when you create objects)
+
+9. Which of the methods in Alien.java are mutator methods?
+
+10. Which of the methods in Alien.java are accessor methods?

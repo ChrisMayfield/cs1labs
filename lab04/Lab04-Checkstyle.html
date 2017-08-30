@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab04 - CS 149</title>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="main">
+
+<div align="center">
+<font size="+1"><strong>
+    <a href="../index.html">CS 149</a>: Introduction to Programming
+</strong></font>
+<br>
+<font size="+1">
+    <a href="http://www.jmu.edu/">James Madison University</a>, Fall 2017 Semester
+</font>
+<br>
+<br>
+<font size="+2" color="forestgreen"><strong>
+    Lab04: Style guide and Checkstyle
+</strong></font>
+</div>
+
+<p style="padding: 10px; text-align: center;">
+    <img src="code_quality.png" title="I honestly didn't think you could even USE emoji in variable names. Or that there were so many different crying ones." alt="Code Quality">
+    <br>Source: <a href="https://xkcd.com/1513/">https://xkcd.com/1513/</a>
+</p>
+
+<h3>Background</h3>
+
+<p>Virtually every organization that does software development has strict guidelines on how to format source code. Here are two examples of "industrial strength" Java style guides:</p>
+
+<ul>
+<li><p><a href="../style/CodeConvTOC.doc.html">Code Conventions</a> (April 1999)</p></li>
+<li><p><a href="http://google.github.io/styleguide/javaguide.html">Google Java Style</a> (July 2016)</p></li>
+</ul>
+
+<p>This course will more or less follow a simplified version of these guidelines. Rather than memorize a long list of rules, you should develop good habits and intuition when it comes to style.</p>
+
+<p>Checkstyle is a tool that can be used to determine if your source code follows a set of style rules. It also checks for common programming mistakes, such as empty statements and accidental assignment.
+
+<p style="float: right; padding: 10px; text-align: center;">
+<a href="http://checkstyle.sourceforge.net/">
+<img src="checkstyle-logo.png"><br>checkstyle.sourceforge.net</a>
+</p>
+
+<h3>Running Checkstyle</h3>
+
+<p>Download these two files into the same directory as your code:</p>
+
+<ul>
+<li><p><a href="checkstyle-8.1-all.jar">checkstyle-8.1-all.jar</a> - command-line tool</p></li>
+<li><p><a href="cs149.xml">cs149.xml</a> - configuration file for CS 149</p></li>
+</ul>
+
+<p>Open a terminal and use the following command to run Checkstyle:</p>
+<blockquote><kbd style="background-color: #ffffbe">
+java -jar checkstyle-*-all.jar -c cs149.xml *.java
+</kbd></blockquote>
+
+<p>Note the <kbd>*</kbd> characters are <i>wildcards</i> that match whatever version of Checkstyle you have and whatever java source files are present. The output indicates the file and line number of each problem. The following example refers to a method beginning on line 93, char 5 of <kbd>Hello.java</kbd>:</p>
+
+<blockquote><kbd style="background-color: #fafafa">
+    Hello.java:93:5: Missing a Javadoc comment
+</kbd></blockquote>
+
+<p>If you apply Checkstyle to your source code often, you will likely internalize good style habits over time. Note however that Checkstyle is unable to evaluate the quality of comments, meaning of variable names, and placement of declarations.</p>
+
+<h3>Example Program</h3>
+
+<p>If you haven't already, you should create a top-level <code>CS149</code> folder to organize all your labs and other assignments for the semester. Then create a <code>Lab04</code> folder for today's lab. (If you logged in as <code>student</code> today, please log out and log back in with your own account.)</p>
+
+<p>Download: <a href="Payroll.java">Payroll.java</a></p>
+
+<p><em>Submission:</em> At the end of class today, or by 11:00 PM if you would like more time, submit a corrected version of Payroll.java via Canvas. Your code must pass Checkstyle without any warnings <b>AND</b> meet all the requirements outlined below. (It must also compile and run correctly; don't change the program's behavior.)</p>
+
+<p><em>Collaboration:</em> You are encouraged to work with another student to complete this lab. Each of you should submit your own copy of the program. It's okay if your files are similar or identical, as long as both of your names are present at the top.</p>
+
+<h4>A. Comments</h4>
+<ol>
+    <li>Every class must contain a Javadoc comment with the following three elements.</li>
+<pre>
+/**
+  * Overall description of the class goes here.
+  *
+  * @author Your name goes here
+  * @version Due date goes here
+  */
+</pre>
+    <li>All methods (including <code>main</code>) must contain an applicable Javadoc comment.</li>
+<pre>
+/**
+ * Overall description of the method goes here.
+ *
+ * @param paramterName describe each input parameter
+ * @param anotherParam use a separate line for each
+ * @return describe the value that this method returns
+ */
+</pre>
+    <li>In-line comments (<code>//</code>) should describe major structures and steps within a method.</li>
+    <li>All comments should use normal English spelling and grammar. Phrases are okay.</li>
+    <li>Comments must come before the code that they are describing or on the same line.</li>
+</ol>
+
+<h4>B. Names</h4>
+<ol>
+    <li>All names should be descriptive and readable.
+        (<code>subTotal</code> rather than <code>s</code>,&nbsp; <code>grade</code> rather than <code>grd</code>)</li>
+    <li>Multiple-word names should use capital letters to separate words.
+        (<code>subTotal</code>, not <code>sub_total</code>)</li>
+    <li>Variable and method names should begin with a lowercase letter, and:
+        <ul>
+            <li>Variable names should be nouns or noun phrases. (<code>studentName</code> or <code>subTotal</code>)</li>
+            <li>Method names should be verbs or verb phrases. (<code>printLine</code> or <code>addColumn</code>)</li>
+        </ul>
+    </li>
+    <li>Class names should begin with a capital letter and use title case. (<code>HelloWorld</code>)</li>
+    <li>Constant names should be all caps with an underscore separator. (<code>PI</code> or <code>INTEREST_RATE</code>)</li>
+</ol>
+
+<h4>C. Declarations</h4>
+<ol>
+    <li>All constants should be named and initialized at the top of the method in which they are used.</li>
+<pre>
+final double CENTIMETERS_PER_INCH = 2.54;
+centimeters = inches * CENTIMETERS_PER_INCH;    // NOT inches * 2.54;
+</pre>
+    <li>All variables should also be declared at the top of the method, directly after any constant declaraions.</li>
+    <li>It is strongly recommended (in CS 149) to separate variable declaration and initialization statements.</li>
+<pre>
+Scanner input = new Scanner(System.in);    // discouraged
+
+Scanner input;
+input = new Scanner(System.in);
+</pre>
+    <li>Each declaration should be on its own line. Comment to the right if the name is not self-explanatory.</li>
+</ol>
+
+<h4>D. Literals</h4>
+<ol>
+    <li>Numeric literals should be of the correct type for the context in which they are used.</li>
+<pre>
+// integer expressions should use integer literals
+int a;
+double b;
+a = 2;
+b = 2.0;
+
+// double expressions should use double literals
+double x;
+double y;
+double average;
+average = (x + y) / 2.0;    // NOT 2, which is an integer
+</pre>
+</ol>
+
+<h4>E. Indentation</h4>
+<ol>
+    <li>Subsections of code should be indented consistently with four spaces.</li>
+    <li>Always use four space characters, not tab characters, for indentation.</li>
+    <li>Statements too long for one line should be indented on subsequent lines.</li>
+    <li>All blocks of code (even if one line) should be surrounded by curly braces.</li>
+    <li>Left braces must appear at the end of the same line as the structure header.</li>
+</ol>
+
+<h4>F. Whitespace</h4>
+<ol>
+    <li>There should be a space after cast operators, commas, and //'s.</li>
+    <li>Use whitespace to separate logical segments of code. There should be a blank line after variable declarations.</li>
+    <li>Lines should be kept to a short length (&lt; 80 chars). You should be able to see the full line in your text editor.</li>
+    <li>Binary operators should be separated from their operands by a single space.
+        (<code>sum = myGrade + yourGrade;</code>)</li>
+    <li>The dot (<code>.</code>) operator, on the other hand, should not have any space surrounding it.
+    (<code>System.out.println();</code>)</li>
+    <li>Unary operators should also not be separated by a space.
+        (<code>myGrade++;</code>)</li>
+</ol>
+
+</div>
+</body>
+</html>

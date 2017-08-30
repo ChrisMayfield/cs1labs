@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab07 - CS 149</title>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="main">
+
+<div align="center">
+<font size="+1"><strong>
+    <a href="../index.html">CS 149</a>: Introduction to Programming
+</strong></font>
+<br>
+<font size="+1">
+    <a href="http://www.jmu.edu/">James Madison University</a>, Fall 2017 Semester
+</font>
+<br>
+<br>
+<font size="+2" color="forestgreen"><strong>
+    Lab07: Web-CAT submission system
+</strong></font>
+</div>
+
+<p style="float: right; padding: 10px; text-align: center;">
+<img src="webcat.png" width="400" title="Web Center for Automated Testing">
+</p>
+
+<h3>Background</h3>
+
+<p>In CS 149, you submit your programming assignments via <a href="http://web-cat.org/group/web-cat">Web-CAT</a>. This system is also the means by which you receive feedback and grades for your programs.</p>
+
+<p><em>Collaboration:</em> You are encouraged to work with another student to complete this lab. Each of you should submit your own copy of the code. It's okay if your files are similar or identical, as long as both of your names are present at the top.</p>
+
+<h3>Objectives</h3>
+
+<ul>
+<li><p>Practice validation and <kbd>if-else-if</kbd> statements.</p></li>
+<li><p>Log into Web-CAT and set up your user profile.</p></li>
+<li><p>Submit a program and JUnit tests in a zip archive.</p></li>
+</ul>
+
+<h3>Key Terms</h3>
+<dl>
+<dt>zip file</dt>
+<dd>compressed file that contains one or more files</dd>
+<dt>code coverage</dt>
+<dd>percentage of code that was tested by JUnit tests</dd>
+<dt>problem coverage</dt>
+<dd>percentage of instructor's test cases that passed</dd>
+</dl>
+
+<h3>Part 1: Understand the Problem</h3>
+
+<p>Write a program to prepare the monthly charge account statement for a customer of <i>CS Card International</i>, a credit card company. The program should take as input the previous balance on the account and the total amount of additional charges during the month. It should then compute the interest for the month, the total new balance (i.e., the previous balance plus additional charges plus interest), and the minimum payment due.</p>
+
+<ul>
+<li>
+    <p>The <em>interest</em> is $0 if the previous balance was $0.00 or less.  If the previous balance was greater than $0, the interest is 2% of the total owed (i.e., previous balance plus additional charges).</p>
+    <p>EXAMPLE: If the previous balance is $50.00 and the additional charges are $50.00, the interest would be $2.00. But if the previous balance is $0.00, the interest is $0 no matter what.</p>
+</li>
+<li>
+    <p>The <em>minimum payment</em> based on the table below:</p>
+<pre>
+             $0.00          for new balance less than $0
+         new balance        for new balance between $0 and $49.99 (inclusive)
+            $50.00          for new balance between $50 and $300 (inclusive)
+    20% of the new balance  for new balance over $300
+</pre>
+    <p>EXAMPLE: If the new balance is $38.00 then the person must pay the whole $38.00; if the balance is $128 then the person must pay $50; if the balance is $350 the minimum payment is $70.</p>
+</li>
+</ul>
+
+<p><font color="red">Make sure you understand the calculations before trying to program. Write the algorithm in pseudocode on paper, and test your algorithm with some examples to see how it works.</font></p>
+
+<h3>Part 2: Program the Solution</h3>
+
+Much of the solution including output formatting has already been done for you. Use the variables provided and keep all output statements exactly as they are.
+
+<ol start="1">
+<li>
+    <p>Download a copy of <a href="CSCard.java">CSCard.java</a> and <a href="CSCardTest.java">CSCardTest.java</a> as a starting point. Fill in the Javadoc comment for CSCard.java, but don't worry about writing other comments for this lab.</p>
+</li>
+<li>
+    <p>Get the provided code to compile. Write <b>stubs</b> for the <code>calculateInterest</code> and <code>calculateMinPayment</code> methods, returning bogus values for interest and minimum payments for now.</p>
+</li>
+<li>
+    <p>Using the variables provided, code the input statements as described in CSCard.java. You must ensure that the program will not crash if the user enters a bad value (i.e., use <code>hasNextDouble</code>).
+</li>
+<li>
+    <p>Code the rest of the main method as if the two calculate methods were finished, and then test your program. You should see that the code properly reads in a value for the balance and additional charges and outputs the values in the correct format. (The numbers should be wrong until you finish your coding.)</p>
+</li>
+<li>
+    <p>For each calculation (interest and minimum payment), you should code the corresponding method. Run the provided JUnit test cases to make sure your implementation is correct.</p>
+</li>
+<!--
+<li>
+    <p>Complete the test file by adding additional cases to test each of the two calculation methods. Test the program with a variety of data. Include positive balance, negative balance, and 0 balance.</p>
+</li>
+-->
+<li>
+    <p>When you are sure that your code is working properly, run the main method using a variety of inputs (like you used in your examples on paper). Make sure the output still looks okay.</p>
+</li>
+</ol>
+
+<h3>Part 3: Web-CAT Submission</h3>
+
+<p><font color="red">You will NOT upload your files to Canvas today. We will grade them automatically using Web-CAT instead.</font></p>
+
+<ol start="7">
+<li>
+    <p>Open a Terminal window and navigate to the directory for your Java files.</p>
+</li>
+<li>
+    <p>Create a new zip archive containing the two Java files:&nbsp;
+    <code>zip Lab07.zip CSCard.java CSCardTest.java</code></p>
+</li>
+<li>
+    <p>Log into Web-CAT (<a href="http://webcat.cs.jmu.edu">webcat.cs.jmu.edu</a>) using your JMU username and password.</p>
+</li>
+<!--
+<li>
+    <p>Feel free to change your Web-CAT password by clicking on your name in the upper right corner.<br><b>DO NOT use your MyMadison password</b>; our Web-CAT server is not completely secure.</p>
+</li>
+-->
+<li>
+    <p>Click the "Home" link (if not already on that page) and then click the "Submit" button next to Lab07.</p>
+</li>
+<li>
+    <p>Browse to the zip file that you just created, then click "Upload Submission."</p>
+</li>
+<li>
+    <p>Double check that the correct files were uploaded and click "Confirm."</p>
+</li>
+</ol>
+
+<p>Web-CAT will score your submission based on three criteria, which we will discuss in more detail on Monday:</p>
+<ul>
+<li>The percentage of your own test cases that passed.</li>
+<li>The percentage of code that was run by your test cases.</li>
+<li>The percentage of the instructor's test cases that passed.</li>
+</ul>
+
+<table border="1" cellpadding="10" cellspacing="0">
+<tr>
+    <th>Correct Program</th>
+    <th>Incorrect Program (example)</th>
+</tr>
+<tr>
+    <td><img src="wc-correct.png"></td>
+    <td><img src="wc-incorrect.png"></td>
+</tr>
+</table>
+
+</div>
+</body>
+</html>

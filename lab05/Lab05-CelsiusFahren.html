@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab05 - CS 149</title>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="main">
+
+<div align="center">
+<font size="+1"><strong>
+    <a href="../index.html">CS 149</a>: Introduction to Programming
+</strong></font>
+<br>
+<font size="+1">
+    <a href="http://www.jmu.edu/">James Madison University</a>, Fall 2017 Semester
+</font>
+<br>
+<br>
+<font size="+2" color="forestgreen"><strong>
+    Lab05: Formatting output in Java
+</strong></font>
+</div>
+
+<p style="float: right; padding: 10px; text-align: center;">
+<img src="thermometer.jpg" width="225" title="Wikipedia: Galileo thermometer"></p>
+
+<h3>Background</h3>
+
+<p>You have a Canadian friend with whom you talk frequently. Canadians use the
+metric system for many of their measurements, including temperatures in the
+Celsius scale. You want to practice your Java skills by writing a program to
+help you quickly figure out what the equivalent temperature (in Fahrenheit) is
+here in Harrisonburg. We will use the <code>System.out.printf()</code> method
+described in Section 3.6 of the book. As a quick review, check out this
+<a href="printf_reference.pdf"><img src="../icons/pdf.png"> printf reference</a>
+by <a href="http://web.cerritos.edu/jwilson">Jack Wilson</a> at Cerritos College.</p>
+
+<p><em>Collaboration:</em> You are encouraged to work with another student to complete this lab. Each of you should submit your own copy of the programs. It's okay if your files are similar or identical, as long as both of your names are present at the top.</p>
+
+<p><em>Submission:</em> At the end of class today, or by 11:00 PM if you would like more time, submit Celsius.java and Celsius.html via Canvas. The latter file will be in the folder you create when running Javadoc for the first time.</p>
+
+<h3>Part 1: Celsius to Fahrenheit</h3>
+
+<p>Write a program that will convert Celsius temperatures to their equivalent
+Fahrenheit values. The appropriate formula to solve this problem is found on
+<a href="http://convertcelciustofarenheit.com/">convertcelciustofarenheit.com</a>.
+Download <a href="Celsius.java"><img src="../icons/disk.png"> Celsius.java</a> to
+use as a starting point for your solution.</p>
+
+<ol start="1">
+<li><p>Decide which formula should be used to convert a Celsius temperature to its equivalent in Fahrenheit.</p></li>
+<li><p>Develop three examples to use in testing your program. Think carefully about the range of data values.</p></li>
+<li><p>In the main method documentation of Celsius.java, list three test examples rounded to one decimal place.</p></li>
+<li><p>Write code to solve the problem: declare variables, get the input, do the calculation, and output the results.</p></li>
+<li><p>Test your code with the three examples you came up with earlier, and make sure that they all work correctly.</p></li>
+</ol>
+
+<p>Don't forget to prompt the user for input. Your Celsius.java program should
+closely resemble what you did in PA1.</p>
+
+<h3>Part 2: Hello, printf method!</h3>
+
+<p>Your program likely displays the temperature as a number with lots of
+decimal places, depending upon the calculated value. Your Canadian friend will
+not appreciate you saying, "Wow, that's like 87.199823 Fahrenheit." So you want
+to produce a number that is more reasonable and has only one decimal point.</p>
+
+<p><code>System.out.printf</code> is a method like <code>System.out.print</code>
+or <code>System.out.println</code>. Instead of just printing what is between the
+parentheses, <code>printf</code> allows for substitutions and formatting of output.
+The <code>printf</code> method takes two or more parameters, separated by commas.
+The first parameter is a formatting string. It contains the text that you want
+to use, as well as positions where it will substitute other values. For example,
+a double variable is named <code>totalValue</code> and we wanted to print it with
+three decimal places:</p>
+<pre>
+System.out.printf("The total value is %.3f\n", totalValue);
+</pre>
+<p>Note the format specifier is only <code>%.3f</code> (<code>\n</code> is not
+part of the format for <code>totalValue</code>; it's just more text to print
+out at the end).</p>
+
+<ol start="6">
+<li><p>Try using <code>printf</code> in your Celsius.java program, but display the value with only 1 decimal position.</p></li>
+<li><p>Copy the following lines to the end of your program, replacing the word <code>fahrenheit</code> with your own variable name.</p></li>
+<pre>
+System.out.printf("Wow, that's like %d degrees!\n", (int) fahrenheit);
+System.out.printf("Wow, that's like %8d degrees!\n", (int) fahrenheit);
+System.out.printf("If I had $1M for every degree, I'd have $%,.2f!\n", fahrenheit * 1e6);
+</pre>
+<li><p>Add an inline comment (<code>//</code>) before each <code>printf</code> listed above, and explain what the format specifier means.</p></li>
+</ol>
+
+<p>Note the cast operator <code>(int)</code> in the previous examples. <i>What does it mean to cast?</i> Try removing it and see what happens. <i>Will it compile? Will it run?</i> You'll need to know these answers before the midterm.</p>
+
+<h3>Part 3: Running Javadoc</h3>
+
+<p>Javadoc is a nifty tool that reads your documentation comments and generates web pages based on them. DrJava makes it easy to run Javadoc, but unfortunately its built-in web browser makes the output difficult to read on Linux.</p>
+
+<ol start="9">
+<li><p>In DrJava, go to Edit &gt; Preferences. Change the Web Browser to <code>/usr/bin/google-chrome</code> or <code>/usr/bin/firefox</code>.</p></li>
+<li><p>Now press the Javadoc button on the main toolbar. When it asks you to create a new folder, press OK and then Yes.</p></li>
+<li><p>Your documentation should display in the web browser of your choice. Make sure your name and the date are correct.</p></li>
+<li><p>Experiment with changing the <code>/**</code> comments and running Javadoc again. Make sure you understand the relationship.</p></li>
+</ol>
+
+</div>
+</body>
+</html>

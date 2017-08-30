@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab12 - CS 149</title>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="main">
+
+<div align="center">
+<font size="+1"><strong>
+    <a href="../index.html">CS 149</a>: Introduction to Programming
+</strong></font>
+<br>
+<font size="+1">
+    <a href="http://www.jmu.edu/">James Madison University</a>, Fall 2017 Semester
+</font>
+<br>
+<br>
+<font size="+2" color="forestgreen"><strong>
+    Lab12: Practice with nested loops
+</strong></font>
+</div>
+
+<p style="float: right; padding: 10px; text-align: center;">
+<img src="Stars.jpg" title="Wikipedia: Star">
+</p>
+
+<h3>Background</h3>
+
+<p>In the good old days, we didn't have fancy computer graphics. So we had to rely on <a href="http://en.wikipedia.org/wiki/ASCII_art">ASCII art</a> and the user's imagination. Today's lab will take you back in time! Your task is to draw various pictures of stars (<code>'*'</code>) that require the creative use of iteration and decisions.</p>
+
+<p><em>Collaboration:</em> You are encouraged to work with another student to complete this lab. Each of you should submit your own copy of the programs. It's okay if your files are similar or identical, as long as both of your names are present at the top.</p>
+
+<h3>Objectives</h3>
+
+<ul>
+<li><p>Write nested for loops and decisions.</p></li>
+<li><p>Solve counting problems with loops.</p></li>
+</ul>
+
+<h3>Instructions</h3>
+
+<ol start="1">
+<li>
+    <p>Download <a href="Stars.java">Stars.java</a> and open your favorite editor.</p>
+</li>
+<li>
+    <p>Write your name and today's date in the class comment.</p>
+</li>
+<li>
+    <p>Compile and run the program. What shape does this pattern produce?</p>
+</li>
+<li>
+    <p>Notice the relationship between the <code>row</code> (outer loop) and the number of stars that are printed.</p>
+</li>
+<li>
+    <p>Notice the relationship between the <code>col</code> (inner loop) and the place where we move to a new line.</p>
+</li>
+<li>
+    <p>Add code to your program to carry out Patterns A, B, and C as shown below.</p>
+</li>
+<li>
+    <p>Submit <kbd>Stars.java</kbd> via Canvas by the end of the day.</p>
+</li>
+<li>
+    <p>If you finish early, you may use the remaining time to work on PA4.</p>
+</li>
+</ol>
+
+<h3>Pattern A</h3>
+<pre style="color: steelblue">
+**********
+*********
+********
+*******
+******
+*****
+****
+***
+**
+*
+</pre>
+
+<p>The leftmost stars are in the leftmost output column. Test your code with an odd number of stars and an even number of stars.</p>
+
+<p>HINT: While developing the code, replace each space with another character that is visible.</p>
+
+<h3>Pattern B</h3>
+<pre style="color: steelblue">
+         *
+        **
+       ***
+      ****
+     *****
+    ******
+   *******
+  ********
+ *********
+**********
+</pre>
+
+<p>The leftmost star of the last row is in the first position of the output column.</p>
+
+<p>HINT: You used starCnt in the original example and Pattern A. You should think about using the blnkCnt variable as well.</p>
+
+<h3>Pattern C</h3>
+<pre style="color: steelblue">
+**********
+ *********
+  ********
+   *******
+    ******
+     *****
+      ****
+       ***
+        **
+         *
+</pre>
+
+<p>The top row, leftmost star is in the first position of the output.</p>
+
+<p>HINT: It should be the same as Pattern B, except for the way you calculate blnkCnt and starCnt.</p>
+
+<h3>Generalization</h3>
+
+<p>Create a new void method called <code>print</code> that <i>encapsulates</i> the code that Patterns A, B, and C have in common.</p>
+
+<p>Add parameters that <i>generalize</i> the method so that it works for Patterns A, B, C, and potentially other patterns.</p>
+
+<p>Be sure to write a meaningful documentation comment including <code>@param</code> tags.</p>
+
+<p>Replace any duplicated code in <code>main</code> with method calls to your <code>print</code> method.</p>
+
+<h3>Pattern D <font color="darkgreen">&nbsp;(Extra Credit)</font></h3>
+<pre style="color: steelblue">
+    *
+   ***
+  *****
+ *******
+*********
+*********
+ *******
+  *****
+   ***
+    *
+</pre>
+
+<p>For an odd number of rows, you would only have one middle line. The middle row leftmost star is in the first position of the output.</p>
+
+<p>HINT: Consider writing two loops: one for the top half, and another for the bottom half. You may also want to increment and decrement starCnt and blnkCnt, rather than calculate them directly based on the row number.</p>
+
+</div>
+</body>
+</html>
