@@ -83,7 +83,7 @@ System.out.println("It is NOT okay to go to the next line
 </pre>
 
 <p>The solution is to break the long String up into two shorter strings that
-are joined using the concatenation operator (which is the <kbd>+</kbd> symbol). So the following would be legal.</p>
+are joined using the concatenation operator (which is the <code>+</code> symbol). So the following would be legal.</p>
 <pre>
 System.out.println("It is OKAY to break a long string into "
         + "parts and join them with a '+' symbol.");
@@ -94,9 +94,9 @@ continuation line. Also note that the operator is placed at the beginning of
 the continuation line instead of at the end of the first line, to improve
 readability.</p>
 
-<p>So when working with strings, the <kbd>+</kbd> symbol means
+<p>So when working with strings, the <code>+</code> symbol means
 to concatenate the Strings (join them). BUT when working with numbers, the
-<kbd>+</kbd> means what it has always meant: to add!</p>
+<code>+</code> means what it has always meant: to add!</p>
 
 <ol>
   <li>Open the Concat.java file. <span class="red">Do not compile or run
@@ -106,8 +106,8 @@ to concatenate the Strings (join them). BUT when working with numbers, the
   just like the Concat program itself is a class. As such, String has methods or
   actions that can be done.<br></li>
 
-  <li>This program uses the <kbd>length</kbd> method of the
-  String class. <kbd>length</kbd> is a method that returns a
+  <li>This program uses the <code>length</code> method of the
+  String class. <code>length</code> is a method that returns a
   value which, in this example, is the number of characters in <span class=
   "name">sample</span>. Or another way to read this is "sample's length".</li>
 
@@ -143,48 +143,48 @@ today's date in the class's Javadoc comment.</p>
   <li>Read through the program, noticing the following new features:
 
     <ol>
-      <li><kbd>Scanner</kbd> - The <kbd>Scanner</kbd> class provides a mechanism for reading in values
+      <li><code>Scanner</code> - The <code>Scanner</code> class provides a mechanism for reading in values
       from the keyboard (among other things).</li>
 
-      <li>The very first line of the source file is an <kbd>import</kbd> statement. This import makes the Scanner class
+      <li>The very first line of the source file is an <code>import</code> statement. This import makes the Scanner class
       available to this program.<br></li>
 
-      <li>Before we can use the <kbd>Scanner</kbd>, we must make
+      <li>Before we can use the <code>Scanner</code>, we must make
       an instance of it. We call an instance of a class an object. So we need
-      to create a <kbd>Scanner</kbd> object.<br></li>
+      to create a <code>Scanner</code> object.<br></li>
 
-      <li>So, we first declare a <kbd>Scanner</kbd> variable
-      named <kbd>input</kbd>. Then in the initializations, we
-      instantiate or make a new <kbd>Scanner</kbd> object. The
-      value in the parentheses is <kbd>System.in</kbd> which
+      <li>So, we first declare a <code>Scanner</code> variable
+      named <code>input</code>. Then in the initializations, we
+      instantiate or make a new <code>Scanner</code> object. The
+      value in the parentheses is <code>System.in</code> which
       refers to standard system input or the keyboard.</li>
 
       <li>Whenever we expect the user of a program to enter something at the
-      command line, we have to prompt them. The line <kbd>System.out.print("Enter a number: ");</kbd> is performing the
+      command line, we have to prompt them. The line <code>System.out.print("Enter a number: ");</code> is performing the
       prompt. When you run this program, the line will display, then the
       program will stop executing until the user enters a value on the command
-      line. The line <kbd>num1 = input.nextInt();</kbd> is the
+      line. The line <code>num1 = input.nextInt();</code> is the
       place where the input Scanner is reading what the user has typed in
-      and assigning it to the variable <kbd>num1</kbd>.</li>
+      and assigning it to the variable <code>num1</code>.</li>
 
-      <li>We then "echo" the value of <kbd>num1</kbd> in the
+      <li>We then "echo" the value of <code>num1</code> in the
       following line.</li>
     </ol>
   </li>
 
   <li>Compile the program and execute it. Use any integer value for
-  <kbd>num1.</kbd> (What happens if you don't type in an integer?)</li>
+  <code>num1.</code> (What happens if you don't type in an integer?)</li>
 
   <li>Now, duplicate the four lines at the end of the program and alter them to
-  read a value into <kbd>val1</kbd>. You will need to use the
-  <kbd>nextDouble()</kbd> method instead of <kbd>nextInt().</kbd> There should be a blank line between this new block
+  read a value into <code>val1</code>. You will need to use the
+  <code>nextDouble()</code> method instead of <code>nextInt().</code> There should be a blank line between this new block
   of code and the previous one.</li>
 
   <li>Compile and execute the program with your changes.</li>
 
   <li>Finally, duplicate the last four lines again and alter them to read a
-  value into <kbd>text</kbd>. You will need to use the
-  <kbd>nextLine()</kbd> method instead of <kbd>nextDouble()</kbd>. Make sure you are also updating the comments!<br>
+  value into <code>text</code>. You will need to use the
+  <code>nextLine()</code> method instead of <code>nextDouble()</code>. Make sure you are also updating the comments!<br>
   <br>
   <span style="color: red;">NOTE:</span> When reading in numbers via nextInt or
   nextDouble, Scanner does not read the newline character that you typed (by
@@ -203,26 +203,26 @@ thought questions only and do not need to be turned in.</span><br>
 
 <ol>
   <li>Add a statement to the end of the program to assign the value found in
-  <kbd>text</kbd> to the variable <kbd>val1</kbd>.
+  <code>text</code> to the variable <code>val1</code>.
   <span class="gre">What happens when you try to compile it?</span></li>
 
   <li>Comment out that line and add a new line that assigns the value of
-  <kbd>val1</kbd> to <kbd>num1</kbd>. <span class=
+  <code>val1</code> to <code>num1</code>. <span class=
   "gre">What happens when you try to compile it?</span></li>
 
   <li>Comment out that line and add a new line that assigns the value of
-  <kbd>val1</kbd> to <kbd>val2</kbd>. <span class=
+  <code>val1</code> to <code>val2</code>. <span class=
   "gre">What happens when you try to compile it? Will it
   execute?</span><br></li>
 
-  <li>Add a print statement to display the contents of <kbd>val1</kbd> and <kbd>val2</kbd> after the
+  <li>Add a print statement to display the contents of <code>val1</code> and <code>val2</code> after the
   assignment.<br></li>
 
   <li>Add a statement to the end of the program to assign the value found in
-  <kbd>num1</kbd> to <kbd>val2</kbd>. <span class=
+  <code>num1</code> to <code>val2</code>. <span class=
   "gre">What happens when you try to compile it? Will it execute?</span></li>
 
-  <li>Add a print statement to display the contents of <kbd>num1</kbd> and <kbd>val2</kbd> after the
+  <li>Add a print statement to display the contents of <code>num1</code> and <code>val2</code> after the
   assignment.<br></li>
 
   <li>What can you say about compatibility among Java data types? In other

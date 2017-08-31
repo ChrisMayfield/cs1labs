@@ -75,10 +75,10 @@
     <p>Use a loop to read the input values from the keyboard (as doubles) and store them into the array. No prompt should be output before reading the values. The loop should terminate when the appropriate number of values has been read.</p>
 </li>
 <li>
-    <p>Once the array is built, you will pass it to methods in Stats.java. For now, simply print the contents of the array to make sure your program is working correctly. You may find the <kbd>Arrays.toString</kbd> method useful.</p>
+    <p>Once the array is built, you will pass it to methods in Stats.java. For now, simply print the contents of the array to make sure your program is working correctly. You may find the <code>Arrays.toString</code> method useful.</p>
 </li>
 <li>
-    <p>To test the program using the command-line argument for the number of values to read in, open a terminal window, navigate to your work folder, and enter: <pre>java Main 10</pre> This command will run the Main program passing <code>{"10"}</code> as the command-line arguments to the main method. If you run it with just <kbd>java Main</kbd> then the default of 25 values should be used.</p>
+    <p>To test the program using the command-line argument for the number of values to read in, open a terminal window, navigate to your work folder, and enter: <pre>java Main 10</pre> This command will run the Main program passing <code>{"10"}</code> as the command-line arguments to the main method. If you run it with just <code>java Main</code> then the default of 25 values should be used.</p>
 </li>
 </ol>
 
@@ -88,13 +88,13 @@
 
 <ol start="9">
 <li>
-    <p>In the Stats.java file, create a static method called <kbd>mean</kbd> that will take an array of double values as its parameter, and then calculate and return the mean of those numbers.</p>
+    <p>In the Stats.java file, create a static method called <code>mean</code> that will take an array of double values as its parameter, and then calculate and return the mean of those numbers.</p>
 </li>
 <li>
-    <p>The method should ensure that the array is not null and that it has more than 0 elements. If either of these conditions exists, the method should return <kbd>Double.NaN</kbd> (not a number).</p>
+    <p>The method should ensure that the array is not null and that it has more than 0 elements. If either of these conditions exists, the method should return <code>Double.NaN</code> (not a number).</p>
 </li>
 <li>
-    <p>Test your mean method from the Main.java program. The main method should output the return value as a single line, using the format <kbd>"Mean: %.2f\n"</kbd>.</p>
+    <p>Test your mean method from the Main.java program. The main method should output the return value as a single line, using the format <code>"Mean: %.2f\n"</code>.</p>
 </li>
 </ol>
 
@@ -102,16 +102,16 @@
 
 <ol start="12">
 <li>
-    <p>Add to Stats.java a method called <kbd>stdDev</kbd> that computes the standard deviation of a given array of double numbers.</p>
+    <p>Add to Stats.java a method called <code>stdDev</code> that computes the standard deviation of a given array of double numbers.</p>
 </li>
 <li>
     <p>Your stdDev method should call the mean method created in Part 3 above.</p>
 </li>
 <li>
-    <p>The method should ensure that the array is not null and that it has more than 0 elements. If either of those conditions exists, return <kbd>Double.NaN</kbd> (not a number).</p>
+    <p>The method should ensure that the array is not null and that it has more than 0 elements. If either of those conditions exists, return <code>Double.NaN</code> (not a number).</p>
 </li>
 <li>
-    <p>Add to the Main program a single line of output following the mean output line. The format of the standard deviation line should be <kbd>"StdDev: %.2f\n"</kbd>.</p>
+    <p>Add to the Main program a single line of output following the mean output line. The format of the standard deviation line should be <code>"StdDev: %.2f\n"</code>.</p>
 </li>
 </ol>
 

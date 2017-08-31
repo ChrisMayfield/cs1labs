@@ -116,19 +116,19 @@ public class BasicMathTest extends TestCase {
 
 <p>Note in the above example:</p>
 <ul>
-<li>Test classes must import <kbd>junit.framework.TestCase</kbd>, and they must extend <kbd>TestCase</kbd>.</li>
-<li>Test methods are usually <kbd>void</kbd> and take no parameters. However, they can be as complex as you like.</li>
+<li>Test classes must import <code>junit.framework.TestCase</code>, and they must extend <code>TestCase</code>.</li>
+<li>Test methods are usually <code>void</code> and take no parameters. However, they can be as complex as you like.</li>
 <li>Each test method establishes an expected value and runs the corresponding method to get the actual value.</li>
 <li>Finally, test methods use assertEquals (or other assert methods provided by JUnit) to verify correctness.</li>
 </ul>
 
 <p>Let's see how this process works in DrJava:</p>
 <ol start="1">
-<li><p>Copy and paste the example code above into <kbd>BasicMath.java</kbd> and <kbd>BasicMathTest.java</kbd>.</p></li>
+<li><p>Copy and paste the example code above into <code>BasicMath.java</code> and <code>BasicMathTest.java</code>.</p></li>
 <li><p>Make sure both files are open and then press the Compile button. You should have no errors.</p></li>
 <li><p>Press the Run button. (Note that since neither class has a main method, you can't "run" them.)</p></li>
 <li><p>Press the Test button. You should get a green light indicating that all tests completed successfully.</p></li>
-<li><p>Now go back and "break" the code by changing the BasicMath.add method: <kbd>return sum + 1;</kbd></p></li>
+<li><p>Now go back and "break" the code by changing the BasicMath.add method: <code>return sum + 1;</code></p></li>
 <li><p>Compile the new code, and then press the Test button. <i>What happens when an assertion fails?</i></p></li>
 </ol>
 
@@ -136,17 +136,17 @@ public class BasicMathTest extends TestCase {
 
 <ol start="7">
 <li>
-    <p>Implement the following methods in your <kbd>BasicMath</kbd> class:</p>
+    <p>Implement the following methods in your <code>BasicMath</code> class:</p>
     <ul>
-    <li><kbd>public static double multiply(double x, double y)</kbd></li>
-    <li><kbd>public static double divide(double x, double y)</kbd></li>
+    <li><code>public static double multiply(double x, double y)</code></li>
+    <li><code>public static double divide(double x, double y)</code></li>
     </ul>
 </li>
 <li>
-    <p>Now write the corresponding test methods in <kbd>BasicMathTest</kbd>. Use the same pattern as in <kbd>testAdd</kbd> and <kbd>testSubtract</kbd>: establish an expected result and an actual result, then compare the two with an assertion.</p>
+    <p>Now write the corresponding test methods in <code>BasicMathTest</code>. Use the same pattern as in <code>testAdd</code> and <code>testSubtract</code>: establish an expected result and an actual result, then compare the two with an assertion.</p>
 </li>
 <li>
-    <p>Floating point arithmetic (i.e., using <code>float</code> or <code>double</code> in Java) is <a href="http://en.wikipedia.org/wiki/Floating_point#Accuracy_problems">not completely accurate</a> due to limitations in computer hardware. Use the following technique to test your <kbd>multiply</kbd> and <kbd>divide</kbd> methods:</p>
+    <p>Floating point arithmetic (i.e., using <code>float</code> or <code>double</code> in Java) is <a href="http://en.wikipedia.org/wiki/Floating_point#Accuracy_problems">not completely accurate</a> due to limitations in computer hardware. Use the following technique to test your <code>multiply</code> and <code>divide</code> methods:</p>
 <pre>
 double expected;
 double actual;
@@ -167,7 +167,7 @@ assertTrue(error &lt; 1e-6);
 
 <ol start="11">
 <li>
-    <p>Add the following test cases to the <kbd>testAdd</kbd> method. (Copy and paste the last three lines of <kbd>testAdd</kbd> for each case below.
+    <p>Add the following test cases to the <code>testAdd</code> method. (Copy and paste the last three lines of <code>testAdd</code> for each case below.
     For readability, separate each one with a blank line.)</p>
     <ul>
     <li>case 1: x = 0.0, y = 0.0</li>
@@ -178,7 +178,7 @@ assertTrue(error &lt; 1e-6);
     <p>Add two additional test cases to each of the other three test methods. Design your own expected values for these methods.</p>
 </li>
 <li>
-    <p>Write an appropriate Javadoc comment for your <kbd>BasicMathTest</kbd> class, including <code>@author</code> and <code>@version</code> tags.</p>
+    <p>Write an appropriate Javadoc comment for your <code>BasicMathTest</code> class, including <code>@author</code> and <code>@version</code> tags.</p>
 </li>
 <li>
     <p>Write Javadoc comments for each of the test methods. It's okay to be brief if what you are testing is straightforward.</p>
@@ -187,7 +187,7 @@ assertTrue(error &lt; 1e-6);
 
 <h3>Part 3: A More Complex Example</h3>
 
-<p>Add the following code to the end of your <kbd>BasicMath</kbd> class, but <font color="red">don't look too carefully at the code itself</font>. Your goal is to find the mistakes in <kbd>calculateTax</kbd> by writing test cases based on its documentation.</p>
+<p>Add the following code to the end of your <code>BasicMath</code> class, but <font color="red">don't look too carefully at the code itself</font>. Your goal is to find the mistakes in <code>calculateTax</code> by writing test cases based on its documentation.</p>
 
 <pre>
     /**
@@ -224,14 +224,14 @@ assertTrue(error &lt; 1e-6);
 <li>
     <p>Rather than write over a dozen test cases in a single method, create the following test methods:</p>
     <ul>
-    <li><kbd>testTypeX</kbd> should test cases 'X' and 'x'</li>
-    <li><kbd>testTypeM</kbd> should test cases 'M' and 'm'</li>
-    <li><kbd>testTypeF</kbd> should test cases 'F' and 'f'</li>
-    <li><kbd>testOther</kbd> should test "anything else"</li>
+    <li><code>testTypeX</code> should test cases 'X' and 'x'</li>
+    <li><code>testTypeM</code> should test cases 'M' and 'm'</li>
+    <li><code>testTypeF</code> should test cases 'F' and 'f'</li>
+    <li><code>testOther</code> should test "anything else"</li>
     </ul>
 </li>
 <li>
-    <p>For each of the <kbd>calculateTax</kbd> test methods, write at least four test cases using assertEquals. Note that you can implement many of these assertions in one line of code, for example:</p>
+    <p>For each of the <code>calculateTax</code> test methods, write at least four test cases using assertEquals. Note that you can implement many of these assertions in one line of code, for example:</p>
     <pre>assertEquals(0.0, BasicMath.calculateTax(1.99, 'X'));</pre>
 </li>
 <li>
@@ -242,7 +242,7 @@ assertTrue(error &lt; 1e-6);
 </li>
 </ol>
 
-<p>Submit your completed <kbd>BasicMathTest.java</kbd> file via Canvas by the end of the day.</p>
+<p>Submit your completed <code>BasicMathTest.java</code> file via Canvas by the end of the day.</p>
 
 </div>
 </body>
