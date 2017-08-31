@@ -1,0 +1,5 @@
+a[target="_blank"]:after {
+  content: "\e164";
+  font-family: "Glyphicons Halflings";
+  padding-left: 2px;
+}
