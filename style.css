@@ -35,3 +35,8 @@ code {
 em {
     color: deeppink;
 }
+
+/* with thanks to https://css-tricks.com/snippets/css/print-url-after-links/ */
+@media print{
+       a:after{content:" (" attr(href) ") ";font-size:0.8em;font-weight:normal;}
+}
