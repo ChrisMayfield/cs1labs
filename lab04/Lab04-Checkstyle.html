@@ -3,6 +3,12 @@
 <head>
     <title>Lab04 - CS 149</title>
     <link href="../style.css" rel="stylesheet" type="text/css">
+    <link href="../bootstrap-mods.css" rel="stylesheet" type="text/css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="main">
@@ -24,7 +30,7 @@
 
 <p style="padding: 10px; text-align: center;">
     <img src="code_quality.png" title="I honestly didn't think you could even USE emoji in variable names. Or that there were so many different crying ones." alt="Code Quality">
-    <br>Source: <a href="https://xkcd.com/1513/">https://xkcd.com/1513/</a>
+    <br>Source: <a target="_blank" rel="noopener noreferrer" href="https://xkcd.com/1513/">https://xkcd.com/1513/</a>
 </p>
 
 <h3>Background</h3>
@@ -32,8 +38,8 @@
 <p>Virtually every organization that does software development has strict guidelines on how to format source code. Here are two examples of "industrial strength" Java style guides:</p>
 
 <ul>
-<li><p><a href="../style/CodeConvTOC.doc.html">Code Conventions</a> (April 1999)</p></li>
-<li><p><a href="http://google.github.io/styleguide/javaguide.html">Google Java Style</a> (July 2016)</p></li>
+<li><p><a target="_blank" rel="noopener noreferrer" href="../style/CodeConvTOC.doc.html">Code Conventions</a> (April 1999)</p></li>
+<li><p><a target="_blank" rel="noopener noreferrer" href="http://google.github.io/styleguide/javaguide.html">Google Java Style</a> (July 2016)</p></li>
 </ul>
 
 <p>This course will more or less follow a simplified version of these guidelines. Rather than memorize a long list of rules, you should develop good habits and intuition when it comes to style.</p>
@@ -41,7 +47,7 @@
 <p>Checkstyle is a tool that can be used to determine if your source code follows a set of style rules. It also checks for common programming mistakes, such as empty statements and accidental assignment.
 
 <p style="float: right; padding: 10px; text-align: center;">
-<a href="http://checkstyle.sourceforge.net/">
+<a target="_blank" rel="noopener noreferrer" href="http://checkstyle.sourceforge.net/">
 <img src="checkstyle-logo.png"><br>checkstyle.sourceforge.net</a>
 </p>
 
@@ -50,20 +56,20 @@
 <p>Download these two files into the same directory as your code:</p>
 
 <ul>
-<li><p><a href="checkstyle-8.1-all.jar">checkstyle-8.1-all.jar</a> - command-line tool</p></li>
-<li><p><a href="cs149.xml">cs149.xml</a> - configuration file for CS 149</p></li>
+<li><p><a download href="checkstyle-8.1-all.jar">checkstyle-8.1-all.jar</a> - command-line tool</p></li>
+<li><p><a download href="cs149.xml">cs149.xml</a> - configuration file for CS 149</p></li>
 </ul>
 
 <p>Open a terminal and use the following command to run Checkstyle:</p>
-<blockquote><kbd style="background-color: #ffffbe">
-java -jar checkstyle-*-all.jar -c cs149.xml *.java
-</code></blockquote>
+<code>
+    java -jar checkstyle-*-all.jar -c cs149.xml *.java
+</code>
 
 <p>Note the <code>*</code> characters are <i>wildcards</i> that match whatever version of Checkstyle you have and whatever java source files are present. The output indicates the file and line number of each problem. The following example refers to a method beginning on line 93, char 5 of <code>Hello.java</code>:</p>
 
-<blockquote><kbd style="background-color: #fafafa">
+<code>
     Hello.java:93:5: Missing a Javadoc comment
-</code></blockquote>
+</code>
 
 <p>If you apply Checkstyle to your source code often, you will likely internalize good style habits over time. Note however that Checkstyle is unable to evaluate the quality of comments, meaning of variable names, and placement of declarations.</p>
 
@@ -71,7 +77,7 @@ java -jar checkstyle-*-all.jar -c cs149.xml *.java
 
 <p>If you haven't already, you should create a top-level <code>CS149</code> folder to organize all your labs and other assignments for the semester. Then create a <code>Lab04</code> folder for today's lab. (If you logged in as <code>student</code> today, please log out and log back in with your own account.)</p>
 
-<p>Download: <a href="Payroll.java">Payroll.java</a></p>
+<p>Download: <a download href="Payroll.java">Payroll.java</a></p>
 
 <p><em>Submission:</em> At the end of class today, or by 11:00 PM if you would like more time, submit a corrected version of Payroll.java via Canvas. Your code must pass Checkstyle without any warnings <b>AND</b> meet all the requirements outlined below. (It must also compile and run correctly; don't change the program's behavior.)</p>
 
