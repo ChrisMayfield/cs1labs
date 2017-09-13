@@ -1,0 +1,8 @@
+/* 
+  with thanks to https://stackoverflow.com/a/33208122/1449799
+*/
+a[target="_blank"]:after {
+  content: "\e164";
+  font-family: "Glyphicons Halflings";
+  padding-left: 2px;
+}

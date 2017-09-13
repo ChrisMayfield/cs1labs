@@ -3,6 +3,12 @@
 <head>
     <title>Lab06 - CS 149</title>
     <link href="../style.css" rel="stylesheet" type="text/css">
+    <link href="../bootstrap-mods.css" rel="stylesheet" type="text/css">
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 </head>
 <body>
 <div class="main">
@@ -30,7 +36,7 @@
 
 <p style="float: right; padding: 10px; text-align: center;">
 <img src="meld-mary.png" title="Credit: Meld website">
-<br>Check out <a href="http://meldmerge.org/">meldmerge.org</a></p>
+<br>Check out <a target="_blank" rel="noopener noreferrer" href="http://meldmerge.org/">meldmerge.org</a></p>
 
 <ul>
 <li><p>Perform integer division and modulus.</p></li>
@@ -43,7 +49,7 @@
 
 <dl>
 <dt><code>import</code> statement</dt>
-<dd>bring in classes from <a href="http://docs.oracle.com/javase/8/docs/api/">Java's standard library</a></dd>
+<dd>bring in classes from <a target="_blank" rel="noopener noreferrer" href="http://docs.oracle.com/javase/8/docs/api/">Java's standard library</a></dd>
 <dt>division (<code>/</code>)</dt>
 <dd>integer operation that produces the quotient</dd>
 <dt>modulus (<code>%</code>)</dt>
@@ -93,7 +99,7 @@ all variables, and list all required steps in the conversion.</p>
 
 <h3>Part 2: Implementation</h3>
 
-<p>Create a new program <kbd>Seconds.java</kbd> (note the capital S) in DrJava
+<p>Create a new program <code>Seconds.java</code> (note the capital S) in DrJava
 with the following structure.</p>
 
 <ol start="1">
@@ -127,7 +133,7 @@ output to be flagged as incorrect.</p>
 <h3>Part 3: Command Line</h3>
 
 <p>One of the most powerful and useful skills you will learn in this course is
-how to use the <a href="http://en.wikipedia.org/wiki/Command-line_interface">
+how to use the <a target="_blank" rel="noopener noreferrer" href="http://en.wikipedia.org/wiki/Command-line_interface">
 command-line interface</a> or "Terminal" for short. Today we will learn the
 commands for compiling and running Java applications so that we can automate
 the input and capture the output.</p>
@@ -136,16 +142,16 @@ the input and capture the output.</p>
 <li>Locate your .java and .class files for today's lab using the file manager.</li>
 <li>Right-click the open space around your files (i.e., the folder containing your files).</li>
 <li>Select "Open in Terminal" from the context menu. Welcome to the command line!</li>
-<li>Enter the command &nbsp;<code>javac Seconds.java</code>&nbsp; (<kbd>javac</kbd> means "java compiler").</li>
+<li>Enter the command &nbsp;<code>javac Seconds.java</code>&nbsp; (<code>javac</code> means "java compiler").</li>
 <li>If it fails to compile, javac will print out the usual compiler error messages.</li>
-<li>Enter the command &nbsp;<code>java Seconds</code>&nbsp; (<kbd>java</kbd> means "java virtual machine").</li>
+<li>Enter the command &nbsp;<code>java Seconds</code>&nbsp; (<code>java</code> means "java virtual machine").</li>
 </ol>
 
-<p><font color="red">Note that <kbd>javac</kbd> requires a file name, whereas
-the <kbd>java</kbd> command requires a class name.</font></p>
+<p><font color="red">Note that <code>javac</code> requires a file name, whereas
+the <code>java</code> command requires a class name.</font></p>
 
 <ol start="17">
-<li>Download the file <a href="test.in">test.in</a> and look at the file contents.</li>
+<li>Download the file <a href="test.in" download>test.in</a> and look at the file contents.</li>
 <li>Enter the command &nbsp;<code>java Seconds &lt; test.in</code>&nbsp; and see what happens.</li>
 <li>Enter the command &nbsp;<code>java Seconds &lt; test.in &gt; test.out</code>&nbsp; and see what happens.</li>
 <li>You should now have a file named test.out in that same directory. What is in the file?</li>
@@ -158,13 +164,13 @@ saving yourself a lot of typing when testing your programs!</p>
 <h3>Part 4: Diff Testing</h3>
 
 <p>Once you have captured the actual output of a program, you should compare it
-with the expected output. We will use <a href="http://meldmerge.org/">Meld</a>,
+with the expected output. We will use <a target="_blank" rel="noopener noreferrer" href="http://meldmerge.org/">Meld</a>,
 a visual diff and merge tool that runs on Linux. (There are similar free tools
-like <a href="http://winmerge.org/">WinMerge</a> on Windows or opendiff on Mac,
-the latter of which comes with <a href="https://developer.apple.com/xcode/">Xcode</a>.)
+like <a target="_blank" rel="noopener noreferrer" href="http://winmerge.org/">WinMerge</a> on Windows or opendiff on Mac,
+the latter of which comes with <a target="_blank" rel="noopener noreferrer" href="https://developer.apple.com/xcode/">Xcode</a>.)
 
 <ol start="21">
-<li>Download the file <a href="test.exp">test.exp</a> and look at the file contents.</li>
+<li>Download the file <a href="test.exp" download>test.exp</a> and look at the file contents.</li>
 <li>Enter the command &nbsp;<code>meld test.exp test.out</code>&nbsp; to compare the two files.</li>
 <li>If there are no differences, congratulations on getting your program right the first time!<br>(But go back and make a mistake in your Java code to see how this part of the lab works.)</li>
 <li>Based on the differences between the expected output and your actual output, figure out what needs to be changed in your code.</li>
