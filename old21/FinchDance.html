@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab10B - CS 139</title>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="main">
+
+<div align="center">
+<font size="+1"><strong>
+    <a href="../index.html">CS 139</a>: Programming Fundamentals
+</strong></font>
+<br>
+<font size="+1">
+    <a href="http://www.jmu.edu/">James Madison University</a>, Spring 2014 Semester
+</font>
+<br>
+<br>
+<font size="+2" color="forestgreen"><strong>
+    Lab10B: Finch robot square dancing
+</strong></font>
+</div>
+
+<p style="float: right; padding: 10px; text-align: center;">
+<img src="finch.png" width="375">
+</p>
+
+<h3>Background</h3>
+
+<p>And now, the moment you've all been waiting for...ROBOTS! In today's lab, you will write code to make a <a href="http://www.finchrobot.com/">Finch robot</a> do a "square" dance.</p>
+
+<h3>Objectives</h3>
+
+<ul>
+<li><p>Implement an algorithm that uses repetition and conditionals.</p></li>
+<li><p>Collaborate with others to gain insight and solve a problem.</p></li>
+</ul>
+
+<h3>Key Terms</h3>
+
+<dl>
+<dt>classpath</dt>
+<dd>user-defined setting that tells Java where to look for classes</dd>
+</dl>
+
+<h3>Part 0: DrJava Settings</h3>
+
+<p>In order to connect to a Finch robot over USB, you'll need to add two Java libraries to your classpath.</p>
+
+<ol start="1">
+<li>
+    <p>In DrJava, go to Edit &gt; Preferences. Select "Resource Locations" on the left, and click the "Add" button.</p>
+</li>
+<li>
+    <p>Add the files <code>/opt/FinchJava/SourceFiles/finch.jar</code> and <code>/opt/FinchJava/SourceFiles/jnaerator-0.9.5.jar</code>.</p>
+</li>
+<li>
+    <p>Your DrJava preferences should now look like:</p> <img src="classpath.png" width="600">
+</li>
+</ol>
+
+<h3>Part 1: Hello, Finch!</h3>
+
+<p>The <code>/opt/FinchJava/SourceFiles/Code</code> directory contains dozens of Java programs that demonstrate the <a href="http://www.finchrobot.com/finch-hardware">Finch hardware</a>. Today we will focus on examples in the <code>simpleOutput</code> directory.</p>
+
+<ol start="1">
+<li>
+    <p>Download <a href="Dance.java"><img src="../icons/disk.png"> Dance.java</a> and type your name and today's date in the Javadoc comment.</p>
+</li>
+<li>
+    <p>If you are working with a partner, make sure your names are in separate <code>@author</code> tags.</p>
+</li>
+<li>
+    <p>Compile and run the provided code. Then modify it however you like. Be creative!</p>
+</li>
+<li>
+    <p>Skim the <a href="http://www.finchrobot.com/javadoc/edu/cmu/ri/createlab/terk/robot/finch/Finch.html">Finch API</a> documentation to see the complete list of methods you can call.</p>
+</li>
+</ol>
+
+<h3>Part 2: Square Dancing</h3>
+
+<p>Now that you have created your own dance moves, can you do the same dance as everyone else?</p>
+
+<ol start="4">
+<li>
+    <p>With your lab partner, write a program that performs the following dance pattern:</p>
+<pre>
+Move in a square pattern, full speed ahead, for 1 second each side.
+Move in a square pattern, full speed reverse, for 0.5 seconds each side.
+Repeat forever...
+</pre>
+</li>
+<li>
+    <p>When you are ready, bring your robot to the dance floor! Make modifications as needed.</p>
+</li>
+<li>
+    <p>See if you can make use of the sensors on the robot by calling methods like <code>isObstacle</code>.</p>
+</li>
+</ol>
+
+<p>Submit your final version of <kbd>Dance.java</kbd> via Canvas by the end of the day. (Each student should turn in their own copy.)</p>
+
+</div>
+</body>
+</html>
