@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab02 - CS 149</title>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="main">
+
+<div align="center">
+<font size="+1"><strong>
+    <a href="../index.html">CS 149</a>: Programming Fundamentals
+</strong></font>
+<br>
+<font size="+1">
+    <a href="http://www.jmu.edu/">James Madison University</a>, Fall 2016 Semester
+</font>
+<br>
+<br>
+<font size="+2" color="forestgreen"><strong>
+    Lab02: Robots counting rooms
+</strong></font>
+</div>
+
+<img src="gridrooms.png" style="float: right; padding: 10px"
+title="Picture of door space">
+
+<h3>Background</h3>
+
+<p>For this lab we will program a robot that has been dropped into a grid of square rooms. The walls of each room have been painted this way: the <b>N</b>orth wall is <b>N</b>eon, the <b>E</b>ast wall is <b>E</b>ggplant, the <b>S</b>outh wall is <b>S</b>andy, and the <b>W</b>est wall is <b>W</b>allnut. Walls between rooms have doors in them, but walls on the edge do not. The robot knows how to:</p>
+
+<ul>
+<li><b>Check</b> (<b>N</b> or <b>E</b> or <b>S</b> or <b>W</b>) to see if there is a door on that wall.</li>
+<li><b>Move</b> (<b>N</b> or <b>E</b> or <b>S</b> or <b>W</b>) to go one room over in that direction.</li>
+<li>Do basic math and remember things; whatever you can program.</li>
+</ul>
+
+<p>If you ask the robot to go through a wall that does not have a door, it isn't smart enough to know that it can't. So it will crash into the wall and damage itself.</p>
+
+<p>Note this lab is fairly open-ended. The point is to assess both (1) your problem-solving skills and (2) how much Java you already know. It's possible for you to spend hours on these activities, but you are not expected to do so.</p>
+
+<h3>Getting Started</h3>
+
+<p>Many of the lab assignments in this course involve multiple files, so we recommend you create a <code>Lab02</code> folder to save your work. If you haven't already, you should also create a top-level <code>CS149</code> folder to organize all your labs and other assignments for the semester. Download the following files into your <code>CS149/Lab02</code> folder:</p>
+
+<ul>
+<li><a href="DoorRoom.java">DoorRoom.java</a></li>
+<li><a href="Robot.java">Robot.java</a></li>
+<li><a href="Example.java">Example.java</a></li>
+</ul>
+
+<p>Figure out how to compile and run the Example program. (We will walk you through this process in DrJava during class.) You may use the Example code as a starting point, but do not modify the other two files.</p>
+
+<p><em>Submission:</em> At the end of class today, or by 11:00 PM if you would like more time, submit <u>one</u> of the Activity<i>N</i>.java files via Canvas. We won't be super formal in this lab. If we can tell what you are asking the robot to do, that's good enough for now.</p>
+
+<p><em>Collaboration:</em> You are encouraged to work with another student to complete this lab. Each of you should submit your own copy of the program. It's okay if your files are similar or identical, as long as both of your names are present at the top.</p>
+
+<h3>Activity 1: Simple Square</h3>
+
+<p>Download: <a href="Activity1.java">Activity1.java</a></p>
+
+<p>Suppose the robot is dropped into a square grid of rooms and starts in the north-west corner of the grid. Come up with an algorithm that the robot can use to figure out how many rooms are in the grid.</p>
+
+<ul>
+<li>An algorithm is a deterministic set of steps that does not require any outside information.</li>
+<li>Remember, your robot doesn't know how many squares there are in advance; if you refer to the size of the grid in your instructions to the robot, it won't work.</li>
+</ul>
+
+<p>Is there any size grid for which your algorithm does not work? How about on a 1-by-1, or a 1000-by-1000?</p>
+
+<p>In a 3-by-3 grid, how many times will the robot have to move through a door to run your algorithm? How about a 4-by-4? An <i>n</i>-by-<i>n</i>?</p>
+
+<p>Assume that we want to save on robot fuel. Can you make an algorithm that uses fewer moves for the same size grid?</p>
+
+<p>Once you have an algorithm you think is general (works for all grid sizes) and efficient (uses few moves), describe it at the top of Activity1.java by replacing the paragraph with the instructions. Don't forget to write your name(s) and today's date where indicated. Then implement as much of the algorithm as you can in the main method.</p>
+
+<h3>Activity 2: Simple Rectangular</h3>
+
+<p>Download: <a href="Activity2.java">Activity2.java</a></p>
+
+<p>Suppose the robot is dropped into a rectangular (not necessarily
+square) grid of rooms and starts in the north-west corner of the grid.
+Come up with an algorithm that the robot can use to figure out how many
+rooms are in the grid.</p>
+
+<p>Ask yourself the same questions as in Part 1 to make sure you have a general and efficient algorithm. Then complete the Activity2.java file.</p>
+
+<p>If your Part 1 algorithm also solves this problem as well as the Part 1 problem, you are welcome to use it again for Part 2.</p>
+
+<h3>Activity 3: Rectangular</h3>
+
+<p>Download: <a href="Activity3.java">Activity3.java</a></p>
+
+<p>Suppose the robot is dropped into a rectangular (not necessarily
+square) grid of rooms and might start in any arbitrary room in the grid.
+ Come up with an algorithm that the robot can use to figure out how many
+ rooms are in the grid.</p>
+
+<p>Continue the same process as before to refine your algorithm. Then complete the Activity3.java file. Since the number of moves will probably depend on the starting location of the robot, just tell us the largest number you could see (assuming the robot starts in the worst possible room).</p>
+
+<p>If your Part 2 algorithm also solves this problem as well as the Part 2 problem, you are welcome to use it again for Part 3.</p>
+
+<h3>Activity 4: Stranger Grids</h3>
+
+<p>Download: <a href="Activity4.java">Activity4.java</a></p>
+
+<p>See how general you can make your algorithm. Can you get it to work
+on diamond-shaped grids of rooms? Grids with more complicated outlines?
+Grids where some rooms are missing in the middle? Grids where some walls
+that should have doors don't have doors? Arbitrary mazes of rooms?</p>
+
+<p>Implement the most general algorithm you can in Activity4.java. We are not looking for any particular functionality in Part 4. If you can't get any more complicated grids than in Part 3, submit Part 3 (or 2 or 1) instead, and we'll assume that's as much as you could do in the time we gave you.</p>
+
+<h3>Acknowledgements</h3>
+
+<p>This lab is based on materials developed by Luther Tychonievich, Mark Sherriff, and Ryan Layer. Adapted by Chris Mayfield and licensed under <a href="http://creativecommons.org/licenses/by-nc-sa/3.0/">CC BY-NC-SA 3.0</a>.</p>
+
+</div>
+</body>
+</html>
