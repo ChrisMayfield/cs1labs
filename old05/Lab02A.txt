@@ -1,0 +1,47 @@
+CS 139 - Lab02A Worksheet
+
+Name:
+
+
+Step 1.
+Where does the answer get stored? What happens when you click it?
+
+
+What happens when you click the check box next to the answer?
+
+
+Step 2.
+How can you get the sprite to say the answer from Step 1?
+
+
+How can you make the message disappear after four seconds?
+
+
+Step 3.
+How can you get the sprite to say "Hello, _____" using your answer? (There should be a space between the comma and the answer value.)
+
+
+How can you output "I think _____ is cool!" using your answer?
+
+
+Step 4.
+How do you ask the user for their first and last name separately?
+
+
+How can you display them back to the user in reverse order?
+
+
+Step 5.
+How do you perform multiplication in Scratch?
+
+
+Raise your hand when finished and demonstrate your script to the instructor.
+
+
+Step 6.
+Write a short description of your project below (2-3 complete sentences).
+
+
+Step 7.
+Write a short description of your project below (2-3 complete sentences).
+

@@ -1,0 +1,35 @@
+CS 139 - Lab01A Worksheet
+
+Name:
+
+
+1. How many puzzles did you complete?  Which one were you the most proud of
+solving, and why?
+
+
+
+
+2. What is one thing that gave you some difficulty?  How did you overcome it?
+
+
+
+
+3. For one of the puzzles that require a repeat-block and an if-block, paste
+your solution below in JavaScript format. (Click the "Show Code" button.)
+
+
+
+
+4. For each line in your code above, identify the programming fundamentals
+that are being used. (i.e., I/O, method, decision, loop, object, array)
+
+
+
+
+5. What is the basic difference between a decision and a loop?
+
+
+
+
+6. Why do the "move forward" and "turn left/right" blocks represent methods?
+

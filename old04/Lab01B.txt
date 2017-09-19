@@ -1,0 +1,36 @@
+CS 139 - Lab01B Worksheet
+
+Name:
+
+
+1. How would you answer the question "what is Scratch" to a relative or friend?
+(Please write 2-3 complete sentences.)
+
+
+
+
+2. What is the difference between a sprite and a sprite's costume?
+
+
+
+
+3. When might you want to add a new sprite instead of a costume?
+
+
+
+
+4. How many blocks do you typically add before testing them out?
+How often should you stop "programming" and see how it works?
+
+
+
+
+5. How can you test small portions of your Scratch code after it gets relatively
+long or complex?
+
+
+
+
+6. Think back to your reading of Sections 1.6 and 1.7 of the book. Which aspects
+of the programming process apply to Scratch? Which ones do not?
+

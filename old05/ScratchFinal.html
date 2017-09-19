@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab02A - CS 139</title>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="main">
+
+<div align="center">
+<font size="+1"><strong>
+    <a href="../index.html">CS 139</a>: Programming Fundamentals
+</strong></font>
+<br>
+<font size="+1">
+    <a href="http://www.jmu.edu/">James Madison University</a>, Spring 2014 Semester
+</font>
+<br>
+<br>
+<font size="+2" color="forestgreen"><strong>
+    Lab02A: I/O, variables, operators
+</strong></font>
+</div>
+
+<h3>Background</h3>
+
+<p>This final Scratch lab will introduce more advanced programming constructs
+that allow you to manipulate numbers and text. We will also explore several
+ideas and techniques for your self-directed programming assignment due later
+this week.</p>
+
+<img src="scratch-guess.png" style="float: right; padding: 10px"
+     title="Credit: Mike Leishman, kidsprogramming.pbworks.com">
+
+<h3>Objectives</h3>
+
+<ul>
+<li><p>Understand the process of asking for input and displaying output.</p></li>
+<li><p>Be able to describe what a variable is and why variables are useful.</p></li>
+<li><p>Become familiar with arithmetic operators and string concatenation.</p></li>
+</ul>
+
+<h3>Key Terms</h3>
+
+<dl>
+<dt>I/O</dt>
+<dd>input/output, or the communication between a program and its user</dd>
+<dt>Variable</dt>
+<dd>a descriptive name associated with a value or storage location</dd>
+<dt>Operator</dt>
+<dd>a symbol that represents a common arithmetic or logic function</dd>
+</dl>
+
+<h3>Submission</h3>
+
+<ul>
+<li>
+    <p>Download the <a href="Lab02A.txt"><img src="../icons/disk.png">
+    Lab02A.txt</a> worksheet and open/edit the file <b>as plain text</b>.</p>
+</li>
+<li>
+    <p>Submit your completed worksheet via
+    <a href="https://canvas.jmu.edu/"> <img src="../icons/world.png">
+    canvas.jmu.edu</a> by the end of the day.</p>
+</li>
+</ul>
+
+<h3>References</h3>
+
+<p>This lab is adapted from the
+<a href="http://scratched.media.mit.edu/resources/scratch-curriculum-guide-draft">
+Scratch Curriculum Guide</a> v20110923, released under the Creative Commons
+Attribution-ShareAlike license.</p>
+
+<p>&nbsp;</p><hr>
+
+<p align="center"><font size="+1" color="blue"><strong>
+Part 1: Basic Conversion
+</strong></font></p>
+
+<p><em>As we transition to Java later this week, several of the example programs
+we will do involve converting values of one format into another. The purpose of
+this exercise is to write a small "conversion" program in Scratch.</em></p>
+
+<p>
+<b>Step 1.</b>
+Begin with an empty Scratch project and click on the "Sensing" palette. Drag an
+"ask" block onto the scripts area. Click on the script and answer the question
+that the cat asks you.
+</p>
+<ul>
+    <li>Where does the answer get stored? What happens when you click it?</li>
+    <p>&nbsp;</p>
+    <li>What happens when you click the check box next to the answer?</li>
+    <p>&nbsp;</p>
+</ul>
+
+<p>
+<b>Step 2.</b>
+Now click the "Looks" palette and snap a "say" block under the "ask" block.
+</p>
+<ul>
+    <li>How can you get the sprite to say the answer from Step 1?</li>
+    <p>&nbsp;</p>
+    <li>How can you make the message disappear after four seconds?</li>
+    <p>&nbsp;</p>
+</ul>
+
+<p>
+<b>Step 3.</b>
+Find the "join" block on the "Operators" palette.
+</p>
+<ul>
+    <li>How can you get the sprite to say "Hello, _____" using your answer?
+    (There should be a space between the comma and the answer value.)</li>
+    <p>&nbsp;</p>
+    <li>How can you output "I think _____ is cool!" using your answer?
+    <p>&nbsp;</p>
+</ul>
+
+<p><em>Have you discovered the "Tips" menu? You may want to refer to the
+"How To" and "Blocks" reference pages linked from that sidebar.</em></p>
+<p>&nbsp;</p>
+
+<p>
+<b>Step 4.</b>
+Variables allow you to save values for use in blocks with rounded or rectangular
+holes (which correspond to numbers and text, respectively).
+</p>
+<ul>
+    <li>How do you ask the user for their first and last name separately?</li>
+    <p>&nbsp;</p>
+    <li>How can you display them back to the user in reverse order?</li>
+    <p>&nbsp;</p>
+</ul>
+
+<p>
+<b>Step 5.</b>
+Write a script that asks the user for a number of inches, converts that value
+into centimeters (1 in = 2.54 cm), and displays the result.
+</p>
+<ul>
+    <li>How do you perform multiplication in Scratch?</li>
+    <p>&nbsp;</p>
+    <li>Raise your hand when finished and demonstrate your script to the instructor.</li>
+    <p>&nbsp;</p>
+</ul>
+
+
+<p>&nbsp;</p><hr>
+
+<p align="center"><font size="+1" color="blue"><strong>
+Part 2: Squares &amp; Circles
+</strong></font></p>
+
+<p>
+<b>Step 6.</b>
+You have been hired to design a new marketing campaign for JMU sports. The
+coaches would like something with gold squares and purple circles. Refer to
+the <a href="Shapes.pdf"><img src="../icons/pdf.png"> Shapes handout</a>
+for ideas. And try to incorporate the
+<a href="http://en.wikipedia.org/wiki/Duke_Dog">Duke Dog</a>
+into your project somehow.
+</p>
+<ul>
+    <li>Spend at least 15 minutes designing a project you can show to the class.</li>
+    <p>&nbsp;</p>
+    <li>Raise your hand when finished and demonstrate your work to the instructor.</li>
+    <p>&nbsp;</p>
+    <li>Write a short description of your project below (2-3 complete sentences).</li>
+    <p>&nbsp;</p>
+</ul>
+
+
+<p>&nbsp;</p><hr>
+
+<p align="center"><font size="+1" color="blue"><strong>
+Part 3: Automatic Drawing
+</strong></font></p>
+
+<p>
+<b>Step 7.</b>
+In Scratch, each sprite has a "pen" it can draw with as it moves around the
+stage (see the "Pen" palette). This idea is known as
+<a href="http://en.wikipedia.org/wiki/Turtle_graphics">turtle graphics</a> and
+enables you to program your own drawings. For a completely random example, see
+the <a href="Drawing.pdf"><img src="../icons/pdf.png"> Drawing handout</a>.
+Figure out how to draw something simple, like a geometric shape or repeating pattern.
+</p>
+<ul>
+    <li>Spend at least 15 minutes designing a project you can show to the class.</li>
+    <p>&nbsp;</p>
+    <li>Raise your hand when finished and demonstrate your work to the instructor.</li>
+    <p>&nbsp;</p>
+    <li>Write a short description of your project below (2-3 complete sentences).</li>
+    <p>&nbsp;</p>
+</ul>
+
+<p><em>
+Again, you should check out the "Tips" menu -- particularly the one about the
+pen blocks.
+</em></p>
+
+</div>
+</body>
+</html>
