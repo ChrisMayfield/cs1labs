@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab06B - CS 139</title>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="main">
+
+<div align="center">
+<font size="+1"><strong>
+    <a href="../index.html">CS 139</a>: Programming Fundamentals
+</strong></font>
+<br>
+<font size="+1">
+    <a href="http://www.jmu.edu/">James Madison University</a>, Spring 2014 Semester
+</font>
+<br>
+<br>
+<font size="+2" color="forestgreen"><strong>
+    Lab06B: Handling bad input values
+</strong></font>
+</div>
+
+<p style="float: right; padding: 10px; text-align: center;">
+<img src="validation.png" width="400" title="Data Validation">
+<br>Image source: <a href="https://www.devexpress.com/products/net/controls/asp/grid/editors.xml">DevExpress</a></p>
+
+<h3>Background</h3>
+
+<p>There are a number of conditions that may cause a program to fail. When we can anticipate such conditions, we use structures such as if statements to prevent those conditions from causing a run-time error or invalid results. In today's lab, we will use the Scanner methods <code>hasNextInt</code> and <code>hasNextDouble</code> to condition our reading of the input.</p>
+
+<h3>Objectives</h3>
+
+<ul>
+<li><p>Sign up for CodingBat and solve problems.</p></li>
+<li><p>Use if-else statements to validate user input.</p></li>
+</ul>
+
+<h3>Key Terms</h3>
+<dl>
+<dt>runtime stack</dt>
+<dd>memory that keeps track of each method call and where to go after each method returns</dd>
+<dt>stack trace</dt>
+<dd>a list of method calls that were in the "runtime stack" at the point the program failed</dd>
+<dt>hasNext methods</dt>
+<dd>Scanner methods that return true if the next part of the input matches the expected data type</dd>
+</dl>
+
+<h3>Part 1: Hello, CodingBat!</h3>
+
+<p>CodingBat is a free site of live problems to build skill in Java and/or Python. It was created by <a href="http://www-cs-faculty.stanford.edu/~nick/">Nick Parlante</a>, who is computer science lecturer at Stanford. The name "CodingBat" was based on the Greek word "bat" meaning "this domain was available" (or so <a href="http://codingbat.com/about.html">they say</a>).</p>
+
+<ol start="1">
+<li>
+    <p>Go to <a href="http://codingbat.com">codingbat.com</a> and create an account (click the link on the upper right).
+    <br><font color="red"><b>Please use your JMU email when setting up your account. Also enter your name as shown (last, first).</b></font></p>
+</li>
+<li>
+    <p>After logging in, click the "prefs" link (upper right) and "share to" <kbd>mayfiecs@jmu.edu</kbd> so you will get credit.</p>
+</li>
+<li>
+    <p>In Warmup-1 (on the Java side), do problems <code>sumDouble</code> and <code>makes10</code> until you pass all of the test cases.</p>
+</li>
+</ol>
+
+<p>We will use CodingBat in subsequent labs, and you are encouraged to work on CodingBat problems at any time.</p>
+
+<h3>Part 2: Dividing by zero</h3>
+
+<p>Download the <a href="Lab06B.txt">Lab06B.txt</a> worksheet and open it with a text editor. Answer the questions below as you work through the lab. To get started, download <a href="Divide0.java">Divide0.java</a> and open it in DrJava.</p>
+
+<ol start="4">
+<li>
+    <p>Compile and run <kbd>Divide0</kbd>. Use the first operand of 10 and the second operand of 3. <em>What is output?</em></p>
+</li>
+<li>
+    <p>Execute your program again, this time using 10 and 0 as operands. <em>What error message do you see?</em></p>
+</li>
+<li>
+    <p>This error is an example of a run-time error. The message tells you what error you had and where it occurred.</p>
+</li>
+<li>
+    <p>To prevent this error, we can use an if-else structure to carry out the division only if the divisor is not 0. We can use a default value if we try to divide by zero.</p>
+</li>
+<li>
+    <p>In your program, create an if statement that will test the divisor for zero before carrying out the division operation. If the divisor is zero, print an error message: <pre><code>System.err.println("Cannot divide by zero");</code></pre> If the divisor is not zero, carry out the division as is currently displayed. You should only condition the division operation, not the rest of the program.</p>
+</li>
+<li>
+    <p>Compile your program and use the values of 10 and 0. <em>What error message do you see?</em></p>
+</li>
+<li>
+    <p><em>Why do you get this message?</em></p>
+</li>
+<li>
+    <p>Correct this condition using another if/else structure. Recompile your program and test with 10 and 0. <em>What output do you get?</em></p>
+</li>
+<li>
+    <p>You have two if/else statements that should look similar. <em>What is the conditional expression that you are using in both?</em></p>
+</li>
+<li>
+    <p>When you have two statements that are conditioned by the same expression, you can combine those if/else statements into one with a block of statements. Combine these two if/else conditions. Compile and execute your program. You need print only one error message for the divide by zero condition. <em>Copy and paste your if/else structure into your worksheet.</em></p>
+</li>
+</ol>
+
+<h3>Part 3: Bad input values</h3>
+
+<p>Download <a href="BadInput.java">BadInput.java</a> and open it in DrJava.</p>
+
+<ol start="14">
+<li>
+    <p>Compile and run <kbd>BadInput</kbd>. Use the correct type of values expected.</p>
+</li>
+<li>
+    <p>Now, run this program again and enter the value "x" when it asks for the integer value.</p>
+</li>
+<li>
+    <p><em>What error message do you see?</em></p>
+</li>
+<li>
+    <p>We can end the program "elegantly" rather than crashing as before. The Scanner method <code>hasNextInt</code> returns a boolean value. If the input stream does not contain an integer as the next token, the return value is false. If the input stream contains an integer as the next token, the return value is true. We can use this method to read a value only when it is of the correct type.</p>
+</li>
+<li>
+    <p>Add an if/else statement around your first read statement. The condition should use the Scanner object's <code>hasNextInt</code> method. If the condition is true, read the value using the normal <code>nextInt</code> method. If the condition is false, read the value using the <code>next</code> method and print the error message <kbd>"Bad value "</kbd> followed by the value that was entered.</p>
+</li>
+<li>
+    <p>Do the same thing for the second operand.</p>
+</li>
+<li>
+    <p><em>Why is it better to leave these as two separate if/else statements?</em></p>
+</li>
+<li>
+    <p>Compile your program. <em>What error message do you see?</em></p>
+</li>
+<li>
+    <p>This error is caused because you set the value of the operands only in the case where there is a good value. There are two ways to handle a bad value. One is to simply skip all remaining statements and exit the program. Another is to use a default value.</p>
+</li>
+<li>
+    <p>We will set the operands using a constant in the Integer class. The Integer class has services that we can use with integer data. It also has a constant <code>Integer.MAX_VALUE</code> which is the largest number that and integer variable can hold. In your code, set either operand with a bad value to <code>Integer.MAX_VALUE</code>.</p>
+</li>
+<li>
+    <p>Compile and test your code using normal input as well as input with bad values (such as character data). <em>Copy and paste one of your if/else structures into your worksheet.</em></p>
+</li>
+</ol>
+
+<p>Submit your completed <kbd>Lab06B.txt</kbd> file via Canvas by the end of the day.</p>
+
+</div>
+</body>
+</html>

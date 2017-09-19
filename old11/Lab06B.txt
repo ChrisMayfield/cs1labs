@@ -1,0 +1,42 @@
+CS 139 - Lab06B Worksheet
+
+Name:
+
+
+==== Divide0.java Questions ====
+
+4. What is output?
+
+
+5. What error message do you see?
+
+
+9. What error message do you see?
+
+
+10. Why do you get this message?
+
+
+11. What output do you get?
+
+
+12. What is the conditional expression that you are using in both?
+
+
+13. Copy and paste your if/else structure into your worksheet.
+
+
+
+==== BadInput.java Questions ====
+
+16. What error message do you see?
+
+
+20. Why is it better to leave these as two separate if/else statements?
+
+
+21. What error message do you see?
+
+
+24. Copy and paste one of your if/else structures into your worksheet.
+

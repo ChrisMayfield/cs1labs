@@ -1,0 +1,238 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+    <title>Lab10B - CS 139</title>
+    <style type="text/css">
+        A:link    {text-decoration: none}
+        A:visited {text-decoration: none}
+        A:active  {text-decoration: none}
+        A:hover   {text-decoration: underline}
+    </style>
+  </head>
+  <body>
+    <p align="center"><font color="blue" size="+1"><strong>
+        CS 139 Algorithm Development<br>
+        Lab10B: Program Design and Structure
+    </strong></font></p>
+    <h3>Objectives</h3>
+    <em>Students will be able to:</em>
+    <ul>
+      <li>interpret a program structure diagram</li>
+      <li>write a program skeleton for a diagram</li>
+      <li>create a structure diagram for a problem</li>
+    </ul>
+    <h3>Key Terms</h3>
+    <ul>
+      <li>modularity</li>
+      <li>cohesion</li>
+      <li>coupling</li>
+      <li>structure diagram<br>
+      </li>
+    </ul>
+    <h3>Submission</h3>
+    <ol>
+      <li>Write your answers in the provided
+      <a href="Lab10B.txt">Lab10B.txt</a> Worksheet and submit this
+      file via <a href="https://blackboard.jmu.edu/">Blackboard</a>.</li>
+    </ol>
+    <h3>Background</h3>
+    Modern computer software is very complex. A typical application that
+    you use might consist of tens of millions of lines of computer code.
+    Applications of this complexity cannot be written successfully
+    without first creating a detailed design for the software that
+    identifies modules and their interactions.<br>
+    <br>
+    At the individual program level, we also employ design techniques to
+    help us decompose a program into efficient subprogram modules (which
+    we call methods in the case of Java programs).
+    The goals of design are:<br>
+    <ul>
+      <li>modularity:&nbsp; isolate different functions (such as
+        input, calculation, output) from one another by putting them in
+        separate methods<br>
+      </li>
+      <li>high cohesion:&nbsp; ensure that each method has a
+        single purpose that can be focused on<br>
+      </li>
+      <li>low coupling:&nbsp; minimize the amount of data that
+        must be transferred between methods<br>
+      </li>
+    </ul>
+    A <em>structure diagram</em> is a simple design tool that helps us to
+    visualize program design. It shows the modules (or methods) that make
+    up a program, and the arguments and return values by which data is
+    transferred between them. Take a look at the following program and
+    structure diagram. Each method of the program appears as a module
+    (box) in the diagram. Each argument appears as a data-flow from the
+    main module, and each return value appears as a data flow to the
+    main module. <br>
+    <br>
+    <table border="1" cellpadding="2" cellspacing="2">
+      <tbody>
+        <tr>
+          <td align="center" valign="top">Structure Diagram<br>
+          </td>
+          <td align="center" valign="top">Program<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">
+              <img src="Diagram1.jpg">
+          </td>
+          <td valign="top">
+<pre>
+import java.util.*;
+
+public class Interest {
+
+  public static void main(String[] args) {
+    double balance;
+    double rate;
+    double monthlyInterest;
+
+    balance = getInput("Enter the loan balance: ");
+    rate = getInput("Enter the annual interest rate % (0-100): ");
+    monthlyInterest = calculateInterest(balance, rate);
+    showResult(monthlyInterest);
+  }
+
+  public static double getInput(String prompt) {
+    double valueIn;
+    Scanner keyboard = new Scanner(System.in);
+    System.out.println(prompt);
+    valueIn = keyboard.nextDouble();
+    return valueIn;
+  }
+
+  public static double calculateInterest(double balance, double rate) {
+    double interest;
+    interest = (rate / 100.0 / 12.0) * balance;
+    return interest;
+  }
+
+  public static void showResult(double interest) {
+    System.out.println("Monthly interest: " + interest);
+  }
+
+}
+</pre>
+            </td>
+        </tr>
+      </tbody>
+    </table>
+    <br>
+    <p>&nbsp;</p>
+    <hr>
+    <p align="center"><font color="blue" size="+1"><strong> Part 1: <font
+            size="+1">Refactoring</font> </strong></font></p>
+    <p>
+      <a href="http://en.wikipedia.org/wiki/Code_refactoring">Refactoring</a>
+      is the process of restructuring code to improve its style and organization
+      without changing its runtime behavior. Examine the following program.
+      It is a <em>monolithic</em> program, i.e., one with no structure.
+      The structure diagram alongside the program shows an improved
+      design, with several modules.
+    </p>
+    <p>
+      1. For each line of code in the program, decide which module that
+      line of code should belong to in the improved design. In your answer
+      worksheet, list the lines that belong to each module (A, B, C, D).
+      You may describe ranges of lines like this: 1-5, 21, 27-30.
+    </p>
+    <table border="1" cellpadding="2" cellspacing="2">
+      <tbody>
+        <tr>
+          <td align="center" valign="top">Original Code<br>
+          </td>
+          <td align="center" valign="top">Improved Design<br>
+          </td>
+        </tr>
+        <tr>
+          <td valign="top">
+<pre>
+ 1.  import java.util.Scanner;
+ 2.
+ 3.  public class CostPerSqFt {
+ 4.
+ 5.    public static void main(String[] args) {
+ 6.      final double SENTINEL = 0.0;
+ 7.      double houseSize;
+ 8.      double costPerSqFt;
+ 9.      double totalCostPerSqFt;
+10.      double averageCostPerSqFt;
+11.      int houseCost;
+12.      int houseCount;
+13.      Scanner keyboard;
+14.
+15.      keyboard = new Scanner(System.in);
+16.      totalCostPerSqFt = 0.0;
+17.      houseCount = 0;
+18.
+19.      System.out.println("Enter the square feet and price for each house.");
+20.      System.out.println("Enter " + SENTINEL + " for house size to quit.");
+21.
+22.      do {
+23.        System.out.print("Size in square feet: ");
+24.        houseSize = keyboard.nextDouble();
+25.        System.out.print("Cost in whole dollars: ");
+26.        houseCost = keyboard.nextInt();
+27.
+28.        if (houseSize > 0.0) {
+29.          costPerSqFt = houseCost / houseSize;
+30.          totalCostPerSqFt = totalCostPerSqFt = costPerSqFt;
+31.          houseCount = houseCount + 1;
+32.        }
+33.      } while (houseSize != SENTINEL);
+34.
+35.      if (houseCount > 0) {
+36.        averageCostPerSqFt = totalCostPerSqFt / houseCount;
+37.      }
+38.      else {
+39.        averageCostPerSqFt = 0.0;
+40.      }
+41.      System.out.println("Number of Houses: " + houseCount);
+42.      System.out.println("Average cost per square foot: " + averageCostPerSqFt);
+43.    }
+44.
+45.  }
+</pre>
+          </td>
+          <td valign="top">
+              <img src="Diagram2.jpg"><br>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <p align="center"><br>
+      <font color="blue" size="+1"><strong></strong></font></p>
+    <hr size="2" width="100%">
+    <p align="center"><font color="blue" size="+1"><strong>Part 2: </strong></font>
+    <font color="blue" size="+1"><strong>Creating a Program Skeleton</strong></font></p>
+    2. Given the structure diagram below, write all of the method headers
+    (using the argument and parameter names shown in the diagram).
+    Assume that names ending in _s are string values, otherwise they are
+    int's.<br>
+    <br>
+    3. Begin the coding for the main method by writing a call to each of the
+    four helper methods.<br>
+    <br>
+    <img alt="Structure Diagram 3" src="Diagram3.jpg"
+      height="266" width="576"><br>
+    <p>&nbsp;</p>
+    <hr>
+    <p align="center"><font color="blue" size="+1"><strong> Part 3:
+          Create Your Own Design </strong></font></p>
+    4. Develop a structure diagram (on paper) for a program to solve the
+    following problem. Then write the program skeleton (method headers)
+    as in Part 2, and the complete main method.<br>
+    <blockquote><em>
+    The Password Generator program will generate a unique password using
+    random characters. The user will input a password length and a
+    string of characters from which the password can be composed. The
+    program will select the required number of characters at random to
+    form a password, and then display the password.
+    </em></blockquote>
+    <br>
+  </body>
+</html>

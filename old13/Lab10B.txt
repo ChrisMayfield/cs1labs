@@ -1,0 +1,36 @@
+﻿CS139 Algorithm Development
+Lab10B Worksheet
+
+Name:
+
+==== Part 1 ====
+
+Module A:
+
+Module B:
+
+Module C:
+
+Module D:
+
+
+==== Part 2 ====
+
+2. Method headers:
+
+
+
+
+
+
+3. Main method:
+
+
+
+
+
+
+
+==== Part 3 ====
+
+4. Program Skeleton:

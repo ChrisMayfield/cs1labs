@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab10A - CS 139</title>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="main">
+
+<div align="center">
+<font size="+1"><strong>
+    <a href="../index.html">CS 139</a>: Programming Fundamentals
+</strong></font>
+<br>
+<font size="+1">
+    <a href="http://www.jmu.edu/">James Madison University</a>, Spring 2014 Semester
+</font>
+<br>
+<br>
+<font size="+2" color="forestgreen"><strong>
+    Lab10A: Testing and code coverage
+</strong></font>
+</div>
+
+<p style="float: right; padding: 10px; text-align: center;">
+<img src="webcat-cover.png" width="375" title="Web-CAT coverage analysis">
+</p>
+
+<h3>Background</h3>
+
+<p>For this lab, you will write test methods and submit them to Web-CAT one at a time for evaluation.</p>
+
+<h3>Objectives</h3>
+
+<ul>
+<li><p>Write tests to fully cover decisions and loops.</p></li>
+<li><p>Practice interpreting results from Web-CAT.</p></li>
+</ul>
+
+<h3>Key Terms</h3>
+
+<dl>
+<dt>code coverage</dt>
+<dd>the percentage of source code that is completely exercised during testing</dd>
+<dt>white-box testing</dt>
+<dd>writing test cases to exercise specific program statements (i.e., with full access to the source code)</dd>
+<dt>black-box testing</dt>
+<dd>writing test cases to validate program specifications (i.e., testing the final output against the input)</dd>
+</dl>
+
+<h3>Getting Started</h3>
+
+<p>As a warm-up for today's lab, complete the following problems. Remember to log into CodingBat first so you will receive credit.</p>
+
+<ul>
+<li><p><a href="http://codingbat.com/prob/p165312">String-2 doubleChar</a></p></li>
+<li><p><a href="http://codingbat.com/prob/p186753">Logic-2 roundSum</a></p></li>
+</ul>
+
+<p>Then download <a href="Coverage.java"><img src="../icons/disk.png"> Coverage.java</a> and create a corresponding <kbd>Lab10ATest.java</kbd> in the same folder. Add the following test method to cover the <code>public class Coverage</code> definition:</p>
+
+<pre>
+public static void testClass() {
+    new Lab10A();
+}
+</pre>
+
+<p>Review the <a href="../wk-08/Act08A-WebCAT-PA3.pdf">Act08A slides</a> (Web-CAT and PA3 Hints) for more background information.</p>
+
+<h3><kbd>if</kbd> Statements</h3>
+
+<p>Testing an IF statement requires that every possible outcome be exercised in the test code.</p>
+
+<ul>
+<li>For a simple IF or IF-ELSE statement, two tests are required: one positive (i.e., a true condition), one negative (i.e., a false condition). In the following code, the test cases might be <code>x = 2</code> (negative) and <code>x = 4</code> (positive):
+<pre>
+if (x &gt;= 3) {
+    ...
+} else {
+    ...
+}
+</pre>
+</li>
+<li>For a nested IF statement, including those written using "IF ELSE", one test is required for each possible outcome, including the default outcome. (A default value test is required whether or not the final <i>else</i> is present). In the following code, the test cases might be <code>x = -1</code>, <code>x = 0</code>, <code>x = 10</code>, and <code>x = 101</code>:
+<pre>
+if (x &lt; 0) {
+    ...
+} else if (x == 0) {
+    ...
+} else if (x &lt; 100) {
+    ...
+} else {
+    ...
+}
+</pre>
+</li>
+</ul>
+
+<ol start="1">
+<li><p>Examine the code in <tt>Lab10A.ifMethod()</tt>, then write test cases in <tt>Lab10ATest.testIfMethod()</tt> that will cover every possibility for each of the if statements.</p>
+</li>
+<li><p>After you've finished this step, zip Lab10A.java and Lab10ATest.java, submit the zip file to Web-CAT, and then examine the code for Lab10A.ifMethod() on Web-CAT to ensure that it was fully covered. Any red lines indicate a lack of coverage. Revise your tests and resubmit if necessary.</p>
+</li>
+</ol>
+
+<h3><kbd>switch</kbd> Statements</h3>
+
+<p>Testing a SWITCH statement requires that every case be examined, including the default case.</p>
+
+<ul>
+<li>The following SWITCH statement has five branches including the default. Sample test cases might include <code>a = 1</code>, <code>a = 2</code>, <code>a = 11</code>, <code>a = 12</code>, and <code>a = 5</code>:
+<pre>
+switch (a) {
+    case 1:
+        answer = 100;
+        break;
+    case 2:
+        answer = 200;
+        break;
+    case 11:
+        answer = 300;
+        break;
+    case 12:
+        answer = 400;
+        break;
+    default:
+        answer = 500;
+        break;
+}
+</pre>
+</li>
+</ul>
+
+<ol start="3">
+<li><p>Examine the code in <tt>Lab10A.caseMethod()</tt>, then write test cases in <tt>Lab10ATest.testCaseMethod()</tt> that will cover every possibility.</p>
+</li>
+<li><p>After you've finished this step, zip Lab10A.java and Lab10ATest.java, submit the zip file to Web-CAT, and then examine the code for Lab10A.caseMethod() on Web-CAT to ensure that it was fully covered. Any red lines indicate a lack of coverage. Revise your tests and resubmit if necessary.</p>
+</li>
+</ol>
+
+<h3><kbd>while</kbd> / <kbd>for</kbd> Loops</h3>
+
+<p>When testing a loop, provide test data that will execute a varying number of iterations, including (if possible) zero iterations, one iteration only, and multiple iterations.</p>
+
+<ul>
+<li>The following WHILE loop computes the greatest common divisor of <tt>a</tt> and <tt>b</tt>. Sample test cases for zero, one, and many iterations include <code>(a = 3, b = 3)</code>, <code>(a = 2, b = 1)</code>, and <code>(a = 81, b = 54)</code>.
+<pre>
+while (a != b) {
+    if (a &gt; b) {
+        a = a - b;
+    } else {
+        b = b - a;
+    }
+}
+</pre>
+</li>
+</ul>
+
+<ol start="5">
+<li><p>Examine the code in <tt>Lab10A.loopMethod()</tt>, then write test cases in <tt>Lab10ATest.testLoopMethod()</tt> that will execute the loop zero, one, and multiple times. Also make sure that your test cases execute each branch of the if statement included in the loop.</p>
+</li>
+<li><p>After you've finished this step, zip Lab10A.java and Lab10ATest.java, submit the zip file to Web-CAT, and then examine the code for Lab10A.loopMethod() on Web-CAT to ensure that it was fully covered. Any red lines indicate a lack of coverage. Revise your tests and resubmit if necessary.</p>
+</li>
+</ol>
+
+<h3>Black Box Testing <font color="darkgreen">&nbsp;(Extra Credit)</font></h3>
+
+<p>It's also necessary to test code according to its specifications (i.e., what it's supposed to do) rather than how it works inside. Specification-based testing is also called black-box testing, since testing is based on documentation only and the inside of the code either can't be seen or is ignored. This type of testing requires that every possible scenario described in the documentation for the code be examined with one or more test cases. Black-box testing also entails trying to "break" the code by creating test cases that the programmers might not have foreseen.</p>
+
+<ol start="7">
+<li><p>The documentation for the method squareRoot() in Lab10A.java explains its purpose. Create a variety of test cases for this method in <tt>Lab10ATest.testSquareRoot()</tt>, ensuring that you cover every possibility. Also try to break the method with weird test cases.</p>
+<p>Remember that this method promises only limited precision. So, for example, the square root of 4.0 won't necessarily be 2.0, but the absolute value of the difference between the two should be within the stated precision. Absolute value can be computed with the function Math.abs(). You should use the TestCase method assertTrue() rather than assertEquals() to test that the absolute value is less than or equal to the stated precision:</p>
+<pre>
+assertTrue("...error message...", Math.abs(expected - actual) &lt;= PRECISION);
+</pre>
+</li>
+<li><p>After you've finished this step, zip Lab10A.java and Lab10ATest.java, submit the zip file to Web-CAT, and then examine the code for Lab10A.squareRoot() on Web-CAT to ensure that it was fully covered. Any red lines indicate a lack of coverage. Revise your tests and resubmit if necessary.</p>
+</li>
+</ol>
+
+</div>
+</body>
+</html>
