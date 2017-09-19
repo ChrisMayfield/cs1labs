@@ -1,0 +1,27 @@
+PRINTING A DOCUMENT WITH TWO LINES:
+CS149 is
+super fun.
+
+PRINTING AN EMPTY DOCUMENT:
+
+REMOVING LINE 0:
+super fun.
+
+ADDING TWO MORE LINES:
+super fun.
+sooooooper fun
+fun.
+
+LONGEST LINE:
+sooooooper fun
+
+PRINTING A COPY OF THE DOCUMENT:
+super fun.
+sooooooper fun
+fun.
+
+THE COPY IS EQUAL TO THE ORIGINAL?
+true
+
+THE COPY IS EQUAL TO AN EMPTY DOCUMENT?
+false

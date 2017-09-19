@@ -1,0 +1,20 @@
+CS 149 - Lab00 Worksheet
+
+Name:
+
+
+1. Briefly summarize the basic concepts you learned from this tutorial.
+
+
+
+2. What is one thing that gave you some difficulty? How did you overcome it?
+
+
+
+3. Did you install the JDK and DrJava on your own computer? All three steps?
+
+
+
+4. In the space below, write a Java program that shows what you have learned.
+It can be simple like the "Hello World" example or more advanced if you like.
+

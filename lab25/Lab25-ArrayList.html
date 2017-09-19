@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab25 - CS 149</title>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+    <style type="text/css">
+    pre {color: forestgreen;}
+    kbd {color: forestgreen;}
+    </style>
+</head>
+<body>
+<div class="main">
+
+<div align="center">
+<font size="+1"><strong>
+    <a href="../index.html">CS 149</a>: Programming Fundamentals
+</strong></font>
+<br>
+<font size="+1">
+    <a href="http://www.jmu.edu/">James Madison University</a>, Spring 2017 Semester
+</font>
+<br>
+<br>
+<font size="+2" color="forestgreen"><strong>
+    Lab25: ArrayLists and generic types
+</strong></font>
+</div>
+
+<h3>Background</h3>
+
+<p>Arrays in Java are efficient but inconvenient: once created, their size cannot be changed. Sometimes you don't know in advance how many elements you'll need, and it's wasteful to allocate large amounts of unused memory. Fortunately the Java library provides an extensive <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/collections/">Collections Framework</a> for storing not only arrays of objects, but many other types of data structures. <a href="http://docs.oracle.com/javase/8/docs/api/java/util/ArrayList.html">ArrayList</a> is a <i>generic</i> collection of objects: the declaration determines the type of object it will store:</p>
+
+<pre>
+    ArrayList&lt;String&gt; list;
+    list = new ArrayList&lt;String&gt;();
+</pre>
+
+<!--
+<p>ArrayLists and other collections can only store reference types, not primitive times. So if you need an ArrayList of integers, use the wrapper class:</p>
+
+<pre>
+    ArrayList&lt;Integer&gt; list;
+    list = new ArrayList&lt;Integer&gt;();
+</pre>
+-->
+
+<p>The ArrayList class provides many methods for adding, getting, setting elements. For example:</p>
+
+<table border="1" cellpadding="5" cellspacing="0">
+<tr bgcolor="lightyellow">
+    <th colspan="2"><tt>String[] array;</tt></th>
+    <th colspan="2"><tt>ArrayList&lt;String&gt; list;</tt></th>
+</tr>
+<tr>
+    <td width="25%"><tt>array.length</tt></td>
+    <td width="25%">The <i>capacity</i> of the array.</td>
+    <td width="25%"><tt>list.size()</tt></td>
+    <td width="25%">The <i>number of elements</i> stored in the ArrayList.</td>
+</tr>
+<tr>
+    <td><tt>String val = array[0];</tt></td>
+    <td></td>
+    <td><tt>String val = list.get(0);</tt></td>
+    <td></td>
+</tr>
+<tr>
+    <td><tt>array[0] = "HI";</tt></td>
+    <td></td>
+    <td><tt>list.set(0, "HI");</tt></td>
+    <td></td>
+</tr>
+<tr>
+    <td></td>
+    <td>Not possible to resize an array.</td>
+    <td><tt>list.add("Bob");</tt></td>
+    <td>Adds a new element at the end of the list. (This changes the size.)</td>
+</tr>
+<tr>
+    <td></td>
+    <td>Not possible to resize an array.</td>
+    <td><tt>list.remove(4);</tt></td>
+    <td>Removes the element at index 4. (all elements after 4 shift left.)</td>
+</tr>
+</table>
+
+<p>As with arrays, you can use an extended <tt>for</tt> loop to iterate the elements:</p>
+
+<pre>
+    for (String text : list) {
+        System.out.println(text);
+    }
+</pre>
+
+<h3>Instructions</h3>
+
+<p>The goal of this lab is to implement a <tt>Document</tt> class that represents a plain text file as an <tt>ArrayList</tt> of <tt>String</tt> objects. Each entry in the <tt>ArrayList</tt> corresponds to a single line of text.The following files are provided:</p>
+
+<ul>
+<li><p><a href="Document.java">Document.java</a> - UNFINISHED</p></li>
+<li><p><a href="DocumentTestDriver.java">DocumentTestDriver.java</a> - This is a simple driver class. Take a minute to look over this code to get a better idea of the expected behavior.</p></li>
+<li><p><a href="Editor.java">Editor.java</a> - This is an editor application that provides a command-line interface to the <tt>Document</tt> class.</p></li>
+</ul>
+
+<p>Download the files above and complete <tt>Document.java</tt> so that all methods conform to the Javadoc comments. Test your completed file by running the two provided applications. The file <a href="output.txt">output.txt</a> contains the correct output for <tt>DocumentTestDriver.java</tt>.</p>
+
+<p>Submit your completed version of <tt>Document.java</tt> through Web-CAT. If you have trouble with your submission, you may find it helpful to look at the JUnit submission tests: <a href="DocumentTest.java">DocumentTest.java</a>.</p>
+
+<h3>Acknowledgement</h3>
+
+<p>This lab is based on materials developed by <a href="https://w3.cs.jmu.edu/spragunr/">Nathan Sprage</a>.</p>
+
+</div>
+</body>
+</html>
