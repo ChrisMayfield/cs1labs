@@ -9,7 +9,7 @@ import javax.swing.JFrame;
  * @author YOUR NAME
  * @version TODAY'S DATE
  */
-public class Lab12 extends Canvas {
+public class Lab16 extends Canvas {
     
     /** Scaling factor of the Vee. */
     private static final int SIZE = 50;
@@ -39,10 +39,10 @@ public class Lab12 extends Canvas {
      */
     public static void main(String[] args) {
         hello();
-        Canvas canvas = new Lab12();
+        Canvas canvas = new Lab16();
         canvas.setSize(800, 400);
         canvas.setBackground(Color.white);
-        JFrame frame = new JFrame("Lab12 Drawing");
+        JFrame frame = new JFrame("Lab16 Drawing");
         frame.add(canvas);
         frame.pack();
         frame.setVisible(true);
@@ -106,7 +106,6 @@ public class Lab12 extends Canvas {
      * @param g graphics context
      * @param x bottom x location
      * @param y bottom y location
-     * @param size length of branch
      * @param depth recursive count
      */
     public void vee(Graphics g, int x, int y, int depth) {
