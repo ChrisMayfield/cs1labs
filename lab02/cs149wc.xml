@@ -4,7 +4,7 @@
     "http://www.puppycrawl.com/dtds/configuration_1_3.dtd">
 
 <!--
-Checkstyle configuration for CS 149, Fall 2017.
+Checkstyle configuration for CS 149, Spring 2018.
 -->
 <module name="Checker">
 
