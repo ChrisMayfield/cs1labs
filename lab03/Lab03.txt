@@ -1,0 +1,25 @@
+CS 149 - Lab03 Worksheet
+
+Name:
+
+
+1. What computer and operating system did you use to complete this lab?
+
+
+
+2. Briefly summarize 8--10 commands that you learned from the tutorial.
+Each command should be a single word followed by a short description.
+Don't just list every example from the lab; "ls", "ls -a", and "ls -l"
+only count as one command (ls). Instead, write your answers like this:
+
+The "ls" command lists directory contents. The -a option shows all files, and
+the -l option shows a long listing with permissions, sizes, and dates.
+
+
+
+3. What is the meaning of the symbols ~, ., .., and * on the command line?
+
+
+
+4. What is the difference between the >, >>, and | command-line operators?
+

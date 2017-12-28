@@ -24,20 +24,19 @@
 
 <h3>Background</h3>
 
-<p>The workstations in ISAT/CS 143 and ISAT/CS 250 run <a href="http://www.linuxmint.com/">Linux Mint</a>, and the iMacs in ISAT/CS 248 run <a href="http://www.apple.com/macos/">macOS</a>.
+<p>The PCs in ISAT/CS 143 and ISAT/CS 250 run <a href="http://www.linuxmint.com/">Linux Mint</a>, and the iMacs in ISAT/CS 248 used to run <a href="http://www.apple.com/macos/">macOS</a>.
 Both operating systems are based on <a href="http://en.wikipedia.org/wiki/Unix">Unix</a> and come with a powerful suite of general purpose <a href="http://en.wikipedia.org/wiki/GNU">computing tools</a>.
 Many of these tools are only available via the <a href="http://en.wikipedia.org/wiki/Command-line_interface">command-line interface</a> (also known as the "Terminal").
 You will learn some of these commands in this course and others throughout your career.
 Today we will focus on the basic survival skills for navigating the command line and a Unix-based file system.</p>
 
-<h3>Part 1: Getting Started</h3>
+<h3>Part 0: Getting Started</h3>
 
 <p>There are multiple options for completing this lab:
 (1) use a Linux machine in the CS department,
 (2) connect to the <kbd>student</kbd> server using <a href="https://youtu.be/wUW2pnYqWRw">SSH or PuTTY</a>,
 or (3) get things working on your own computer.
-We recommend the last option, since it will enable you to be more productive throughout the course.
-But don't spend too long "getting started" if you run into problems; the video and Part 2 will already take about an hour to complete.</p>
+We recommend the last option, since it will enable you to be more productive throughout the course.</p>
 
 <ul>
 <li>
@@ -47,10 +46,28 @@ But don't spend too long "getting started" if you run into problems; the video a
 </li>
 <li>
     <p>If you have a Windows computer, you may want to <a href="https://cygwin.com/install.html">install Cygwin</a>.
-    This collection of tools provides a UNIX-like environment on Windows and creates a Terminal shortcut on your Desktop.
-    If you're not sure how to run the installer, <a href="https://www.youtube.com/results?search_query=install+cygwin">search YouTube</a> for instructions.</p>
+    This collection of tools provides a UNIX-like environment on Windows and creates a Terminal shortcut on your desktop.</p>
 </li>
+    <ul>
+    <li>
+        <p>If you're not sure how to run the installer, <a href="https://www.youtube.com/results?search_query=install+cygwin">search YouTube</a> for instructions. But don't spend too long installing Cygwin if you run into problems. Use option #1 or #2 above for today's lab, and then bring your laptop to office hours later this week.</p>
+    </li>
+    <li>
+        <p>Cygwin creates a separate home directory from your Windows home. When running Cygwin for the first time, paste the following three commands (exactly as shown!) into your terminal. <font color="crimson">Please read the instructions below before doing this part.</font>
+<pre>
+ln -s /cygdrive/c/Users/USERNAME/Desktop
+ln -s /cygdrive/c/Users/USERNAME/Documents
+ln -s /cygdrive/c/Users/USERNAME/Downloads
+</pre>
+        <p>The "ln" command means "create a link" or shortcut. After running these commands, you should see your original Desktop, Documents, and Downloads folders in your Cygwin home directory.</p>
+        <p>Be sure to replace the word USERNAME in the commands above with your Windows username.
+        If you don't know your Windows username, you can type "<code>ls /cygdrive/c/Users</code>" and see how it is spelled.
+        Don't use ALL CAPS -- use the same case that <code>ls</code> outputs.</p>
+    </li>
+    </ul>
 </ul>
+
+<h3>Part 1: Video Tutorial</h3>
 
 <p>Once you have a Terminal running, watch the video below and follow along on your own computer by typing the same commands.
 Pay attention to how the video demonstrates tab-completion.
@@ -65,11 +82,14 @@ src="https://www.youtube.com/embed/bE9DyH43C2I"></iframe>
 
 <p>Work through the <em>first four</em> parts of <strong><a href="https://w3.cs.jmu.edu/spragunr/CS139_S16/activities/unix_tutorial/">UNIX Tutorial for Beginners</a></strong>. The first part is more or less a review of the video. The fifth part is optional.</p>
 
-<p>Download and open the <a href="Lab02.txt">Lab02.txt</a> worksheet and answer the questions.
-Make sure you save this file as plain text; if you use Word, you'll need to "Save as" and change the type to "Plain Text".
-And please do NOT change the name of the file; Canvas automatically appends your first and last name to the filename when I download the submissions for grading.</p>
+<p>Download the <a href="Lab03.txt"><img src="../icons/disk.png"> Lab03.txt</a> worksheet (right-click, Save link as..., navigate to <tt>CS149/Lab03</tt>) and answer the questions. Open the file <b>using a text editor</b> (e.g.,
+<a href="https://projects.gnome.org/gedit/">gedit</a> on Linux,
+<a href="http://www.barebones.com/products/textwrangler/">TextWrangler</a> on macOS,
+<a href="http://notepad-plus-plus.org/">Notepad++</a> on Windows).</p>
 
-<p>Upload your completed worksheet to the Lab02 assignment on Canvas.
+<p>Make sure you save this file as plain text; if you use <a href="https://products.office.com/en-us/word">Word</a> or <a href="https://www.libreoffice.org/">LibreOffice</a>, you'll need to "Save as" and change the type to "Plain Text". And please do NOT change the name of the file; Canvas automatically appends your first and last name to the file when I download the submissions for grading.</p>
+
+<p>Upload your completed worksheet to Canvas by the end of the day.
 If you have questions, feel free to start a discussion on Piazza.</p>
 
 </div>
