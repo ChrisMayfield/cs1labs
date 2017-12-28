@@ -11,6 +11,10 @@ Checkstyle configuration for CS 149, Spring 2018.
     <!-- See http://checkstyle.sf.net/config.html#TreeWalker -->
     <module name="TreeWalker">
 
+        <!-- See http://checkstyle.sf.net/config_annotation.html -->
+        <module name="AnnotationLocation"/>
+        <module name="AnnotationUseStyle"/>
+
         <!-- See http://checkstyle.sf.net/config_blocks.html -->
         <module name="AvoidNestedBlocks"/>
         <module name="EmptyBlock"/>
@@ -40,7 +44,9 @@ Checkstyle configuration for CS 149, Spring 2018.
 
         <!-- See http://checkstyle.sf.net/config_imports.html -->
         <module name="AvoidStarImport"/>
-        <module name="AvoidStaticImport"/>
+        <module name="AvoidStaticImport">
+            <property name="excludes" value="org.junit.Assert.*"/>
+        </module>
         <module name="IllegalImport"/>
         <module name="RedundantImport"/>
         <module name="UnusedImports"/>
@@ -83,12 +89,21 @@ Checkstyle configuration for CS 149, Spring 2018.
         <module name="StaticVariableName"/>
         <module name="TypeName"/>
 
+        <!-- See http://checkstyle.sf.net/config_regexp.html -->
+        <module name="Regexp">
+            <property name="format" value=" //[^ ]"/>
+            <property name="illegalPattern" value="true"/>
+            <message key="illegal.regexp" value="missing space after ''//'' in comment."/>
+        </module>
+
         <!-- See http://checkstyle.sf.net/config_sizes.html -->
         <module name="LineLength"/>
         <module name="MethodLength"/>
 
         <!-- See http://checkstyle.sf.net/config_whitespace.html -->
-        <module name="EmptyLineSeparator"/>
+        <module name="EmptyLineSeparator">
+            <property name="allowNoEmptyLineBetweenFields" value="true"/>
+        </module>
         <module name="MethodParamPad"/>
         <module name="NoWhitespaceAfter"/>
         <module name="NoWhitespaceBefore"/>

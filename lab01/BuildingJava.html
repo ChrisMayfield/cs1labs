@@ -57,19 +57,40 @@ and how to resolve it.</p>
 <dd>the process of running a program on a computer</dd>
 </dl>
 
+<h3>Before You Begin: CS149 Folder</h3>
+
+Throughout the semester, you will download and edit a lot of files.
+We recommend that you create a separate folder for each lab, assignment, and exam.
+About a month from now, your <tt>CS149</tt> folder will look something like this:
+
+<p align="center">
+<img src="CS149-folder.png" width="600">
+</p>
+
+<p>In the computer lab, your <a href="https://en.wikipedia.org/wiki/Home_directory">home directory</a> is stored on a network server.
+That way, all the files in your Desktop, Documents, Downloads, and other directories (folders) are the same, regardless what machine you are on.
+If you logged in as <tt>student</tt> today, please log out and log back in with your JMU username and password.</p>
+
+<p>If you haven't already, you should create a top-level <tt>CS149</tt> folder (in your home directory) to organize all your labs and other assignments for the semester. Then create a <tt>Lab01</tt> folder for today's lab. Make sure you spell these names as shown; it's important that you don't add spaces.</p>
+
 <h3>Part 1: Java Development Cycle</h3>
 
-<p>DrJava is a text editor much like gedit or Notepad. But it does a lot more!
+<p>DrJava is a text editor much like TextEdit (macOS) or Notepad (Windows). But it does a lot more!
 First, it highlights key words as you type them. It also supports indenting of
 sections of the code. When you want to compile your code, there is a tool within
 DrJava to do so. And when you want to execute and test your program, it will do
 that too.</p>
 
-<ol>
+<ol start="0">
+<li>
+    <p>The first thing you should do when beginning a lab is read <i>all</i> the instructions at the top of the page.
+    Don't just skip down to the first question.
+    If you haven't set up your <tt>CS149</tt> folder, you need to start over.</p>
+</li>
 <li>
     <p>Open DrJava and click "File &ndash;&gt; New Java Class" from the menu.
     Name the class Hello (note the capital H) and check the box to include a
-    main method. Save the file on your Desktop or other preferred location.</p>
+    main method. Save the file in your <tt>CS149/Lab01</tt> folder.</p>
 </li>
 <li>
     <p>Type the code in the picture on the upper right. Change the @author
@@ -84,10 +105,10 @@ that too.</p>
         <li><p>If it compiles successfully you will get a message: Compilation completed.
         If you have other messages indicating errors, check your typing very carefully.
         Your error message will give you the line number of the first place the compiler
-        was "confused" by what you typed.</p></li>
+        was confused by what you typed.</p></li>
         <li><p>Upon successful compilation, examine the directory (use the file browser)
-        in which you placed your Hello.java file and you should see a Hello.class
-        file.</p></li>
+        in which you placed your <tt>Hello.java</tt> file and you should see a
+        <tt>Hello.class</tt> file.</p></li>
     </ul>
 </li>
 <li>
@@ -105,8 +126,15 @@ see the changes reflected in the executed program.</p>
 
 <h3>Part 2: Syntax Errors</h3>
 
-<p>Download the <a href="Lab01.txt"><img src="../icons/disk.png"> Lab01.txt</a>
-worksheet and open/edit the file as plain text.</p>
+<p>Download (don't just click) the <a href="Lab01.txt"><img src="../icons/disk.png"> Lab01.txt</a> worksheet as follows: right-click the link, choose "Save link as...", navigate to your <tt>CS149/Lab01</tt> folder, and then click Save.
+Open the file <b>using a text editor</b> (e.g.,
+<a href="https://projects.gnome.org/gedit/">gedit</a> on Linux,
+<a href="http://www.barebones.com/products/textwrangler/">TextWrangler</a> on macOS,
+<a href="http://notepad-plus-plus.org/">Notepad++</a> on Windows).
+Make sure you save this file as plain text; if you use
+<a href="https://products.office.com/en-us/word">Word</a>
+or <a href="https://www.libreoffice.org/">LibreOffice</a>,
+you'll need to "Save as" and change the type to "Plain Text".</p>
 
 <p>This part of the lab will give you some practice in reading and interpreting
 syntax errors. As you make each error, pay particular attention to the message
@@ -235,7 +263,7 @@ section will have you experiment with the output.</p>
 </li>
 </ol>
 
-<p>Submit both your completed <b>Lab01.txt and Hello.java</b> via
+<p>Submit both your completed <b>Hello.java and Lab01.txt</b> via
 <a href="https://canvas.jmu.edu/"> <img src="../icons/world.png">
 canvas.jmu.edu</a> by the end of the day.</p>
 
@@ -256,7 +284,7 @@ canvas.jmu.edu</a> by the end of the day.</p>
 
 <p>For those who finish before the end of the lab period, I have an extra
 challenge for you. Write a program named Miles.java that converts miles to
-kilometers (i.e., 1 mile = 1.60934 km).</p>
+kilometers (1 mile = 1.60934 km).</p>
 
 </div>
 </body>
