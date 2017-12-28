@@ -39,11 +39,11 @@
 
 <h3>Part 1 - Create a scenario</h3>
 
-<p>Before the break, we took our first look at <a href="../lab20/Greenfoot.html">game design with Greenfoot</a>. Today we will create a new simulation from scratch.</p>
+<p>Last time, we took our first look at <a href="../lab20/Greenfoot.html">game design with Greenfoot</a>. Today we will create a new simulation from scratch.</p>
 
 <ol>
 <li>
-    <p>Run Greenfoot (from the Linux menu) and select "Scenario &gt; New Java Scenario..." from the Greenfoot menu. Name your scenario <code>Lab21</code> (under your CS149 directory).</p>
+    <p>Run Greenfoot (from the Linux menu) and select "Scenario &gt; New Java Scenario..." (from the Greenfoot menu). Name your scenario <code>Lab21</code> (under your CS149 directory).</p>
 </li>
 <!--
 <li>
@@ -51,7 +51,7 @@
 </li>
 -->
 <li>
-    <p>Right-click the "MyWorld" rectangle on the right, and select "Remove". We'll create a different World in the next step.</p>
+    <p>Right-click the "MyWorld" rectangle on the right, and select "Delete". We'll create a different World in the next step.</p>
 </li>
 <li>
     <p>Right-click the "World" rectangle on the right, and select "New subclass..." Name the subclass <code>Road</code> and select a suitable image from the "backgrounds" category.</p>
@@ -60,16 +60,18 @@
     <p>Right-click the "Actor" rectangle on the right, and select "New subclass..." Name the subclass <code>Car</code> and select a suitable image from the "transport" category.</p>
 </li>
 <li>
-    <p>Press the compile button and then add a <code>new Car()</code> to the world. After placing the car, select "Controls &gt; Save the World" from the menu.</p>
+    <p>Press the Reset button, and then add a <code>new Car()</code> to the world. After placing the car, select "Controls &gt; Save the World" from the menu. If that menu is disabled, try running and resetting the program.</p>
 </li>
 </ol>
+
+<p>When you click "Save the World", a new editor window should open with <tt>Road.java</tt>. Saving the world automatically creates (or edits) the <tt>prepare</tt> method which is invoked by the constructor.</p>
 
 <h3>Part 2 - Basic Car methods</h3>
 <ol start="6">
   <li><p>Double-click the Car rectangle (on the right) to open <kbd>Car.java</kbd>. Write the code for the following steps above the <code>act()</code> method.</p>
   </li>
   <li><p>
-      Create three private variables within the class:
+      Create three <code>private</code> variables within the class:
       an integer that holds the car's year, a string that
       holds the car's make, and an integer that holds the
       car's speed.</p>
@@ -102,6 +104,9 @@
   <li><p>At this point, you should have a compiler error in your <kbd>Road.java</kbd> file. Fix this error by providing info about your car.
   </p></li>
 </ol>
+
+<p>The compiler error (should have) happened when you added a constructor that required parameters.
+When there is no constructor, Java automatically generates a default constructor (without parameters) that does nothing.</p>
 
 <h3>Part 3 - Test your Car</h3>
 <ol start="12">
@@ -178,7 +183,7 @@ if (other != null) {
 </pre></li>
   <li><p>Test your code by moving and rotating your cars so that they will collide. If everything is correct, they should stop.</p>
   </li>
-  <li><p>Add sound effects to your project! <a href="http://soundbible.com/tags-crash.html">Download a wav or mp3 file</a> to your <kbd><i>scenario</i>/sounds</kbd> directory. Then add the following example code where applicable:</p>
+  <li><p>Add sound effects to your project! <a href="http://soundbible.com/tags-crash.html">Download a wav or mp3 file</a> to your <kbd><i>scenario</i>/sounds</kbd> directory. (Not all files are supported; if one doesn't work, try another one.) Then add the following example code where applicable:</p>
 <pre>
 Greenfoot.playSound("crash.wav");
 </pre>
