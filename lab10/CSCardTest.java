@@ -1,7 +1,9 @@
-import junit.framework.TestCase;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
+
+import static org.junit.Assert.*;
+import org.junit.Test;
 
 /**
  * Example test cases for CSCard.java.
@@ -9,12 +11,13 @@ import java.io.PrintStream;
  * @author Chris Mayfield
  * @version 10/09/2015
  */
-public class CSCardTest extends TestCase {
+public class CSCardTest {
     
     /**
      * Tests the calculateInterest method.
      */
-    public static void testCalculateInterest() {
+    @Test
+    public void testCalculateInterest() {
         double actual;
         
         actual = CSCard.calculateInterest(0, 125.25);
@@ -27,7 +30,8 @@ public class CSCardTest extends TestCase {
     /**
      * Tests the calculateMinPayment method.
      */
-    public static void testCalculateMinPayment() {
+    @Test
+    public void testCalculateMinPayment() {
         double actual;
         
         actual = CSCard.calculateMinPayment(-1.00);
@@ -46,7 +50,8 @@ public class CSCardTest extends TestCase {
     /**
      * Tests the main method.
      */
-    public static void testMain() {
+    @Test
+    public void testMain() {
         new CSCard(); // cover the class line
         simulateMain("50\n50\n");
         simulateMain("BAD\n50\n");
