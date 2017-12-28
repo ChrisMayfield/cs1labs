@@ -18,6 +18,32 @@ public class Bottles {
         if (verse == 1) {
             System.out.println("1 bottle of pop on the wall");
         }
+        System.out.println();
+    }
+    
+    /**
+     * Sing each verse of the entire song (using a loop).
+     * 
+     * @param first the first verse of the song
+     */
+    public static void iterative(int first) {
+        while (first > 0) {
+            sing(first);
+            first = first - 1;
+        }
+    }
+    
+    /**
+     * Sing each verse of the entire song (using a loop).
+     * 
+     * @param first the first verse of the song
+     */
+    public static void recursive(int first) {
+        if (first <= 0) {
+            return; // base case
+        }
+        sing(first);
+        recursive(first - 1);
     }
     
     /**
@@ -26,21 +52,17 @@ public class Bottles {
      * @args command line arguments (optional starting verse)
      */
     public static void main(String[] args) {
-        int verse;
+        int start;
         
         // read the optional command line argument
         if (args.length > 0) {
-            verse = Integer.parseInt(args[0]);
+            start = Integer.parseInt(args[0]);
         } else {
-            verse = 10;  // default value
+            start = 10;  // default value
         }
         
-        // sing each verse of the entire song
-        while (verse > 0) {
-            sing(verse);
-            System.out.println();
-            verse--;
-        }
+        // sing the song
+        iterative(start);
     }
     
 }

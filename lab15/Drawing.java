@@ -4,12 +4,12 @@ import java.awt.Graphics;
 import javax.swing.JFrame;
 
 /**
- * Lab16: Recursive 2D graphics.
+ * Recursive 2D graphics.
  * 
  * @author YOUR NAME
  * @version TODAY'S DATE
  */
-public class Lab16 extends Canvas {
+public class Drawing extends Canvas {
     
     /** Scaling factor of the Vee. */
     private static final int SIZE = 50;
@@ -33,23 +33,23 @@ public class Lab16 extends Canvas {
     }
     
     /**
-     * Creates the main window.
+     * Creates the main window. DO NOT EDIT THIS METHOD.
      * 
      * @param args command line arguments
      */
     public static void main(String[] args) {
         hello();
-        Canvas canvas = new Lab16();
+        Canvas canvas = new Drawing();
         canvas.setSize(800, 400);
         canvas.setBackground(Color.white);
-        JFrame frame = new JFrame("Lab16 Drawing");
+        JFrame frame = new JFrame("CS 149 Drawing");
         frame.add(canvas);
         frame.pack();
         frame.setVisible(true);
     }
     
     /**
-     * Paints the window whenever it changes.
+     * Paints the window whenever it changes. DO NOT EDIT THIS METHOD.
      * 
      * @param g graphics context
      */
@@ -59,7 +59,7 @@ public class Lab16 extends Canvas {
     }
     
     /**
-     * Draws an upside-down diamond.
+     * Draws an upside-down diamond. DO NOT EDIT THIS METHOD.
      * 
      * @param g graphics context
      * @param x bottom x location
@@ -81,7 +81,7 @@ public class Lab16 extends Canvas {
     }
     
     /**
-     * Draws an upside-down triangle.
+     * Draws an upside-down triangle. DO NOT EDIT THIS METHOD.
      * 
      * @param g graphics context
      * @param x bottom x location

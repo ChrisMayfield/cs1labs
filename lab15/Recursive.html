@@ -28,9 +28,9 @@
 
 <h3>Background</h3>
 
-<p>This lab will be short and sweet, in part because there's an assignment due today. But more importantly, it gives you an opportunity to visualize what it means to make a recursive method call. You will also learn a bit about random numbers and graphics programming.</p>
+<p>This lab will show you what it means to make a recursive method call. You will also learn a bit about random numbers and graphics programming.</p>
 
-<p>Download <a href="Lab16.java">Lab16.java</a> as a starting point, and submit your work via Canvas by the end of the day.</p>
+<p>Download <a href="Drawing.java">Drawing.java</a> as a starting point, and submit your work via Canvas by the end of the day.</p>
 
 <h3>Part 1: Random Numbers</h3>
 
@@ -40,12 +40,12 @@
 <li><p>
     <i>Run code about x percent of the time.</i> Since we know that the return values of <code>Math.random()</code> are equally likely, we can use an if statement and the less than operator. In other words, is the random number less than x?
 </p></li>
-<p><em>Program:</em> In the <code>hello</code> method of <code>Lab16</code>, write an if statement that prints "Hello, world!" about half of the time and "Howdy, world!" the other half. Test your method interactively (type <code>Lab16.hello()</code> in DrJava Interactions instead of clicking on Run). Make sure it displays each value about half of the time.</p>
+<p><em>Program:</em> In the <code>hello</code> method of <code>Drawing</code>, write an if statement that prints "Hello, world!" about half of the time and "Howdy, world!" the other half. Test your method interactively (type <code>Drawing.hello()</code> in DrJava Interactions instead of clicking on Run). Make sure it displays each value about half of the time.</p>
 <li><p>
     <i>Generate a random integer between x and y.</i>
     Let's say we need a number between 5 and 15 inclusive. Notice how there are 11 possible results [5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]. We can use <code>Math.random()</code> to get a number in the range [0, 1). If we multiply that number by 11, we now have a number in the range [0, 11). Now we just have to add 5 to that number to shift the range to [5, 16). Finally, we cast the value to an int, which throws away any decimal places.
 </p></li>
-<p><em>Program:</em> Complete the method in <code>Lab16</code> named <code>randInt</code>. It should take two integer parameters, x and y, and return a random integer in that range. Test your method interactively (type <code>Lab16.randInt(5, 15)</code> in DrJava Interactions instead of clicking on Run). Make sure it returns the numbers 5 and 15 at some point.</p>
+<p><em>Program:</em> Complete the method in <code>Drawing</code> named <code>randInt</code>. It should take two integer parameters, x and y, and return a random integer in that range. Test your method interactively (type <code>Drawing.randInt(5, 15)</code> in DrJava Interactions instead of clicking on Run). Make sure it returns the numbers 5 and 15 at some point.</p>
 </ol>
 
 <h3>Part 2: Java 2D Graphics</h3>
@@ -67,7 +67,7 @@
         java.swing.JFrame</a> - top level container that represents a window in a graphical user interface</li>
     </ul>
 <li><p>
-    The <code>main</code> method of <code>Lab16</code> has been provided for you; please don't change any of that code. But take a look at it and figure out how it works. Basically it creates a window, adds a canvas to it, and makes it visible. At that point the main method ends, but the window lives on until you close it. The <code>paint</code> method is where all the magic happens.
+    The <code>main</code> method of <code>Drawing</code> has been provided for you; do NOT change any of that code. But take a look at it and figure out how it works. Basically it creates a window, adds a canvas to it, and makes it visible. At that point the main method ends, but the window lives on until you close it. The <code>paint</code> method is where all the magic happens.
 </p></li>
 <li><p>
     You are probably used to Cartesian coordinates, where x and y values can be either positive or negative. In contrast, Java uses a coordinate system where the origin is in the upper-left corner. That way, x and y are always positive integers. Coordinates are measured in pixels; each pixel corresponds to a dot on the screen.
@@ -75,7 +75,7 @@
 <img src="coordinates.png" width="600">
 </p></li>
 <li><p>
-    <em>Program:</em> The <code>Lab16</code> class comes with methods for drawing diamonds and triangles at specific locations. Modify the <code>vee</code> method so that it draws a diamond on top of the left branch and a triangle on top of the right branch. The size of each shape should be 10.
+    <em>Program:</em> The <code>Drawing</code> class comes with methods for drawing diamonds and triangles at specific locations. Modify the <code>vee</code> method so that it draws a diamond on top of the left branch and a triangle on top of the right branch (by calling the provided methods). The size of each shape should be 10.
 </p></li>
 <li><p>
     Notice that when you run the program, it prints each method call to System.out. Use this information to trace the behavior of your code and debug as necessary.
