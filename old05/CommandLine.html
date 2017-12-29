@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Lab02 - CS 149</title>
+    <link href="../style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+<div class="main">
+
+<div align="center">
+<font size="+1"><strong>
+    <a href="../index.html">CS 149</a>: Programming Fundamentals
+</strong></font>
+<br>
+<font size="+1">
+    <a href="http://www.jmu.edu/">James Madison University</a>, Fall 2016 Semester
+</font>
+<br>
+<br>
+<font size="+2" color="forestgreen"><strong>
+    Lab02: Unix commands and files
+</strong></font>
+</div>
+
+<p style="float: right; padding: 10px; text-align: center;">
+<img src="terminal.jpg" width="300"></p>
+
+<h3>Background</h3>
+
+<p>The workstations in ISAT/CS 143 run <a href="http://www.linuxmint.com/">
+Linux Mint</a>, and the iMacs in ISAT/CS 248 run <a href="http://www.apple.com/osx/">
+OS X</a>. Both operating systems are based on <a href="http://en.wikipedia.org/wiki/Unix">
+Unix</a> and come with a powerful suite of general purpose <a href="http://en.wikipedia.org/wiki/GNU">
+computing tools</a>. Many of these tools are only available via the
+<a href="http://en.wikipedia.org/wiki/Command-line_interface">command line</a>
+or "terminal" interface. You will learn some of these commands this semester and
+others throughout your career. Today we will focus on basic survival skills for
+navigating the command line and a Unix-based file system.</p>
+
+<h3>Objectives</h3>
+<ul>
+    <li><p>Describe how a Unix file system is organized.</p></li>
+    <li><p>Develop familiarity with basic Unix commands.</p></li>
+    <li><p>Be comfortable working in a Unix environment.</p></li>
+</ul>
+
+<h3>Instructions</h3>
+
+<p>If you have never used the command-line before, we highly recommend you watch this <a href="http://www.youtube.com/watch?v=bE9DyH43C2I">
+13-minute tutorial on YouTube</a> before you begin the lab.
+For best results, follow along with your own terminal.</p>
+
+<p>Download the <a href="Lab02.txt"><img src="../icons/disk.png"> Lab02.txt</a>
+worksheet and open/edit the file as plain text. Submit your answers via Canvas
+by the deadline.</p>
+
+<p>&nbsp;</p><hr>
+
+<p align="center"><font size="+1" color="blue"><strong>
+Part 1: File Systems and Paths
+</strong></font></p>
+
+<p>
+Most computer users are familiar with the Windows file system, which uses a "drive letter" and backslashes to identify files.
+The following example shows the "path" or location of the file <code>Hello.java</code>, starting from the C: drive.
+</p>
+
+<p><code>C:\Users\John\Desktop\Hello.java</code></p>
+
+<p>
+In Unix-based systems, there are no drive letters.
+All files (and disk drives) can be reached from the "root" directory, designated with a forward slash ( / ).
+</p>
+
+<p><code>/Users/John/Desktop/Hello.java</code> &nbsp;(on OS X)</p>
+<p><code>/home/john/Desktop/Hello.java</code> &nbsp;(on Linux)</p>
+
+<p>
+All three of these examples are "fully qualified" or <b>absolute</b> paths, because they indicate the exact location of the file within the computer's file system.
+</p>
+
+<p>
+You can alternatively specify a <b>relative</b> path, based on your current location in the file system.
+For example, if you are working in the <code>/home/john/</code> directory on Linux, you can simply use the name <code>Desktop/Hello.java</code> to identify that file.
+</p>
+
+<p>
+Study the following example file system diagrams and answer the questions below.
+</p>
+
+<ol>
+    <img src="Windows.png" width="640">
+    <p><b>Windows File Diagram</b></p>
+    <li><p><font color="blue">QUESTION:</font>
+        What do you find at the top of the Windows diagram? Describe which hardware it represents.</p></li>
+    <li><p><font color="blue">QUESTION:</font>
+        What do you find listed below the "Program Files" directory? Describe what each file does.</p></li>
+    <li><p><font color="blue">QUESTION:</font>
+        What is the path for the file john.doc? What is the path for the file 3dMaze.scr?</p></li>
+
+    <img src="Unix.png" width="640">
+    <p><b>Unix File Diagram</b></p>
+    <li><p><font color="blue">QUESTION:</font>
+        In the Unix diagram, what is the absolute path to "donations" in the "jones" directory?</p></li>
+    <li><p><font color="blue">QUESTION:</font>
+        You are now working in the /home/smith/ directory. What is the relative path to week1.txt?</p></li>
+    <li><p><font color="blue">QUESTION:</font>
+        Where are the "program files" installed on a Unix-based system? Name at least two paths.</p></li>
+</ol>
+
+<p>&nbsp;</p><hr>
+
+<p align="center"><font size="+1" color="blue"><strong>
+Part 2: Command Line Basics
+</strong></font></p>
+
+<p>
+The following instructions will lead you through some basic exercises involving the command line.
+Open a new Terminal window to get started.
+Stop and ask your neighbor or a lab assistant for help anytime you don't understand something.
+</p>
+
+<ol start="7">
+
+<li><b>Listing files</b>
+<p>
+The Unix file system is hierarchical.
+It starts at the root, designated by /.
+Every user has a home directory, designated by ~.
+To see a list of files, use the "ls" command.
+</p>
+<table border="1" cellpadding="5" cellspacing="1">
+    <tr>
+        <td><code>ls</code></td>
+        <td>list the current directory</td>
+    </tr>
+    <tr>
+        <td><code>ls ~/Desktop</code></td>
+        <td>list your desktop directory</td>
+    </tr>
+    <tr>
+        <td><code>ls /</code></td>
+        <td>list the root directory</td>
+    </tr>
+</table>
+<p>
+Try the above commands in your terminal.
+</p>
+</li>
+
+<li><b>Creating directories</b>
+<p>
+The commands "mkdir" and "rmdir" will make a new directory and remove a directory from the file system, respectively.
+Try creating a new subdirectory of your home directory:
+</p>
+<p><code>mkdir Lab02</code></p>
+<p>
+The "ls" command should now show a new directory named "Lab02".
+Remove the new directory with:
+</p>
+<p><code>rmdir Lab02</code></p>
+<p>
+Verify that it has been removed using the "ls" command.
+</p>
+</li>
+
+<li><b>Current directory</b>
+<p>
+While you are logged in, you are attached to a "current directory" in the file system.
+To see what your current directory is, enter the "print working directory" command:
+</p>
+<p><code>pwd</code></p>
+<p>
+To change your current directory to a different directory, use the "change directory" command:
+</p>
+<p><code>cd <i>directory</i></code></p>
+<p>
+The angle brackets are not part of the command, but indicate a placeholder for something you type.
+For example:
+</p>
+<table border="1" cellpadding="5" cellspacing="1">
+    <tr>
+        <td><code>cd /</code></td>
+        <td>change to the root directory</td>
+    </tr>
+    <tr>
+        <td><code>cd ~/Desktop</code></td>
+        <td>change to the Desktop subdirectory within your home directory</td>
+    </tr>
+    <tr>
+        <td><code>cd</code></td>
+        <td>change to your home directory (default working directory)</td>
+    </tr>
+</table>
+<p>
+Try the above commands on your workstation.
+Do an "ls" command after each step to list the files in that directory.
+</p>
+</li>
+
+<li><b>Parent directory</b>
+<p>
+The special names "." and ".." refer to the current directory and parent directory, respectively.
+</p>
+<table border="1" cellpadding="5" cellspacing="1">
+    <tr>
+        <td><code>ls .</code></td>
+        <td>list current directory</td>
+    </tr>
+    <tr>
+        <td><code>ls ..</code></td>
+        <td>list parent directory</td>
+    </tr>
+    <tr>
+        <td><code>ls ../..</code></td>
+        <td>list parent of parent directory</td>
+    </tr>
+</table>
+<p>
+Try the above commands on your workstation.
+</p>
+<p>
+<font color="blue">QUESTION:</font>
+If you are in your home directory, what is the location of ../..?
+</p>
+</li>
+
+<li><b>Command history</b>
+<p>
+Unix keeps track of the commands you have recently entered.
+Use the up arrow to recall the previous command you wrote, and press enter to run it again.
+Now press up several times to go back several commands, followed by the down arrow to move forward to more recent commands.
+</p>
+<p>
+<font color="blue">QUESTION:</font>
+Why is it useful to recall commands like this? Please give a specific example.
+</p>
+</li>
+
+<li><b>Nano text editor</b>
+<p>
+Nano is a simple text editor that can be used on most Unix platforms.
+When nano is invoked, a control-key menu appears at the bottom of the screen.
+Try creating a new file with nano and copy a small section of this lab into it:
+</p>
+<p><code>nano hello.txt</code></p>
+<p>
+Practice using the control keys to save (write), exit, search, cut (delete a line), uncut (paste the last cut line), go forward, and go backward.
+</p>
+<p><font color="red">
+Raise your hand when you have completed this step, and demonstrate your nano skills to a lab assistant.
+</font></p>
+</li>
+
+<li><b>Tab completion</b>
+<p>
+When working on the command line, you don't need to type every single character!
+Instead, use the tab key to complete the current word.
+For example, type "nano he" without pressing enter, and then press tab.
+The terminal should complete the word "hello.txt" for you.
+</p>
+<p>
+Try typing the following command with as few keystrokes as possible. (Hint: Use the tab key sometime after every slash.)
+<p>
+<p><code>nano /usr/share/info/dir</code></p>
+</li>
+
+<li><b>File commands</b>
+<p>
+Here are some basic file manipulation commands.
+Practice using them with the file that you created in the last step.
+</p>
+<table border="1" cellpadding="5" cellspacing="1">
+    <tr>
+        <td><code>cp <i>fromfile</i> <i>tofile</i></code></td>
+        <td>Copy a file. The "from file" and "to file" can be relative or absolute file names.</td>
+    </tr>
+    <tr>
+        <td>
+            <code>mv <i>file</i> <i>directory</i></code>
+            <br><br>
+            <code>mv <i>oldname</i> <i>newname</i></code>
+        </td>
+        <td>Move a file. This command can also be used to change the name of a file.</td>
+    </tr>
+    <tr>
+        <td><code>rm <i>filename</i></code></td>
+        <td>Delete (remove) a file. You might want to make a copy of it first.</td>
+    </tr>
+    <tr>
+        <td><code>cat <i>filename</i></code></td>
+        <td>Show the contents of a file (technically, "catenate" it to the standard output).</td>
+    </tr>
+    <tr>
+        <td><code>less <i>filename</i></code></td>
+        <td>View the file contents one page at a time.
+        <br>Use the arrow keys and page up/down to scroll through the file.
+        <br>Press 'q' to quit (exit the less program).</td>
+    </tr>
+</table>
+<p>
+<font color="blue">QUESTION:</font>
+What commands would you type to do the following? (Test them out on your workstation.)
+</p>
+    <ol type="a">
+    <li>Create a new subdirectory named step14.</li>
+    <li>Copy a file from your home directory into step14.</li>
+    <li>Rename the subdirectory step14 to delete_me.</li>
+    <li>Delete the subdirectory. (This step requires multiple commands.)</li>
+    </ol>
+<br>
+</li>
+
+<li><b>Man pages</b>
+<p>
+You now know something about ls, mkdir, rmdir, pwd, cd, nano, cp, mv, rm, cat, and less.
+Each of these programs have optional command line arguments.
+For example, type <code>ls -l</code> (ls with long formatting) in your terminal.
+You can use the "man" command to view the manual page for any command.
+</p>
+<p><code>man ls</code></p>
+<p>
+<font color="blue">QUESTION:</font>
+Use "man" to answer the following questions:
+</p>
+    <ol type="a">
+    <li>What does clear do?</li>
+    <li>What does grep do?</li>
+    <li>What does man do?</li>
+    </ol>
+<br>
+</li>
+
+<li><b>Wildcards</b>
+<p>
+There are two "wildcard" symbols that can be used in most commands.
+Practice using them with the files in your directory.
+Create more files if necessary, using "cp" or "nano".
+</p>
+<table border="1" cellpadding="5" cellspacing="1">
+    <tr>
+        <td><code>*</code></td>
+        <td>match any series of 0 or more characters</td>
+    </tr>
+    <tr>
+        <td><code>?</code></td>
+        <td>match any 1 character</td>
+    </tr>
+</table>
+<p>
+For example:
+</p>
+<table border="1" cellpadding="5" cellspacing="1">
+    <tr>
+        <td><code>ls a*</code></td>
+        <td>list files starting with 'a'</td>
+    </tr>
+    <tr>
+        <td><code>rm *.log</code></td>
+        <td>delete all files ending ".log"</td>
+    </tr>
+    <tr>
+        <td><code>ls ??text.*</code></td>
+        <td>list files with names containing any two characters followed by "text" and ending with any suffix</td>
+    </tr>
+</table>
+<br>
+</li>
+
+</ol>
+
+<p>&nbsp;</p><hr>
+
+<p align="center"><font size="+1" color="blue"><strong>
+Part 3: Optional advanced stuff
+</strong></font></p>
+
+<ol start="17">
+
+<li><b>Hidden files</b>
+<p>
+Files that have names beginning with '.' are not normally shown in directory listings.
+These files are typically used for configuration purposes, or to store personal settings for applications.
+To see the hidden files in a directory, add "-a" (all) to the ls command.
+</p>
+<p><code>ls -a</code></p>
+<p>
+<font color="blue">QUESTION:</font>
+What hidden directories and files exist in your home directory?
+</p>
+</li>
+
+<li><b>Long listings</b>
+<p>
+To see additional details for the files in a directory, add the "-l" (long) option to the ls command.
+</p>
+<p><code>ls -l</code></p>
+<p>
+The directory listing that results will include several attributes for each file.
+</p>
+<pre>
+[groverf@cs347 ~]$ ls -l
+total 44
+drwxr-x--- 2 groverf faculty 4096 Dec 11  2009 bin
+drwxr-x--- 2 groverf groverf 4096 Jul 26 11:20 Desktop
+drwxr-x--- 3 groverf faculty 4096 Jul 26 11:20 downloads
+-rwxr-x--- 2 groverf groverf 4096 Jul 26 14:15 cs347.txt
+drwxr-x--- 2 groverf groverf 4096 Aug 28  2009 tmp
+lrwxrwxrwx 1 root    root      33 Aug 12  2009 www -&gt; /opt/tomcat/webapps/users/groverf
+</pre>
+<p>
+The first 10 characters indicate the following information:
+<br>* file type (d for directory, - for a regular file, l for link)
+<br>* owner permissions (rwx)
+<br>* group permissions (rwx)
+<br>* public permissions (rwx)
+</p>
+<p>
+If the r, w, or x is present, that permission is on (access available); if it shows as a dash ('-'), that permission is off.
+For example, "rwxr-xr--" indicates that the owner has {read, write, execute} permissions, group members have {read, execute} permissions, and the public has {read} permission only.
+</p>
+<p>
+The remaining fields in the listing are:
+<br>* number of links to the file
+<br>* file owner
+<br>* file group
+<br>* file size
+<br>* date last modified
+<br>* file name
+</p>
+</li>
+
+<li><b>Pipes and redirects</b>
+<p>
+One of the useful features of Unix is the ability to transfer the output of one command to the input of another.
+The symbol "|" (vertical bar) pipes output between commands.
+</p>
+<table border="1" cellpadding="5" cellspacing="1">
+    <tr>
+        <td><code>ls -l | sort -k 8</code></td>
+        <td>sorts output from "ll" by the 8th field of the output (time)</td>
+    </tr>
+    <tr>
+        <td><code>ls -la | less</code></td>
+        <td>displays the output of ls one page at a time</td>
+    </tr>
+</table>
+<p>
+The symbol '&gt;' redirects standard output (normally directed to the screen) to a file.
+</p>
+<table border="1" cellpadding="5" cellspacing="1">
+    <tr>
+        <td><code>ls -l &gt; list.txt</code></td>
+        <td>sends output of the "ls" command to a file named "list.txt"</td>
+    </tr>
+    <tr>
+        <td><code>ls -l | sort -k 8 &gt; sortedlist</code></td>
+        <td>sorts the directory listing and saves it in the file "sortedlist"</td>
+    </tr>
+</table>
+<p>
+<font color="blue">QUESTION:</font>
+How would you create a directory listing sorted by file size?
+</p>
+</li>
+
+<li><b>Ready for more?</b>
+<p>
+Check out <a href="http://ss64.com/bash/">http://ss64.com/bash/</a> for a longer list of Unix commands.
+</p>
+</li>
+
+</ol>
+
+</div>
+</body>
+</html>

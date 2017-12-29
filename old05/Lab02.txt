@@ -1,0 +1,54 @@
+CS 149 - Lab02 Worksheet
+
+Name:
+
+
+(Question 1) What do you find at the top of the Windows diagram? Describe which
+hardware it represents.
+
+
+(Question 2) What do you find listed below the "Program Files" directory?
+Describe what each file does.
+
+
+(Question 3) What is the path for the file john.doc? What is the path for the
+file 3dMaze.scr?
+
+
+(Question 4) In the Unix diagram, what is the absolute path to "donations" in
+the "jones" directory?
+
+
+(Question 5) You are now working in the /home/smith/ directory. What is the
+relative path to week1.txt?
+
+
+(Question 6) Where are the "program files" installed on a Unix-based system?
+Name at least two paths.
+
+
+(Question 7) If you are in your home directory, what is the location of ../..?
+
+
+(Question 8) Why is it useful to recall commands like this? Please give a
+specific example.
+
+
+(Question 9) What commands would you type to do the following?
+
+a.
+
+b.
+
+c.
+
+d.
+
+
+(Question 10) Use "man" to answer the following questions:
+
+a.
+
+b.
+
+c.
