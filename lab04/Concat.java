@@ -1,5 +1,5 @@
 /**
- * Lab03: Two meanings of +.
+ * Two meanings of +.
  * This program experiments with the + operator.
  *
  * @author YOUR NAME

@@ -1,5 +1,5 @@
 /**
- * Lab 18: CodingBat AP-1 problems.
+ * CodingBat AP-1 problems.
  *
  * @author YOUR NAME
  * @version DUE DATE

@@ -1,7 +1,7 @@
 import java.util.Scanner;
 
 /**
- * Lab03: Input in Java, data types, and compatibility.
+ * Input in Java, data types, and compatibility.
  * This program experiments with Scanner and assignment.
  *
  * @author YOUR NAME
