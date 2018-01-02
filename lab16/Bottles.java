@@ -34,7 +34,7 @@ public class Bottles {
     }
     
     /**
-     * Sing each verse of the entire song (using a loop).
+     * Sing each verse of the entire song (using recursion).
      * 
      * @param first the first verse of the song
      */
