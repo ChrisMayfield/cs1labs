@@ -174,12 +174,21 @@ a visual diff and merge tool that runs on Linux.</p>
 or by creating new files (e.g., test2.in and test2.exp). The more test cases you
 have, the more confident you can be about your solution.</p>
 
-<p>NOTE: If you are running Windows, there are similar free tools like <a href="http://winmerge.org/">WinMerge</a>
-and <a href="http://kdiff3.sourceforge.net/">KDIff3</a> that you may install. Or if you have a Mac,
-you can download <a href="https://yousseb.github.io/meld/">Meld for OSX</a>.
+<h3>Intalling meld</h3>
+
+<!--
+If you are running Windows, there are similar free tools like <a href="http://winmerge.org/">WinMerge</a>
+and <a href="http://kdiff3.sourceforge.net/">KDIff3</a> that you may install.
+-->
+
+<p>If you have a Mac, download <a href="https://yousseb.github.io/meld/">Meld for OSX</a>.
 After installing it, run this command from the Terminal to make the app visible to the Terminal:</p>
 
-<pre>sudo ln -s /Applications/Meld.app/Content/MacOS/Meld /usr/local/bin/meld</pre>
+<pre>sudo ln -s /Applications/Meld.app/Contents/MacOS/Meld /usr/local/bin/meld</pre>
+
+<p>You can run meld on Windows too, but you'll need to have Cygwin installed (see <a href="../lab03/UnixTutorial.html">Part 0 of Unix Tutorial</a> from last week). Download and run the Windows installer from <a href="http://meldmerge.org/">meldmerge.org</a>. Then open Cygwin and enter the following command:</p>
+
+<pre>ln -s "/cygdrive/c/Program Files (x86)/Meld/Meld.exe" /usr/local/bin/meld</pre>
 
 </div>
 </body>

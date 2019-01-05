@@ -18,11 +18,16 @@
 <h1>Step 1: JDK</h1>
 
 <p>
-In order to compile Java programs on your own computer, you will need to install the <a href="http://www.oracle.com/technetwork/java/javase/downloads/"><img src="../icons/world.png"> Java Development Kit</a> from Oracle's website.
+In order to compile Java programs on your own computer, you will first need to install the <a href="http://www.oracle.com/technetwork/java/javase/downloads/"><img src="../icons/world.png"> Java Development Kit</a> from Oracle's website.
+<span style="background-color: yellow">Do NOT install the latest version -- we will be using Java SE 8 this semester.</span>
+</p>
+
+
+
 Scroll down to the section "Java Platform, Standard Edition" and click the download button under JDK.
 Then accept the license agreement and select the installer for your operating system.
 Don't forget to run the installer after you download it!
-If you run into trouble, the <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/install/"><img src="../icons/world.png"> JDK Installation Guide</a> has specific instructions for your operating system.
+If you run into trouble, the <a href="https://docs.oracle.com/javase/8/docs/technotes/guides/install/"><img src="../icons/world.png"> Installation Guide</a> should have specific instructions for your operating system.
 </p>
 
 <table border="0" cellpadding="5" cellspacing="0">
@@ -32,9 +37,9 @@ If you run into trouble, the <a href="https://docs.oracle.com/javase/8/docs/tech
     <th>Figure 2</th>
 </tr>
 <tr style="vertical-align: top;">
-    <td bgcolor="wheat"><img src="oracle1.png"></td>
+    <td bgcolor="wheat"><img src="oracle1.png" height="525"></td>
     <td width="25"></td>
-    <td bgcolor="wheat"><img src="oracle2.png"></td>
+    <td bgcolor="wheat"><img src="oracle2.png" height="525"></td>
 </tr>
 </table>
 
@@ -42,7 +47,7 @@ If you run into trouble, the <a href="https://docs.oracle.com/javase/8/docs/tech
 
 <p>
 We will use <a href="http://www.drjava.org/"><img src="../icons/world.png"> DrJava</a> as the primary development environment throughout the course.
-Windows and Mac users should download the Jar file instead of the outdated apps.
+<span style="background-color: yellow">Windows and Mac users should download the Jar file instead of the outdated apps.</span>
 There is no need to install the Jar file; simply double click it to run DrJava.
 Mac users may need to <a href="https://support.apple.com/kb/PH14369?locale=en_US">override security settings</a> for the Jar file.
 Linux users may need to make the Jar file executable (i.e., <code>chmod 755</code>).
@@ -60,9 +65,8 @@ Linux users may need to make the Jar file executable (i.e., <code>chmod 755</cod
 <h1>Step 3: Settings</h1>
 
 <p>
-Once you get the JDK and DrJava up and running, you should change the following settings from the "Edit &ndash;&gt; Preferences" menu.
-In particular, we will use an indent level of 4 spaces in all examples.
-The other settings are for convenience when editing programs over long periods of time.
+Once you get the JDK and DrJava up and running, you should change the following settings from the "<span style="background-color: yellow">Edit &ndash;&gt; Preferences</span>" menu.
+Under "Display Options", check "Show All Line Numbers" and change the "Right Margin Position" to 80.
 </p>
 
 <table border="0" cellpadding="5" cellspacing="0">
@@ -70,7 +74,21 @@ The other settings are for convenience when editing programs over long periods o
     <th>Figure 4</th>
 </tr>
 <tr style="vertical-align: top;">
-    <td bgcolor="wheat"><img src="drjava2.png"></td>
+    <td bgcolor="wheat"><img src="drjava2.png" width="640"></td>
+</tr>
+</table>
+
+<p>
+Then under the "Miscellaneous" category, change the "Indent Level" to 4 (i.e., four spaces).
+The other two settings are for convenience when editing programs over long periods of time.
+</p>
+
+<table border="0" cellpadding="5" cellspacing="0">
+<tr style="color: maroon; text-align: center;">
+    <th>Figure 5</th>
+</tr>
+<tr style="vertical-align: top;">
+    <td bgcolor="wheat"><img src="drjava3.png" width="640"></td>
 </tr>
 </table>
 

@@ -13,6 +13,9 @@ import org.junit.Test;
  */
 public class CSCardTest {
     
+    /** Delta value to use for assertEquals. */
+    public static final double DELTA = 0.01;
+    
     /**
      * Tests the calculateInterest method.
      */
@@ -21,10 +24,10 @@ public class CSCardTest {
         double actual;
         
         actual = CSCard.calculateInterest(0, 125.25);
-        assertEquals("Error in calculateInterest: ", 0.00, actual);
+        assertEquals("Error in calculateInterest: ", 0.00, actual, DELTA);
         
         actual = CSCard.calculateInterest(50, 50);
-        assertEquals("Error in calculateInterest: ", 2.00, actual);
+        assertEquals("Error in calculateInterest: ", 2.00, actual, DELTA);
     }
     
     /**
@@ -35,16 +38,16 @@ public class CSCardTest {
         double actual;
         
         actual = CSCard.calculateMinPayment(-1.00);
-        assertEquals("Error in calculateMinPayment: ",  0.00, actual);
+        assertEquals("Error in calculateMinPayment: ",  0.00, actual, DELTA);
         
         actual = CSCard.calculateMinPayment(38.00);
-        assertEquals("Error in calculateMinPayment: ", 38.00, actual);
+        assertEquals("Error in calculateMinPayment: ", 38.00, actual, DELTA);
         
         actual = CSCard.calculateMinPayment(128.00);
-        assertEquals("Error in calculateMinPayment: ", 50.00, actual);
+        assertEquals("Error in calculateMinPayment: ", 50.00, actual, DELTA);
         
         actual = CSCard.calculateMinPayment(350.00);
-        assertEquals("Error in calculateMinPayment: ", 70.00, actual);
+        assertEquals("Error in calculateMinPayment: ", 70.00, actual, DELTA);
     }
     
     /**

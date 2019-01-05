@@ -35,7 +35,6 @@ NOTE: Web-CAT is using Checkstyle 5.8 (Oct 2014).
         <module name="MultipleVariableDeclarations"/>
         <module name="OneStatementPerLine"/>
         <module name="ParameterAssignment"/>
-        <module name="RequireThis"/>
         <module name="ReturnCount"/>
         <module name="SimplifyBooleanExpression"/>
         <module name="SimplifyBooleanReturn"/>
@@ -43,7 +42,9 @@ NOTE: Web-CAT is using Checkstyle 5.8 (Oct 2014).
         <module name="UnnecessaryParentheses"/>
 
         <!-- See http://checkstyle.sf.net/config_imports.html -->
-        <module name="AvoidStarImport"/>
+        <module name="AvoidStarImport">
+            <property name="excludes" value="org.junit.Assert"/>
+        </module>
         <module name="AvoidStaticImport">
             <property name="excludes" value="org.junit.Assert.*"/>
         </module>

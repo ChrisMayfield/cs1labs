@@ -49,19 +49,21 @@
 
 <p>We strongly recommend you also complete the following section, especially if you are interested in using Eclipse on future assignments and/or the final exam. It won't take that long, and it will be worth it!</p>
 
-<h3>Part 2 - Eclipse Plugins (optional)</h3>
+<h3>Part 2 - Eclipse Plugins</h3>
 
 <p>One of the great advantages of using Eclipse is the rich third-party plugin library that exists. Plugins are developed and maintained by other users and organizations, and they are freely available. This next section will walk through setting up some of the plugins we use in CS 149 and CS 159.</p>
 
 <h4>JUnit</h4>
 
-<ol>
+<ol start="4">
 <li>
     <p>Select File -&gt; New -&gt; Other -&gt; JUnit Test Case. Select "New JUnit 4 test" (that's what we've been using this semester) and name your class <tt>CodingBatAP1Test</tt>. Click Next, and select the six AP-1 methods to create stubs.</p>
 </li>
+<!--
 <li>
     <p>To save you some busy work, copy the contents of this <a href="CodingBatAP1Test.java">CodingBatAP1Test.java</a> file into your new test file.</p>
 </li>
+-->
 <li>
     <p>To run JUnit tests, select Run -&gt; RunAs -&gt; JUnit Test. This will test your methods using <tt>CodingBatAP1Test</tt>.</p>
 </li>
@@ -72,12 +74,12 @@
 
 <h4>Checkstyle</h4>
 
-<ol>
+<ol start="8">
 <li>
-    <p>Go to Help -&gt; Eclipse marketplace, find the Checkstyle plugin, and click the Install button.</p>
+    <p>Go to Help -&gt; Eclipse marketplace, find the Checkstyle Plug-in, and click the Install button. You will need to accept the license agreement and then wait for it to install. After it finishes, you will need to restart Eclipse.</p>
 </li>
 <li>
-    <p>Configure Checkstyle to use our <a href="../lab02/cs149.xml">cs149.xml</a> by going to Window -&gt; Preferences -&gt; Checkstyle and importing the cs149.xml as an External Configuration file. (Click New, select the Type, name it cs149, and Browse to the location of cs149.xml.)</p>
+    <p>Configure Checkstyle to use our <a href="../lab02/cs149.xml">cs149.xml</a> by going to Window -&gt; Preferences -&gt; Checkstyle and importing the cs149.xml as an External Configuration file. (Click New, select the Type, name it cs149, and Browse to the location of cs149.xml.) Be sure to click "Set as Default".</p>
 </li>
 <li>
     <p>Go to the Package Explorer panel (on the left), right-click your project, and select Checkstyle -&gt; Activate Checkstyle to get comments in your main code window. You will need to repeat this last step for each project in the future; it's not enabled by default.</p>
@@ -88,12 +90,13 @@
 
 <p>When you press Ctrl+Shift+F to format your code, it uses the built-in style definitions. They don't match our Checkstyle configuration, but they are easy to customize.</p>
 
-<ol>
+<ol start="10">
 <li>
     <p>Go to Window -&gt; Preferences -&gt; Java -&gt; CodeStyle -&gt; Formatter, and then do an import of our <a href="cs149-formatter.xml">cs149-formatter.xml</a> file. (We suggest you download this file to your workspace directory, so it's easy to find.)</p>
 </li>
 </ol>
 
+<!--
 <h4>EclEmma</h4>
 
 <ol>
@@ -104,6 +107,7 @@
     <p>You can now run coverage tests against your program by clicking the Coverage button <img src="coverage-button.png" height="24"> on the toolbar, or by going to Run -&gt; Coverage from the menu bar.</p>
 </li>
 </ol>
+-->
 
 </div>
 </body>
